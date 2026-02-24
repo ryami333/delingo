@@ -1,5 +1,5 @@
 import { authClient } from "../../../helpers/authClient";
-import { Button, Center, Stack, Title } from "@mantine/core";
+import { Button, Center, Stack } from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
 import { z } from "zod";
 

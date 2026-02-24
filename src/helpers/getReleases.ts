@@ -1,4 +1,3 @@
-import { authMiddleware } from "./authMiddleware.ts";
 import { releasesCollection } from "./releasesCollection.ts";
 import { serializeMany } from "./serializeDocument.ts";
 import { createServerFn } from "@tanstack/react-start";

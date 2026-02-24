@@ -36,11 +36,6 @@ export const createReleaseFromMusicBrainz = createServerFn({ method: "POST" })
       throw new Error("Unexpected response from MusicBrainz API");
     }
 
-    const coverDownloadResponse = await fetch(
-      `http://coverartarchive.org/release/${musicBrainzRelease.id}/front.jpg`,
-    );
-    const coverBuffer = Buffer.from(await coverDownloadResponse.arrayBuffer());
-
     const filename = `${musicBrainzRelease.id}.jpg`;
 
     await releasesCollection.insertOne({

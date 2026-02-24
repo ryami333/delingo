@@ -35,7 +35,7 @@ export const Coverflow = ({
     const context = canvas?.getContext("2d", {
       alpha: false,
       desynchronized: true,
-    })!;
+    });
 
     contextRef.current = context;
   }, [dimensions]);
