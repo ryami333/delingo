@@ -1,0 +1,96 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db:/data/db
+    command:
+      ["mongod", "--replSet", "rs0", "--bind_ip_all", "--noauth", "--quiet"]
+    # simple health‑check so the `mongo-init` container can wait for readiness:
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mongo-init:
+    image: mongo:8
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      # e.g. MONGO_RS_HOST=localhost:27017 when app runs on host
+      # or   MONGO_RS_HOST=mongo:27017     when app runs in Docker
+      MONGO_RS_HOST: ${MONGO_RS_HOST}
+    entrypoint: >
+      mongosh --host mongo --eval '
+        const cfg = {
+          _id: "rs0",
+          members: [
+            { _id: 0, host: process.env.MONGO_RS_HOST },
+          ]
+        };
+
+        if (db.hello().setName) {
+          rs.reconfig(cfg, { force: true });
+          print("Replica set reconfigured.");
+        } else {
+          rs.initiate(cfg);
+          print("Replica set initialized.");
+        }
+      '
+
+  minio:
+    image: minio/minio:RELEASE.2025-09-07T16-13-09Z
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    # Set in `.env`
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY_ID}
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/S3_ACCESS_KEY_SECRET
+      MINIO_BUCKET_NAME: ${S3_BUCKET_NAME}
+    secrets:
+      - S3_ACCESS_KEY_SECRET
+    volumes:
+      - "./db/minio:/data"
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  minio-init:
+    image: minio/mc:RELEASE.2025-08-13T08-35-41Z
+    depends_on:
+      minio:
+        condition: service_healthy # wait until the server answers /health/live
+    # Set in `.env`
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY_ID}
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/S3_ACCESS_KEY_SECRET
+      MINIO_BUCKET_NAME: ${S3_BUCKET_NAME}
+    secrets:
+      - S3_ACCESS_KEY_SECRET
+    entrypoint: >
+      /bin/sh -c '
+        # 1) Configure a named alias that points to the MinIO server
+        mc alias set myminio http://minio:9000 "$${MINIO_ROOT_USER}" "$${MINIO_ROOT_PASSWORD}"
+
+        # 2) Create the bucket only if it does not already exist
+        if ! mc ls myminio/"$${MINIO_BUCKET_NAME}" >/dev/null 2>&1; then
+          echo "Creating bucket $${MINIO_BUCKET_NAME}"
+          mc mb myminio/"$${MINIO_BUCKET_NAME}"
+          mc anonymous set download myminio/"$${MINIO_BUCKET_NAME}"
+        else
+          echo "Bucket $${MINIO_BUCKET_NAME} already exists, skipping."
+        fi
+      '
+
+secrets:
+  S3_ACCESS_KEY_SECRET:
+    file: ./secrets/S3_ACCESS_KEY_SECRET

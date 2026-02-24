@@ -1,0 +1,13 @@
+/* MAIN CSS */
+
+/* Import Vendor css files here */
+@import "./vendor/modern-normalize.css";
+
+/* Import base css files here */
+@import "./constants.css";
+@import "./reset.css";
+@import "./base.css";
+
+html {
+  background-color: var(--color-surface-solid-dark);
+}

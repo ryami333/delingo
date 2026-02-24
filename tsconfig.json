@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["es2023", "dom"],
+    "module": "preserve",
+    "target": "es2022",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUncheckedIndexedAccess": true,
+    "moduleResolution": "bundler",
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "types": ["vite/client"]
+  },
+  "exclude": ["**/node_modules", "**/.*/", "dist", ".output"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs"]
+}
