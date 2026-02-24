@@ -2,7 +2,6 @@ import { authMiddleware } from "./authMiddleware.ts";
 import { env } from "./env.mjs";
 import { musicBrainzReleaseSchema } from "./musicBrainzReleaseSchema.ts";
 import { releasesCollection } from "./releasesCollection.ts";
-import { s3Client } from "./s3Client.ts";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
@@ -45,15 +44,6 @@ export const createReleaseFromMusicBrainz = createServerFn({ method: "POST" })
     const coverBuffer = Buffer.from(await coverDownloadResponse.arrayBuffer());
 
     const filename = `${musicBrainzRelease.id}.jpg`;
-
-    await s3Client.send(
-      new PutObjectCommand({
-        Bucket: env.S3_BUCKET_NAME,
-        Key: filename,
-        Body: coverBuffer,
-        ContentType: "image/jpeg",
-      }),
-    );
 
     await releasesCollection.insertOne({
       title: musicBrainzRelease.title,
