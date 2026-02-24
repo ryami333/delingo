@@ -1,0 +1,12 @@
+[
+  { "noun": "Zeit", "gender": "f", "english": "time" },
+  { "noun": "Jahr", "gender": "n", "english": "year" },
+  { "noun": "Mensch", "gender": "m", "english": "person" },
+  { "noun": "Tag", "gender": "m", "english": "day" },
+  { "noun": "Mann", "gender": "m", "english": "man" },
+  { "noun": "Frau", "gender": "f", "english": "woman" },
+  { "noun": "Hand", "gender": "f", "english": "hand" },
+  { "noun": "Kind", "gender": "n", "english": "child" },
+  { "noun": "Land", "gender": "n", "english": "country" },
+  { "noun": "Haus", "gender": "n", "english": "house" }
+]
