@@ -13,6 +13,7 @@
     "@storybook/react-vite": "^10.2.11",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/jest": "^30.0.0",
+    "@types/lodash": "^4",
     "@types/node": "24.10.13",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -46,6 +47,7 @@
     "@tanstack/router-plugin": "^1.162.8",
     "@total-typescript/ts-reset": "^0.6.1",
     "better-auth": "^1.4.19",
+    "lodash": "^4.17.23",
     "nitro": "^3.0.1-alpha.2",
     "sharp": "^0.34.5",
     "zod": "^4.3.6"
