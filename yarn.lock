@@ -5522,13 +5522,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql@npm:^16.12.0":
-  version: 16.12.0
-  resolution: "graphql@npm:16.12.0"
-  checksum: 10c0/b6fffa4e8a4e4a9933ebe85e7470b346dbf49050c1a482fac5e03e4a1a7bed2ecd3a4c97e29f04457af929464bc5e4f2aac991090c2f320111eef26e902a5c75
-  languageName: node
-  linkType: hard
-
 "h3-v2@npm:h3@2.0.1-rc.14, h3@npm:^2.0.1-rc.11":
   version: 2.0.1-rc.14
   resolution: "h3@npm:2.0.1-rc.14"
@@ -6759,7 +6752,6 @@ __metadata:
     classnames: "npm:^2.5.1"
     eslint: "npm:9.39.3"
     eslint-plugin-storybook: "npm:10.2.11"
-    graphql: "npm:^16.12.0"
     jest: "npm:^30.2.0"
     mongodb: "npm:^7.1.0"
     nitro: "npm:^3.0.1-alpha.2"
