@@ -22,7 +22,7 @@ const getRandomIndex = (inputs: unknown[]) =>
 const createRandomProblemState = () => {
   const randomIndex = getRandomIndex(nouns);
   const noun = nounSchema.parse(nouns.at(randomIndex));
-  const plural = Math.random() > 0.25; // One-quarter of the time
+  const plural = Math.random() > 0.75; // One-quarter of the time
   return {
     uuid: window.crypto.randomUUID(),
     noun,
@@ -40,8 +40,11 @@ function HomePage() {
     if (e.currentTarget instanceof HTMLFormElement) {
       const formData = new FormData(e.currentTarget);
 
-      const artikel = ARTIKELS[problemState.noun.gender];
-      const solution = `${artikel} ${capitalize(problemState.noun.noun)}`;
+      const artikel = problemState.plural
+        ? "die"
+        : ARTIKELS[problemState.noun.gender];
+      const solution = `${artikel} ${capitalize(problemState.plural ? problemState.noun.pluralNoun : problemState.noun.noun)}`;
+      console.log({ solution });
 
       const inputVal = formData.get("foo");
 
@@ -56,7 +59,12 @@ function HomePage() {
     <MantineProvider forceColorScheme="dark">
       <Notifications />
       <div>
-        <h1>{problemState.noun.english}</h1>
+        <h1>
+          The{" "}
+          {problemState.plural
+            ? `${problemState.noun.pluralEnglish} (Pl.)`
+            : problemState.noun.english}
+        </h1>
         <form onSubmit={onSubmit} key={problemState.uuid}>
           <input name="foo" type="text" autoFocus />
           <Button type="submit">Submit</Button>
