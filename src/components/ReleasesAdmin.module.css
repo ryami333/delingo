@@ -1,0 +1,28 @@
+.releases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 25%));
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.release {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 16px;
+  padding: 16px;
+}
+
+.cover-art {
+  display: block;
+  aspect-ratio: 1;
+  width: 100%;
+}
+
+.release-details {
+  display: grid;
+  grid-template-columns: max-content auto;
+  column-gap: 16px;
+}
+
+.actions {
+}

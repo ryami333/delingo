@@ -1,0 +1,4 @@
+# Hides machine-generated artefacts from PR diffs on Github
+payload-types.ts linguist-generated=true
+src/app/(payload)/admin/importMap.js linguist-generated=true
+yarn.lock linguist-generated=true
