@@ -1,8 +1,6 @@
 import { authMiddleware } from "./authMiddleware.ts";
-import { env } from "./env.mjs";
 import { musicBrainzReleaseSchema } from "./musicBrainzReleaseSchema.ts";
 import { releasesCollection } from "./releasesCollection.ts";
-import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
