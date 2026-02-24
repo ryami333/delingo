@@ -16,8 +16,6 @@
     "@types/node": "24.10.13",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.55.0",
-    "@typescript-eslint/parser": "^8.55.0",
     "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "^10.4.24",
     "classnames": "^2.5.1",
@@ -34,6 +32,7 @@
     "storybook": "^10.2.11",
     "temporal-polyfill": "^0.3.0",
     "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1"
   },
   "dependencies": {
