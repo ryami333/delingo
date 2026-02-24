@@ -1,12 +1,72 @@
 [
-  { "noun": "Zeit", "gender": "f", "english": "time" },
-  { "noun": "Jahr", "gender": "n", "english": "year" },
-  { "noun": "Mensch", "gender": "m", "english": "person" },
-  { "noun": "Tag", "gender": "m", "english": "day" },
-  { "noun": "Mann", "gender": "m", "english": "man" },
-  { "noun": "Frau", "gender": "f", "english": "woman" },
-  { "noun": "Hand", "gender": "f", "english": "hand" },
-  { "noun": "Kind", "gender": "n", "english": "child" },
-  { "noun": "Land", "gender": "n", "english": "country" },
-  { "noun": "Haus", "gender": "n", "english": "house" }
+  {
+    "noun": "Zeit",
+    "pluralNoun": "Zeiten",
+    "gender": "f",
+    "english": "time",
+    "pluralEnglish": "times"
+  },
+  {
+    "noun": "Jahr",
+    "pluralNoun": "Jahre",
+    "gender": "n",
+    "english": "year",
+    "pluralEnglish": "years"
+  },
+  {
+    "noun": "Mensch",
+    "pluralNoun": "Menschen",
+    "gender": "m",
+    "english": "person",
+    "pluralEnglish": "people"
+  },
+  {
+    "noun": "Tag",
+    "pluralNoun": "Tage",
+    "gender": "m",
+    "english": "day",
+    "pluralEnglish": "days"
+  },
+  {
+    "noun": "Mann",
+    "pluralNoun": "Männer",
+    "gender": "m",
+    "english": "man",
+    "pluralEnglish": "men"
+  },
+  {
+    "noun": "Frau",
+    "pluralNoun": "Frauen",
+    "gender": "f",
+    "english": "woman",
+    "pluralEnglish": "women"
+  },
+  {
+    "noun": "Hand",
+    "pluralNoun": "Hände",
+    "gender": "f",
+    "english": "hand",
+    "pluralEnglish": "hands"
+  },
+  {
+    "noun": "Kind",
+    "pluralNoun": "Kinder",
+    "gender": "n",
+    "english": "child",
+    "pluralEnglish": "children"
+  },
+  {
+    "noun": "Land",
+    "pluralNoun": "Länder",
+    "gender": "n",
+    "english": "country",
+    "pluralEnglish": "countries"
+  },
+  {
+    "noun": "Haus",
+    "pluralNoun": "Häuser",
+    "gender": "n",
+    "english": "house",
+    "pluralEnglish": "houses"
+  }
 ]
