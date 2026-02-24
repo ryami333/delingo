@@ -428,9 +428,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@better-auth/core@npm:1.4.18":
-  version: 1.4.18
-  resolution: "@better-auth/core@npm:1.4.18"
+"@better-auth/core@npm:1.4.19":
+  version: 1.4.19
+  resolution: "@better-auth/core@npm:1.4.19"
   dependencies:
     "@standard-schema/spec": "npm:^1.0.0"
     zod: "npm:^4.3.5"
@@ -441,19 +441,19 @@ __metadata:
     jose: ^6.1.0
     kysely: ^0.28.5
     nanostores: ^1.0.1
-  checksum: 10c0/add9d6282621f17836027f1e76f9dd134484064d4a68fc5cbf69400e3e18463c3d5df08fb302f4e3a6e1f0b2117a8640b731c65d5cc114297960e388d0619179
+  checksum: 10c0/1b45ff5846c372bba85e0a3e3385766ee031a4c06e259292f40d8817680e909da0b57d3d33acadbf103f325b67b6782804824f2fdd4083a42c2592db65867c8f
   languageName: node
   linkType: hard
 
-"@better-auth/telemetry@npm:1.4.18":
-  version: 1.4.18
-  resolution: "@better-auth/telemetry@npm:1.4.18"
+"@better-auth/telemetry@npm:1.4.19":
+  version: 1.4.19
+  resolution: "@better-auth/telemetry@npm:1.4.19"
   dependencies:
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.21"
   peerDependencies:
-    "@better-auth/core": 1.4.18
-  checksum: 10c0/44f5194e178a0d8162d80f44f544a4be440e7ebbb0370b17ff873f96669652120508ce30d9cfabe42184782081ea264872ff153dc66a794632632f9bd1955bab
+    "@better-auth/core": 1.4.19
+  checksum: 10c0/59adf22625b616613108948c15f8fa5dd236e41c81b1f39741a4b4ba74a9f158ae4e98adf7e7c487b8210f04f4e24f8cc9114911d0ad1823be9b9ea8a1ad32e0
   languageName: node
   linkType: hard
 
@@ -1339,10 +1339,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.39.2":
-  version: 9.39.2
-  resolution: "@eslint/js@npm:9.39.2"
-  checksum: 10c0/00f51c52b04ac79faebfaa65a9652b2093b9c924e945479f1f3945473f78aee83cbc76c8d70bbffbf06f7024626575b16d97b66eab16182e1d0d39daff2f26f5
+"@eslint/js@npm:9.39.3":
+  version: 9.39.3
+  resolution: "@eslint/js@npm:9.39.3"
+  checksum: 10c0/df1c70d6681c8daf4a3c86dfac159fcd98a73c4620c4fbe2be6caab1f30a34c7de0ad88ab0e81162376d2cde1a2eed1c32eff5f917ca369870930a51f8e818f1
   languageName: node
   linkType: hard
 
@@ -2853,14 +2853,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tabler/icons-react@npm:^3.36.1":
-  version: 3.36.1
-  resolution: "@tabler/icons-react@npm:3.36.1"
+"@tabler/icons-react@npm:^3.37.1":
+  version: 3.37.1
+  resolution: "@tabler/icons-react@npm:3.37.1"
   dependencies:
     "@tabler/icons": "npm:"
   peerDependencies:
     react: ">= 16"
-  checksum: 10c0/325dd0c7a780ec4713a93790b15517dc176af5778c36c49e1fe586113040d2e71330aa85aa9f5900cbae0fe0b78f69016ba73b4b490783c9b7292215f29c686a
+  checksum: 10c0/115857abe5f15e252cd69b7c9b64ac91c9e0e7f7cb3a30a0dd56fdb463d96f68612713544fa856dd4b142503456ca314f619f32e9d255bbef11f50d3d6cd0ed5
   languageName: node
   linkType: hard
 
@@ -3338,12 +3338,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.2.13":
-  version: 19.2.13
-  resolution: "@types/react@npm:19.2.13"
+"@types/react@npm:^19.2.14":
+  version: 19.2.14
+  resolution: "@types/react@npm:19.2.14"
   dependencies:
     csstype: "npm:^3.2.2"
-  checksum: 10c0/e512dc53b805b9066f5c6ad42944372e1204290d618dbaec634d8bbd80d3aadcc1b8cdd7251329936bbdafae0425c02f531083213473bb370df903f20bb66e91
+  checksum: 10c0/7d25bf41b57719452d86d2ac0570b659210402707313a36ee612666bf11275a1c69824f8c3ee1fdca077ccfe15452f6da8f1224529b917050eb2d861e52b59b7
   languageName: node
   linkType: hard
 
@@ -4085,12 +4085,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"better-auth@npm:^1.4.18":
-  version: 1.4.18
-  resolution: "better-auth@npm:1.4.18"
+"better-auth@npm:^1.4.19":
+  version: 1.4.19
+  resolution: "better-auth@npm:1.4.19"
   dependencies:
-    "@better-auth/core": "npm:1.4.18"
-    "@better-auth/telemetry": "npm:1.4.18"
+    "@better-auth/core": "npm:1.4.19"
+    "@better-auth/telemetry": "npm:1.4.19"
     "@better-auth/utils": "npm:0.3.0"
     "@better-fetch/fetch": "npm:1.1.21"
     "@noble/ciphers": "npm:^2.0.0"
@@ -4160,7 +4160,7 @@ __metadata:
       optional: true
     vue:
       optional: true
-  checksum: 10c0/e2ab761b57da0342f026f7c4184f60afec54a606ddc9a247eee3cb82de2ba69b7510b09c9773df692e0e908a318d25c1685c14925fc03a877243d639061986c9
+  checksum: 10c0/4ebe849fcad7bb8aa47df6421db0ff0709c3497a4cfbf335df9a8470e2acb84152f7f4af99e9707d536722ff17c5064eb703ea42b49063525e933af894725405
   languageName: node
   linkType: hard
 
@@ -5088,9 +5088,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:9.39.2":
-  version: 9.39.2
-  resolution: "eslint@npm:9.39.2"
+"eslint@npm:9.39.3":
+  version: 9.39.3
+  resolution: "eslint@npm:9.39.3"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.8.0"
     "@eslint-community/regexpp": "npm:^4.12.1"
@@ -5098,7 +5098,7 @@ __metadata:
     "@eslint/config-helpers": "npm:^0.4.2"
     "@eslint/core": "npm:^0.17.0"
     "@eslint/eslintrc": "npm:^3.3.1"
-    "@eslint/js": "npm:9.39.2"
+    "@eslint/js": "npm:9.39.3"
     "@eslint/plugin-kit": "npm:^0.4.1"
     "@humanfs/node": "npm:^0.16.6"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
@@ -5133,7 +5133,7 @@ __metadata:
       optional: true
   bin:
     eslint: bin/eslint.js
-  checksum: 10c0/bb88ca8fd16bb7e1ac3e13804c54d41c583214460c0faa7b3e7c574e69c5600c7122295500fb4b0c06067831111db740931e98da1340329527658e1cf80073d3
+  checksum: 10c0/5e5dbf84d4f604f5d2d7a58c5c3fcdde30a01b8973ff3caeca8b2bacc16066717cedb4385ce52db1a2746d0b621770d4d4227cc7f44982b0b03818be2c31538d
   languageName: node
   linkType: hard
 
@@ -6743,7 +6743,7 @@ __metadata:
     "@storybook/addon-links": "npm:^10.2.11"
     "@storybook/react-vite": "npm:^10.2.11"
     "@t3-oss/env-core": "npm:^0.13.10"
-    "@tabler/icons-react": "npm:^3.36.1"
+    "@tabler/icons-react": "npm:^3.37.1"
     "@tanstack/react-router": "npm:^1.162.8"
     "@tanstack/react-start": "npm:^1.162.8"
     "@tanstack/router-plugin": "npm:^1.162.8"
@@ -6751,13 +6751,13 @@ __metadata:
     "@trivago/prettier-plugin-sort-imports": "npm:^6.0.2"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:24.10.13"
-    "@types/react": "npm:^19.2.13"
+    "@types/react": "npm:^19.2.14"
     "@types/react-dom": "npm:^19.2.3"
     "@vitejs/plugin-react": "npm:^5.1.4"
     autoprefixer: "npm:^10.4.24"
-    better-auth: "npm:^1.4.18"
+    better-auth: "npm:^1.4.19"
     classnames: "npm:^2.5.1"
-    eslint: "npm:9.39.2"
+    eslint: "npm:9.39.3"
     eslint-plugin-storybook: "npm:10.2.11"
     graphql: "npm:^16.12.0"
     jest: "npm:^30.2.0"
