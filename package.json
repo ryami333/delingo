@@ -46,7 +46,6 @@
     "@tanstack/router-plugin": "^1.162.8",
     "@total-typescript/ts-reset": "^0.6.1",
     "better-auth": "^1.4.19",
-    "graphql": "^16.12.0",
     "nitro": "^3.0.1-alpha.2",
     "sharp": "^0.34.5",
     "zod": "^4.3.6"
