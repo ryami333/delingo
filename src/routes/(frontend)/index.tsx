@@ -19,29 +19,35 @@ const ARTIKELS = {
 const getRandomIndex = (inputs: unknown[]) =>
   Math.floor(Math.random() * inputs.length);
 
+const createRandomProblemState = () => {
+  const randomIndex = getRandomIndex(nouns);
+  const noun = nounSchema.parse(nouns.at(randomIndex));
+  const plural = Math.random() > 0.25; // One-quarter of the time
+  return {
+    uuid: window.crypto.randomUUID(),
+    noun,
+    plural,
+  };
+};
+
 function HomePage() {
-  const [currentIndex, setCurrentIndex] = useState(getRandomIndex(nouns));
-  const rawNoun = nouns.at(currentIndex);
-  if (!rawNoun) {
-    throw new Error("Noun is empty");
-  }
+  const [problemState, setProblemState] = useState<
+    ReturnType<typeof createRandomProblemState>
+  >(() => createRandomProblemState());
 
   const onSubmit: React.SubmitEventHandler = (e) => {
     e.preventDefault();
-    if (rawNoun && e.currentTarget instanceof HTMLFormElement) {
+    if (e.currentTarget instanceof HTMLFormElement) {
       const formData = new FormData(e.currentTarget);
 
-      const noun = nounSchema.parse(rawNoun);
-
-      const artikel = ARTIKELS[noun.gender];
-      const solution = `${artikel} ${capitalize(rawNoun.noun)}`;
-      console.log({ noun, solution, ARTIKELS });
+      const artikel = ARTIKELS[problemState.noun.gender];
+      const solution = `${artikel} ${capitalize(problemState.noun.noun)}`;
 
       const inputVal = formData.get("foo");
 
       if (solution === inputVal) {
         // TODO: guard against same index as last time.
-        setCurrentIndex(getRandomIndex(nouns));
+        setProblemState(createRandomProblemState());
       }
     }
   };
@@ -50,8 +56,8 @@ function HomePage() {
     <MantineProvider forceColorScheme="dark">
       <Notifications />
       <div>
-        <h1>{rawNoun?.english}</h1>
-        <form onSubmit={onSubmit} key={rawNoun?.noun}>
+        <h1>{problemState.noun.english}</h1>
+        <form onSubmit={onSubmit} key={problemState.uuid}>
           <input name="foo" type="text" autoFocus />
           <Button type="submit">Submit</Button>
         </form>
