@@ -1,4 +1,3 @@
-import { Coverflow } from "../../components/CoverFlow";
 import { getReleases } from "../../helpers/getReleases";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -12,7 +11,6 @@ function HomePage() {
 
   return (
     <div>
-      <Coverflow releases={releases} />
     </div>
   );
 }
