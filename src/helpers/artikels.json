@@ -1,0 +1,97 @@
+[
+  {
+    "word": "der",
+    "english": "the",
+    "nominativ": { "m": "der", "f": "die", "n": "das", "pl": "die" },
+    "akkusativ": { "m": "den", "f": "die", "n": "das", "pl": "die" },
+    "dativ": { "m": "dem", "f": "der", "n": "dem", "pl": "den" },
+    "genitiv": { "m": "des", "f": "der", "n": "des", "pl": "der" }
+  },
+  {
+    "word": "ein",
+    "english": "a / an",
+    "nominativ": { "m": "ein", "f": "eine", "n": "ein", "pl": null },
+    "akkusativ": { "m": "einen", "f": "eine", "n": "ein", "pl": null },
+    "dativ": { "m": "einem", "f": "einer", "n": "einem", "pl": null },
+    "genitiv": { "m": "eines", "f": "einer", "n": "eines", "pl": null }
+  },
+  {
+    "word": "kein",
+    "english": "no / not a",
+    "nominativ": { "m": "kein", "f": "keine", "n": "kein", "pl": "keine" },
+    "akkusativ": { "m": "keinen", "f": "keine", "n": "kein", "pl": "keine" },
+    "dativ": { "m": "keinem", "f": "keiner", "n": "keinem", "pl": "keinen" },
+    "genitiv": { "m": "keines", "f": "keiner", "n": "keines", "pl": "keiner" }
+  },
+  {
+    "word": "mein",
+    "english": "my",
+    "nominativ": { "m": "mein", "f": "meine", "n": "mein", "pl": "meine" },
+    "akkusativ": { "m": "meinen", "f": "meine", "n": "mein", "pl": "meine" },
+    "dativ": { "m": "meinem", "f": "meiner", "n": "meinem", "pl": "meinen" },
+    "genitiv": { "m": "meines", "f": "meiner", "n": "meines", "pl": "meiner" }
+  },
+  {
+    "word": "dein",
+    "english": "your (informal singular)",
+    "nominativ": { "m": "dein", "f": "deine", "n": "dein", "pl": "deine" },
+    "akkusativ": { "m": "deinen", "f": "deine", "n": "dein", "pl": "deine" },
+    "dativ": { "m": "deinem", "f": "deiner", "n": "deinem", "pl": "deinen" },
+    "genitiv": { "m": "deines", "f": "deiner", "n": "deines", "pl": "deiner" }
+  },
+  {
+    "word": "sein",
+    "english": "his / its",
+    "nominativ": { "m": "sein", "f": "seine", "n": "sein", "pl": "seine" },
+    "akkusativ": { "m": "seinen", "f": "seine", "n": "sein", "pl": "seine" },
+    "dativ": { "m": "seinem", "f": "seiner", "n": "seinem", "pl": "seinen" },
+    "genitiv": { "m": "seines", "f": "seiner", "n": "seines", "pl": "seiner" }
+  },
+  {
+    "word": "ihr",
+    "english": "her / their",
+    "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
+    "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
+    "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
+    "genitiv": { "m": "ihres", "f": "ihrer", "n": "ihres", "pl": "ihrer" }
+  },
+  {
+    "word": "unser",
+    "english": "our",
+    "nominativ": { "m": "unser", "f": "unsere", "n": "unser", "pl": "unsere" },
+    "akkusativ": {
+      "m": "unseren",
+      "f": "unsere",
+      "n": "unser",
+      "pl": "unsere"
+    },
+    "dativ": {
+      "m": "unserem",
+      "f": "unserer",
+      "n": "unserem",
+      "pl": "unseren"
+    },
+    "genitiv": {
+      "m": "unseres",
+      "f": "unserer",
+      "n": "unseres",
+      "pl": "unserer"
+    }
+  },
+  {
+    "word": "euer",
+    "english": "your (informal plural)",
+    "nominativ": { "m": "euer", "f": "eure", "n": "euer", "pl": "eure" },
+    "akkusativ": { "m": "euren", "f": "eure", "n": "euer", "pl": "eure" },
+    "dativ": { "m": "eurem", "f": "eurer", "n": "eurem", "pl": "euren" },
+    "genitiv": { "m": "eures", "f": "eurer", "n": "eures", "pl": "eurer" }
+  },
+  {
+    "word": "Ihr",
+    "english": "your (formal)",
+    "nominativ": { "m": "Ihr", "f": "Ihre", "n": "Ihr", "pl": "Ihre" },
+    "akkusativ": { "m": "Ihren", "f": "Ihre", "n": "Ihr", "pl": "Ihre" },
+    "dativ": { "m": "Ihrem", "f": "Ihrer", "n": "Ihrem", "pl": "Ihren" },
+    "genitiv": { "m": "Ihres", "f": "Ihrer", "n": "Ihres", "pl": "Ihrer" }
+  }
+]
