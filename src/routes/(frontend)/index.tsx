@@ -1,5 +1,4 @@
-import { nounSchema } from "../../helpers/nounSchema";
-import nouns from "../../helpers/nouns.json";
+import { createRandomProblemState } from "../../helpers/createRandomProblemState";
 import { Button, MantineProvider } from "@mantine/core";
 import { Notifications } from "@mantine/notifications";
 import { createFileRoute } from "@tanstack/react-router";
@@ -15,20 +14,6 @@ const ARTIKELS = {
   f: "die",
   n: "das",
 } as const;
-
-const getRandomIndex = (inputs: unknown[]) =>
-  Math.floor(Math.random() * inputs.length);
-
-const createRandomProblemState = () => {
-  const randomIndex = getRandomIndex(nouns);
-  const noun = nounSchema.parse(nouns.at(randomIndex));
-  const plural = Math.random() > 0.75; // One-quarter of the time
-  return {
-    uuid: window.crypto.randomUUID(),
-    noun,
-    plural,
-  };
-};
 
 function HomePage() {
   const [problemState, setProblemState] = useState<
