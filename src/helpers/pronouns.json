@@ -1,0 +1,27 @@
+[
+  { "pronoun": "ich", "english": "I", "person": 1, "number": "singular" },
+  {
+    "pronoun": "du",
+    "english": "you (informal singular)",
+    "person": 2,
+    "number": "singular"
+  },
+  { "pronoun": "er", "english": "he", "person": 3, "number": "singular" },
+  { "pronoun": "sie", "english": "she", "person": 3, "number": "singular" },
+  { "pronoun": "es", "english": "it", "person": 3, "number": "singular" },
+  { "pronoun": "wir", "english": "we", "person": 1, "number": "plural" },
+  {
+    "pronoun": "ihr",
+    "english": "you (informal plural)",
+    "person": 2,
+    "number": "plural"
+  },
+  { "pronoun": "sie", "english": "they", "person": 3, "number": "plural" },
+  {
+    "pronoun": "Sie",
+    "english": "you (formal)",
+    "person": 2,
+    "number": "formal"
+  },
+  { "pronoun": "man", "english": "one", "person": 3, "number": "singular" }
+]
