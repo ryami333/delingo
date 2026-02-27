@@ -6,11 +6,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "habe", "plural": "haben" },
-      "secondPerson": {
-        "singular": "hast",
-        "plural": "habt",
-        "formal": "haben"
-      },
+      "secondPerson": { "singular": "hast", "plural": "habt" },
       "thirdPerson": { "singular": "hat", "plural": "haben" }
     }
   },
@@ -21,11 +17,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "sehe", "plural": "sehen" },
-      "secondPerson": {
-        "singular": "siehst",
-        "plural": "seht",
-        "formal": "sehen"
-      },
+      "secondPerson": { "singular": "siehst", "plural": "seht" },
       "thirdPerson": { "singular": "sieht", "plural": "sehen" }
     }
   },
@@ -36,11 +28,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "brauche", "plural": "brauchen" },
-      "secondPerson": {
-        "singular": "brauchst",
-        "plural": "braucht",
-        "formal": "brauchen"
-      },
+      "secondPerson": { "singular": "brauchst", "plural": "braucht" },
       "thirdPerson": { "singular": "braucht", "plural": "brauchen" }
     }
   },
@@ -51,11 +39,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "kenne", "plural": "kennen" },
-      "secondPerson": {
-        "singular": "kennst",
-        "plural": "kennt",
-        "formal": "kennen"
-      },
+      "secondPerson": { "singular": "kennst", "plural": "kennt" },
       "thirdPerson": { "singular": "kennt", "plural": "kennen" }
     }
   },
@@ -66,11 +50,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "liebe", "plural": "lieben" },
-      "secondPerson": {
-        "singular": "liebst",
-        "plural": "liebt",
-        "formal": "lieben"
-      },
+      "secondPerson": { "singular": "liebst", "plural": "liebt" },
       "thirdPerson": { "singular": "liebt", "plural": "lieben" }
     }
   },
@@ -81,11 +61,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "finde", "plural": "finden" },
-      "secondPerson": {
-        "singular": "findest",
-        "plural": "findet",
-        "formal": "finden"
-      },
+      "secondPerson": { "singular": "findest", "plural": "findet" },
       "thirdPerson": { "singular": "findet", "plural": "finden" }
     }
   },
@@ -96,11 +72,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "kaufe", "plural": "kaufen" },
-      "secondPerson": {
-        "singular": "kaufst",
-        "plural": "kauft",
-        "formal": "kaufen"
-      },
+      "secondPerson": { "singular": "kaufst", "plural": "kauft" },
       "thirdPerson": { "singular": "kauft", "plural": "kaufen" }
     }
   },
@@ -111,11 +83,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "nehme", "plural": "nehmen" },
-      "secondPerson": {
-        "singular": "nimmst",
-        "plural": "nehmt",
-        "formal": "nehmen"
-      },
+      "secondPerson": { "singular": "nimmst", "plural": "nehmt" },
       "thirdPerson": { "singular": "nimmt", "plural": "nehmen" }
     }
   },
@@ -126,11 +94,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "mag", "plural": "mögen" },
-      "secondPerson": {
-        "singular": "magst",
-        "plural": "mögt",
-        "formal": "mögen"
-      },
+      "secondPerson": { "singular": "magst", "plural": "mögt" },
       "thirdPerson": { "singular": "mag", "plural": "mögen" }
     }
   },
@@ -141,11 +105,7 @@
     "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "höre", "plural": "hören" },
-      "secondPerson": {
-        "singular": "hörst",
-        "plural": "hört",
-        "formal": "hören"
-      },
+      "secondPerson": { "singular": "hörst", "plural": "hört" },
       "thirdPerson": { "singular": "hört", "plural": "hören" }
     }
   },
@@ -156,7 +116,7 @@
     "form": "dativ",
     "conjugation": {
       "firstPerson": { "singular": "helfe", "plural": "helfen" },
-      "secondPerson": { "singular": "hilfst", "plural": "helft", "formal": "helfen" },
+      "secondPerson": { "singular": "hilfst", "plural": "helft" },
       "thirdPerson": { "singular": "hilft", "plural": "helfen" }
     }
   },
@@ -167,7 +127,7 @@
     "form": "dativ",
     "conjugation": {
       "firstPerson": { "singular": "danke", "plural": "danken" },
-      "secondPerson": { "singular": "dankst", "plural": "dankt", "formal": "danken" },
+      "secondPerson": { "singular": "dankst", "plural": "dankt" },
       "thirdPerson": { "singular": "dankt", "plural": "danken" }
     }
   },
@@ -178,7 +138,7 @@
     "form": "dativ",
     "conjugation": {
       "firstPerson": { "singular": "folge", "plural": "folgen" },
-      "secondPerson": { "singular": "folgst", "plural": "folgt", "formal": "folgen" },
+      "secondPerson": { "singular": "folgst", "plural": "folgt" },
       "thirdPerson": { "singular": "folgt", "plural": "folgen" }
     }
   },
@@ -189,7 +149,7 @@
     "form": "dativ",
     "conjugation": {
       "firstPerson": { "singular": "glaube", "plural": "glauben" },
-      "secondPerson": { "singular": "glaubst", "plural": "glaubt", "formal": "glauben" },
+      "secondPerson": { "singular": "glaubst", "plural": "glaubt" },
       "thirdPerson": { "singular": "glaubt", "plural": "glauben" }
     }
   },
@@ -200,8 +160,41 @@
     "form": "dativ",
     "conjugation": {
       "firstPerson": { "singular": "gehöre", "plural": "gehören" },
-      "secondPerson": { "singular": "gehörst", "plural": "gehört", "formal": "gehören" },
+      "secondPerson": { "singular": "gehörst", "plural": "gehört" },
       "thirdPerson": { "singular": "gehört", "plural": "gehören" }
+    }
+  },
+  {
+    "verb": "sein",
+    "english": "am / are / is",
+    "englishThirdSingular": "is",
+    "form": "nominativ",
+    "conjugation": {
+      "firstPerson": { "singular": "bin", "plural": "sind" },
+      "secondPerson": { "singular": "bist", "plural": "seid" },
+      "thirdPerson": { "singular": "ist", "plural": "sind" }
+    }
+  },
+  {
+    "verb": "werden",
+    "english": "become",
+    "englishThirdSingular": "becomes",
+    "form": "nominativ",
+    "conjugation": {
+      "firstPerson": { "singular": "werde", "plural": "werden" },
+      "secondPerson": { "singular": "wirst", "plural": "werdet" },
+      "thirdPerson": { "singular": "wird", "plural": "werden" }
+    }
+  },
+  {
+    "verb": "bleiben",
+    "english": "remain",
+    "englishThirdSingular": "remains",
+    "form": "nominativ",
+    "conjugation": {
+      "firstPerson": { "singular": "bleibe", "plural": "bleiben" },
+      "secondPerson": { "singular": "bleibst", "plural": "bleibt" },
+      "thirdPerson": { "singular": "bleibt", "plural": "bleiben" }
     }
   }
 ]
