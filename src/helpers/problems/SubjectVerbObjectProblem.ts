@@ -41,11 +41,12 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
         : verb.conjugation[pronoun.person][pronoun.number];
 
     // Fall back to singular if this artikel has no plural form
-    const akkusativForm = plural
-      ? (artikel.akkusativ.pl ?? artikel.akkusativ[noun.gender])
-      : artikel.akkusativ[noun.gender];
+    const artikelCase = artikel[verb.form];
+    const artikelForm = plural
+      ? (artikelCase.pl ?? artikelCase[noun.gender])
+      : artikelCase[noun.gender];
     const germanNoun = capitalize(plural ? noun.pluralNoun : noun.noun);
 
-    this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${akkusativForm} ${germanNoun}`;
+    this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${artikelForm} ${germanNoun}`;
   }
 }
