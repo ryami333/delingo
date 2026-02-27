@@ -3,6 +3,7 @@
     "verb": "haben",
     "english": "have",
     "englishThirdSingular": "has",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "habe", "plural": "haben" },
       "secondPerson": {
@@ -17,6 +18,7 @@
     "verb": "sehen",
     "english": "see",
     "englishThirdSingular": "sees",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "sehe", "plural": "sehen" },
       "secondPerson": {
@@ -31,6 +33,7 @@
     "verb": "brauchen",
     "english": "need",
     "englishThirdSingular": "needs",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "brauche", "plural": "brauchen" },
       "secondPerson": {
@@ -45,6 +48,7 @@
     "verb": "kennen",
     "english": "know",
     "englishThirdSingular": "knows",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "kenne", "plural": "kennen" },
       "secondPerson": {
@@ -59,6 +63,7 @@
     "verb": "lieben",
     "english": "love",
     "englishThirdSingular": "loves",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "liebe", "plural": "lieben" },
       "secondPerson": {
@@ -73,6 +78,7 @@
     "verb": "finden",
     "english": "find",
     "englishThirdSingular": "finds",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "finde", "plural": "finden" },
       "secondPerson": {
@@ -87,6 +93,7 @@
     "verb": "kaufen",
     "english": "buy",
     "englishThirdSingular": "buys",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "kaufe", "plural": "kaufen" },
       "secondPerson": {
@@ -101,6 +108,7 @@
     "verb": "nehmen",
     "english": "take",
     "englishThirdSingular": "takes",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "nehme", "plural": "nehmen" },
       "secondPerson": {
@@ -115,6 +123,7 @@
     "verb": "mögen",
     "english": "like",
     "englishThirdSingular": "likes",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "mag", "plural": "mögen" },
       "secondPerson": {
@@ -129,6 +138,7 @@
     "verb": "hören",
     "english": "hear",
     "englishThirdSingular": "hears",
+    "form": "akkusativ",
     "conjugation": {
       "firstPerson": { "singular": "höre", "plural": "hören" },
       "secondPerson": {
@@ -137,6 +147,61 @@
         "formal": "hören"
       },
       "thirdPerson": { "singular": "hört", "plural": "hören" }
+    }
+  },
+  {
+    "verb": "helfen",
+    "english": "help",
+    "englishThirdSingular": "helps",
+    "form": "dativ",
+    "conjugation": {
+      "firstPerson": { "singular": "helfe", "plural": "helfen" },
+      "secondPerson": { "singular": "hilfst", "plural": "helft", "formal": "helfen" },
+      "thirdPerson": { "singular": "hilft", "plural": "helfen" }
+    }
+  },
+  {
+    "verb": "danken",
+    "english": "thank",
+    "englishThirdSingular": "thanks",
+    "form": "dativ",
+    "conjugation": {
+      "firstPerson": { "singular": "danke", "plural": "danken" },
+      "secondPerson": { "singular": "dankst", "plural": "dankt", "formal": "danken" },
+      "thirdPerson": { "singular": "dankt", "plural": "danken" }
+    }
+  },
+  {
+    "verb": "folgen",
+    "english": "follow",
+    "englishThirdSingular": "follows",
+    "form": "dativ",
+    "conjugation": {
+      "firstPerson": { "singular": "folge", "plural": "folgen" },
+      "secondPerson": { "singular": "folgst", "plural": "folgt", "formal": "folgen" },
+      "thirdPerson": { "singular": "folgt", "plural": "folgen" }
+    }
+  },
+  {
+    "verb": "glauben",
+    "english": "believe",
+    "englishThirdSingular": "believes",
+    "form": "dativ",
+    "conjugation": {
+      "firstPerson": { "singular": "glaube", "plural": "glauben" },
+      "secondPerson": { "singular": "glaubst", "plural": "glaubt", "formal": "glauben" },
+      "thirdPerson": { "singular": "glaubt", "plural": "glauben" }
+    }
+  },
+  {
+    "verb": "gehören",
+    "english": "belong to",
+    "englishThirdSingular": "belongs to",
+    "form": "dativ",
+    "conjugation": {
+      "firstPerson": { "singular": "gehöre", "plural": "gehören" },
+      "secondPerson": { "singular": "gehörst", "plural": "gehört", "formal": "gehören" },
+      "thirdPerson": { "singular": "gehört", "plural": "gehören" }
     }
   }
 ]
