@@ -58,4 +58,5 @@ vite.config.ts          # Vite + Nitro + TanStack Start + React plugins
 - **Imports**: Prettier auto-sorts imports — non-CSS imports first, then CSS imports.
 - **CSS**: CSS Modules for component styles (`.module.css`). PostCSS with CSS nesting enabled. Prettier sorts CSS declarations.
 - **Data schemas**: JSON data files in `src/helpers/` have matching Zod schemas (`nounSchema.ts`, `artikelSchema.ts`, etc.).
-- **Problem system**: Abstract base class `AbstractProblem` with concrete implementations (e.g., `NominalProblem`). Each problem generates a `uuid`, `problem` (English prompt), and `solution` (German answer).
+- **Problem system**: Abstract base class `AbstractProblem` with concrete implementations (e.g., `NominalProblem`, `SubjectVerbObjectProblem`). Each problem generates a `uuid`, `problem` (English prompt), and `solution` (German answer).
+- **German capitalization in solutions**: German nouns are always capitalized. In full sentences (e.g., `SubjectVerbObjectProblem`), the first word is also capitalized (sentence case). In noun phrases (e.g., `NominalProblem`), the article stays lowercase — only the noun is capitalized.
