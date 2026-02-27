@@ -33,11 +33,11 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     const englishNoun = plural ? noun.pluralEnglish : noun.english;
     this.problem = `${pronoun.english} ${englishVerb} ${artikel.english} ${englishNoun}`;
 
-    // German solution — object takes accusative case
-    // "formal" only occurs with secondPerson, which has the "formal" key
+    // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ/genitiv)
+    // Formal "Sie" always conjugates identically to 1st/3rd person plural in German
     const germanVerb =
       pronoun.number === "formal"
-        ? verb.conjugation.secondPerson.formal
+        ? verb.conjugation.thirdPerson.plural
         : verb.conjugation[pronoun.person][pronoun.number];
 
     // Fall back to singular if this artikel has no plural form
