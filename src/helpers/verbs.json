@@ -1,0 +1,142 @@
+[
+  {
+    "verb": "haben",
+    "english": "have",
+    "englishThirdSingular": "has",
+    "conjugation": {
+      "firstPerson": { "singular": "habe", "plural": "haben" },
+      "secondPerson": {
+        "singular": "hast",
+        "plural": "habt",
+        "formal": "haben"
+      },
+      "thirdPerson": { "singular": "hat", "plural": "haben" }
+    }
+  },
+  {
+    "verb": "sehen",
+    "english": "see",
+    "englishThirdSingular": "sees",
+    "conjugation": {
+      "firstPerson": { "singular": "sehe", "plural": "sehen" },
+      "secondPerson": {
+        "singular": "siehst",
+        "plural": "seht",
+        "formal": "sehen"
+      },
+      "thirdPerson": { "singular": "sieht", "plural": "sehen" }
+    }
+  },
+  {
+    "verb": "brauchen",
+    "english": "need",
+    "englishThirdSingular": "needs",
+    "conjugation": {
+      "firstPerson": { "singular": "brauche", "plural": "brauchen" },
+      "secondPerson": {
+        "singular": "brauchst",
+        "plural": "braucht",
+        "formal": "brauchen"
+      },
+      "thirdPerson": { "singular": "braucht", "plural": "brauchen" }
+    }
+  },
+  {
+    "verb": "kennen",
+    "english": "know",
+    "englishThirdSingular": "knows",
+    "conjugation": {
+      "firstPerson": { "singular": "kenne", "plural": "kennen" },
+      "secondPerson": {
+        "singular": "kennst",
+        "plural": "kennt",
+        "formal": "kennen"
+      },
+      "thirdPerson": { "singular": "kennt", "plural": "kennen" }
+    }
+  },
+  {
+    "verb": "lieben",
+    "english": "love",
+    "englishThirdSingular": "loves",
+    "conjugation": {
+      "firstPerson": { "singular": "liebe", "plural": "lieben" },
+      "secondPerson": {
+        "singular": "liebst",
+        "plural": "liebt",
+        "formal": "lieben"
+      },
+      "thirdPerson": { "singular": "liebt", "plural": "lieben" }
+    }
+  },
+  {
+    "verb": "finden",
+    "english": "find",
+    "englishThirdSingular": "finds",
+    "conjugation": {
+      "firstPerson": { "singular": "finde", "plural": "finden" },
+      "secondPerson": {
+        "singular": "findest",
+        "plural": "findet",
+        "formal": "finden"
+      },
+      "thirdPerson": { "singular": "findet", "plural": "finden" }
+    }
+  },
+  {
+    "verb": "kaufen",
+    "english": "buy",
+    "englishThirdSingular": "buys",
+    "conjugation": {
+      "firstPerson": { "singular": "kaufe", "plural": "kaufen" },
+      "secondPerson": {
+        "singular": "kaufst",
+        "plural": "kauft",
+        "formal": "kaufen"
+      },
+      "thirdPerson": { "singular": "kauft", "plural": "kaufen" }
+    }
+  },
+  {
+    "verb": "nehmen",
+    "english": "take",
+    "englishThirdSingular": "takes",
+    "conjugation": {
+      "firstPerson": { "singular": "nehme", "plural": "nehmen" },
+      "secondPerson": {
+        "singular": "nimmst",
+        "plural": "nehmt",
+        "formal": "nehmen"
+      },
+      "thirdPerson": { "singular": "nimmt", "plural": "nehmen" }
+    }
+  },
+  {
+    "verb": "mögen",
+    "english": "like",
+    "englishThirdSingular": "likes",
+    "conjugation": {
+      "firstPerson": { "singular": "mag", "plural": "mögen" },
+      "secondPerson": {
+        "singular": "magst",
+        "plural": "mögt",
+        "formal": "mögen"
+      },
+      "thirdPerson": { "singular": "mag", "plural": "mögen" }
+    }
+  },
+  {
+    "verb": "hören",
+    "english": "hear",
+    "englishThirdSingular": "hears",
+    "conjugation": {
+      "firstPerson": { "singular": "höre", "plural": "hören" },
+      "secondPerson": {
+        "singular": "hörst",
+        "plural": "hört",
+        "formal": "hören"
+      },
+      "thirdPerson": { "singular": "hört", "plural": "hören" }
+    }
+  }
+]

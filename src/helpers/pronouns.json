@@ -1,27 +1,62 @@
 [
-  { "pronoun": "ich", "english": "I", "person": 1, "number": "singular" },
+  {
+    "pronoun": "ich",
+    "english": "I",
+    "person": "firstPerson",
+    "number": "singular"
+  },
   {
     "pronoun": "du",
     "english": "you (informal singular)",
-    "person": 2,
+    "person": "secondPerson",
     "number": "singular"
   },
-  { "pronoun": "er", "english": "he", "person": 3, "number": "singular" },
-  { "pronoun": "sie", "english": "she", "person": 3, "number": "singular" },
-  { "pronoun": "es", "english": "it", "person": 3, "number": "singular" },
-  { "pronoun": "wir", "english": "we", "person": 1, "number": "plural" },
+  {
+    "pronoun": "er",
+    "english": "he",
+    "person": "thirdPerson",
+    "number": "singular"
+  },
+  {
+    "pronoun": "sie",
+    "english": "she",
+    "person": "thirdPerson",
+    "number": "singular"
+  },
+  {
+    "pronoun": "es",
+    "english": "it",
+    "person": "thirdPerson",
+    "number": "singular"
+  },
+  {
+    "pronoun": "wir",
+    "english": "we",
+    "person": "firstPerson",
+    "number": "plural"
+  },
   {
     "pronoun": "ihr",
     "english": "you (informal plural)",
-    "person": 2,
+    "person": "secondPerson",
     "number": "plural"
   },
-  { "pronoun": "sie", "english": "they", "person": 3, "number": "plural" },
+  {
+    "pronoun": "sie",
+    "english": "they",
+    "person": "thirdPerson",
+    "number": "plural"
+  },
   {
     "pronoun": "Sie",
     "english": "you (formal)",
-    "person": 2,
+    "person": "secondPerson",
     "number": "formal"
   },
-  { "pronoun": "man", "english": "one", "person": 3, "number": "singular" }
+  {
+    "pronoun": "man",
+    "english": "one",
+    "person": "thirdPerson",
+    "number": "singular"
+  }
 ]
