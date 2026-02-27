@@ -34,9 +34,11 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     this.problem = `${pronoun.english} ${englishVerb} ${artikel.english} ${englishNoun}`;
 
     // German solution — object takes accusative case
-    const personGroup = verb.conjugation[pronoun.person];
     // "formal" only occurs with secondPerson, which has the "formal" key
-    const germanVerb = (personGroup as Record<string, string>)[pronoun.number];
+    const germanVerb =
+      pronoun.number === "formal"
+        ? verb.conjugation.secondPerson.formal
+        : verb.conjugation[pronoun.person][pronoun.number];
 
     // Fall back to singular if this artikel has no plural form
     const akkusativForm = plural
