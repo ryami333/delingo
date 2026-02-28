@@ -2,11 +2,16 @@ import { Artikel } from "../artikelSchema";
 import { Noun } from "../nounSchema";
 import { Pronoun } from "../pronounSchema";
 import { Verb } from "../verbSchema";
-import { AbstractProblem } from "./AbstractProblem";
+import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
 export class SubjectVerbObjectProblem extends AbstractProblem {
-  public problemParts: readonly [string, string, string, string];
+  public problemParts: readonly [
+    ProblemPart<Pronoun>,
+    ProblemPart<Verb>,
+    ProblemPart<Artikel>,
+    ProblemPart<Noun>,
+  ];
   public solution: string;
 
   constructor({
@@ -31,7 +36,12 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
       ? verb.englishThirdSingular
       : verb.english;
     const englishNoun = plural ? noun.pluralEnglish : noun.english;
-    this.problemParts = [pronoun.english, englishVerb, artikel.english, englishNoun];
+    this.problemParts = [
+      [pronoun.english, pronoun],
+      [englishVerb, verb],
+      [artikel.english, artikel],
+      [englishNoun, noun],
+    ];
 
     // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ/genitiv)
     // Formal "Sie" always conjugates identically to 1st/3rd person plural in German

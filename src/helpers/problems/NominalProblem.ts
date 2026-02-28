@@ -1,10 +1,10 @@
 import { Artikel } from "../artikelSchema";
 import { Noun } from "../nounSchema";
-import { AbstractProblem } from "./AbstractProblem";
+import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
 export class NominalProblem extends AbstractProblem {
-  public problemParts: readonly [string, string];
+  public problemParts: readonly [ProblemPart<Artikel>, ProblemPart<Noun>];
   public solution: string;
 
   constructor({
@@ -20,7 +20,10 @@ export class NominalProblem extends AbstractProblem {
 
     const artikelProblem = capitalize(artikel.english);
     const nounProblem = plural ? noun.pluralEnglish : noun.english;
-    this.problemParts = [artikelProblem, nounProblem];
+    this.problemParts = [
+      [artikelProblem, artikel],
+      [nounProblem, noun],
+    ];
 
     const artikelSolution = artikel.nominativ[plural ? "pl" : noun.gender];
     const nounSolution = plural ? noun.pluralNoun : noun.noun;
