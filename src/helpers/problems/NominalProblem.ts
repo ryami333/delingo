@@ -7,10 +7,16 @@ export class NominalProblem extends AbstractProblem {
   public problemParts: readonly [string, string];
   public solution: string;
 
-  constructor({ artikel, noun }: { artikel: Artikel; noun: Noun }) {
+  constructor({
+    artikel,
+    noun,
+    plural,
+  }: {
+    artikel: Artikel;
+    noun: Noun;
+    plural: boolean;
+  }) {
     super();
-
-    const plural = Math.random() > 0.75; // One-quarter of the time
 
     const artikelProblem = capitalize(artikel.english);
     const nounProblem = plural ? noun.pluralEnglish : noun.english;

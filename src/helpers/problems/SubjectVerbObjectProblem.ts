@@ -14,15 +14,15 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     verb,
     artikel,
     noun,
+    plural,
   }: {
     pronoun: Pronoun;
     verb: Verb;
     artikel: Artikel;
     noun: Noun;
+    plural: boolean;
   }) {
     super();
-
-    const plural = Math.random() > 0.75; // One-quarter of the time
 
     // English problem
     const isThirdPersonSingular =

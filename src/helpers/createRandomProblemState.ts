@@ -20,12 +20,14 @@ export const createRandomProblemState = () => {
         verb: verbSchema.parse(getRandomItem(verbs)),
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
+        plural: Math.random() > 0.75, // One-quarter of the time,
       });
     }
     case 1: {
       return new NominalProblem({
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
+        plural: Math.random() > 0.75, // One-quarter of the time,
       });
     }
     default: {
