@@ -10,28 +10,6 @@ export const env = createEnv({
      */
     MONGODB_URL: z.string().url(),
     MONGODB_DB_NAME: z.string().nonempty(),
-    PAYLOAD_SECRET: z.string().nonempty(),
-
-    /**
-     * OIDC Client configured with `/api/auth/oauth2/callback/pocket-id` as the callback URL.
-     */
-    OIDC_CLIENT_ID: z.string().nonempty(),
-    OIDC_CLIENT_SECRET: z.string().nonempty(),
-    OIDC_URI: z.url().nonempty(),
-
-    /**
-     * This should just be a (cryptographically) random string. You can generate
-     * one with this:
-     *
-     * openssl rand -hex 32
-     */
-    BETTER_AUTH_SECRET: z.string().nonempty(),
-
-    /**
-     * Should be `http://localhost:3000` in local development, or
-     * `https://my-website.com` in production.
-     */
-    SELF_URL: z.url().nonempty(),
   },
   runtimeEnv: process.env,
 });

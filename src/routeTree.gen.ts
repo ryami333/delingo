@@ -10,82 +10,33 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as frontendIndexRouteImport } from './routes/(frontend)/index'
-import { Route as adminLayoutRouteImport } from './routes/(admin)/_layout'
-import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
-import { Route as adminLayoutLoginRouteImport } from './routes/(admin)/_layout/login'
-import { Route as adminLayoutProtectedRouteImport } from './routes/(admin)/_layout/_protected'
-import { Route as adminLayoutProtectedAdminRouteImport } from './routes/(admin)/_layout/_protected/admin'
 
 const frontendIndexRoute = frontendIndexRouteImport.update({
   id: '/(frontend)/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const adminLayoutRoute = adminLayoutRouteImport.update({
-  id: '/(admin)/_layout',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const adminLayoutLoginRoute = adminLayoutLoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => adminLayoutRoute,
-} as any)
-const adminLayoutProtectedRoute = adminLayoutProtectedRouteImport.update({
-  id: '/_protected',
-  getParentRoute: () => adminLayoutRoute,
-} as any)
-const adminLayoutProtectedAdminRoute =
-  adminLayoutProtectedAdminRouteImport.update({
-    id: '/admin',
-    path: '/admin',
-    getParentRoute: () => adminLayoutProtectedRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof frontendIndexRoute
-  '/login': typeof adminLayoutLoginRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/admin': typeof adminLayoutProtectedAdminRoute
 }
 export interface FileRoutesByTo {
   '/': typeof frontendIndexRoute
-  '/login': typeof adminLayoutLoginRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/admin': typeof adminLayoutProtectedAdminRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/(admin)/_layout': typeof adminLayoutRouteWithChildren
   '/(frontend)/': typeof frontendIndexRoute
-  '/(admin)/_layout/_protected': typeof adminLayoutProtectedRouteWithChildren
-  '/(admin)/_layout/login': typeof adminLayoutLoginRoute
-  '/api/auth/$': typeof ApiAuthSplatRoute
-  '/(admin)/_layout/_protected/admin': typeof adminLayoutProtectedAdminRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/login' | '/api/auth/$' | '/admin'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/login' | '/api/auth/$' | '/admin'
-  id:
-    | '__root__'
-    | '/(admin)/_layout'
-    | '/(frontend)/'
-    | '/(admin)/_layout/_protected'
-    | '/(admin)/_layout/login'
-    | '/api/auth/$'
-    | '/(admin)/_layout/_protected/admin'
+  to: '/'
+  id: '__root__' | '/(frontend)/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  adminLayoutRoute: typeof adminLayoutRouteWithChildren
   frontendIndexRoute: typeof frontendIndexRoute
-  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -97,73 +48,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof frontendIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/(admin)/_layout': {
-      id: '/(admin)/_layout'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof adminLayoutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/auth/$': {
-      id: '/api/auth/$'
-      path: '/api/auth/$'
-      fullPath: '/api/auth/$'
-      preLoaderRoute: typeof ApiAuthSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/(admin)/_layout/login': {
-      id: '/(admin)/_layout/login'
-      path: '/login'
-      fullPath: '/login'
-      preLoaderRoute: typeof adminLayoutLoginRouteImport
-      parentRoute: typeof adminLayoutRoute
-    }
-    '/(admin)/_layout/_protected': {
-      id: '/(admin)/_layout/_protected'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof adminLayoutProtectedRouteImport
-      parentRoute: typeof adminLayoutRoute
-    }
-    '/(admin)/_layout/_protected/admin': {
-      id: '/(admin)/_layout/_protected/admin'
-      path: '/admin'
-      fullPath: '/admin'
-      preLoaderRoute: typeof adminLayoutProtectedAdminRouteImport
-      parentRoute: typeof adminLayoutProtectedRoute
-    }
   }
 }
 
-interface adminLayoutProtectedRouteChildren {
-  adminLayoutProtectedAdminRoute: typeof adminLayoutProtectedAdminRoute
-}
-
-const adminLayoutProtectedRouteChildren: adminLayoutProtectedRouteChildren = {
-  adminLayoutProtectedAdminRoute: adminLayoutProtectedAdminRoute,
-}
-
-const adminLayoutProtectedRouteWithChildren =
-  adminLayoutProtectedRoute._addFileChildren(adminLayoutProtectedRouteChildren)
-
-interface adminLayoutRouteChildren {
-  adminLayoutProtectedRoute: typeof adminLayoutProtectedRouteWithChildren
-  adminLayoutLoginRoute: typeof adminLayoutLoginRoute
-}
-
-const adminLayoutRouteChildren: adminLayoutRouteChildren = {
-  adminLayoutProtectedRoute: adminLayoutProtectedRouteWithChildren,
-  adminLayoutLoginRoute: adminLayoutLoginRoute,
-}
-
-const adminLayoutRouteWithChildren = adminLayoutRoute._addFileChildren(
-  adminLayoutRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
-  adminLayoutRoute: adminLayoutRouteWithChildren,
   frontendIndexRoute: frontendIndexRoute,
-  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
