@@ -1,4 +1,6 @@
 import appCss from "../assets/css/main.css?url";
+import { MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
 import {
   HeadContent,
   Outlet,
@@ -33,5 +35,10 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <MantineProvider forceColorScheme="dark">
+      <Notifications />
+      <Outlet />
+    </MantineProvider>
+  );
 }
