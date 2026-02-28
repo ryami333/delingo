@@ -17,7 +17,7 @@ export class NominalProblem extends AbstractProblem {
     this.problemParts = [artikelProblem, nounProblem];
 
     const artikelSolution = artikel.nominativ[plural ? "pl" : noun.gender];
-    const nounSolution = capitalize(plural ? noun.pluralNoun : noun.noun);
+    const nounSolution = plural ? noun.pluralNoun : noun.noun;
     this.solution = `${artikelSolution} ${nounSolution}`;
   }
 }
