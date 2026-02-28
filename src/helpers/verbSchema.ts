@@ -1,6 +1,7 @@
 import z from "zod";
 
 export const verbSchema = z.object({
+  __type: z.literal("verb").default("verb"),
   verb: z.string(),
   english: z.string(),
   englishThirdSingular: z.string(),
