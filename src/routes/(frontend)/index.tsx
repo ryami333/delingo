@@ -33,7 +33,7 @@ function HomePage() {
     <MantineProvider forceColorScheme="dark">
       <Notifications />
       <div>
-        <h1>{problemState.problemParts.join(" ")}</h1>
+        <h1>{problemState.problemParts.map(([word]) => word).join(" ")}</h1>
         <form onSubmit={onSubmit} key={problemState.uuid}>
           <input name="foo" type="text" autoFocus />
           <Button type="submit">Submit</Button>
