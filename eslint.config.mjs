@@ -12,6 +12,7 @@ const eslintConfig = [
     "build/**",
     "storybook-static/**",
     "src/__generated__/**",
+    "src/routeTree.gen.ts",
   ]),
   ...typescriptEslint.configs.recommended,
   ...storybook.configs["flat/recommended"],
