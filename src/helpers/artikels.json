@@ -67,6 +67,7 @@
   {
     "word": "ihr",
     "english": "their",
+    "disambiguators": ["plural"],
     "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
