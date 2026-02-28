@@ -1,3 +1,4 @@
+import { EnglishFormattedArtikel } from "../../components/EnglishFormattedArtikel";
 import { createRandomProblemState } from "../../helpers/createRandomProblemState";
 import {
   AppShell,
@@ -47,7 +48,22 @@ function HomePage() {
         <Center h="100%">
           <Stack align="center" gap="xl">
             <Title>
-              {problemState.problemParts.map(([word]) => word).join(" ")}
+              <span style={{ whiteSpace: "pre" }}>
+                {problemState.problemParts.flatMap((problemPart, index) => {
+                  const [word, entity] = problemPart;
+                  const el =
+                    entity.__type === "artikel" ? (
+                      <EnglishFormattedArtikel
+                        key={index}
+                        contextualWord={word}
+                        artikel={entity}
+                      />
+                    ) : (
+                      <span key={index}>{word}</span>
+                    );
+                  return index === 0 ? [el] : [" ", el];
+                })}
+              </span>
             </Title>
             <form onSubmit={onSubmit} key={problemState.uuid}>
               <Group>
