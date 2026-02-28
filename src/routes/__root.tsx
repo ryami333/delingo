@@ -11,6 +11,7 @@ import {
 } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
+  ssr: false,
   head: () => ({
     meta: [
       { charSet: "utf-8" },
