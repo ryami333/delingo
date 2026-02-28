@@ -42,7 +42,15 @@
   },
   {
     "word": "sein",
-    "english": "his / its",
+    "english": "his",
+    "nominativ": { "m": "sein", "f": "seine", "n": "sein", "pl": "seine" },
+    "akkusativ": { "m": "seinen", "f": "seine", "n": "sein", "pl": "seine" },
+    "dativ": { "m": "seinem", "f": "seiner", "n": "seinem", "pl": "seinen" },
+    "genitiv": { "m": "seines", "f": "seiner", "n": "seines", "pl": "seiner" }
+  },
+  {
+    "word": "sein",
+    "english": "its",
     "nominativ": { "m": "sein", "f": "seine", "n": "sein", "pl": "seine" },
     "akkusativ": { "m": "seinen", "f": "seine", "n": "sein", "pl": "seine" },
     "dativ": { "m": "seinem", "f": "seiner", "n": "seinem", "pl": "seinen" },
@@ -50,8 +58,15 @@
   },
   {
     "word": "ihr",
-    "english": "her / their",
-    "disambiguators": ["singular", "plural"],
+    "english": "her",
+    "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
+    "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
+    "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
+    "genitiv": { "m": "ihres", "f": "ihrer", "n": "ihres", "pl": "ihrer" }
+  },
+  {
+    "word": "ihr",
+    "english": "their",
     "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
