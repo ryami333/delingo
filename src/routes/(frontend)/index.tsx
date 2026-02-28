@@ -1,6 +1,13 @@
 import { createRandomProblemState } from "../../helpers/createRandomProblemState";
-import { Button, MantineProvider } from "@mantine/core";
-import { Notifications } from "@mantine/notifications";
+import {
+  AppShell,
+  Button,
+  Center,
+  Group,
+  Stack,
+  TextInput,
+  Title,
+} from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
@@ -17,7 +24,6 @@ function HomePage() {
     e.preventDefault();
     if (e.currentTarget instanceof HTMLFormElement) {
       const formData = new FormData(e.currentTarget);
-
       const inputVal = formData.get("foo");
 
       console.log(problemState.solution);
@@ -30,15 +36,35 @@ function HomePage() {
   };
 
   return (
-    <MantineProvider forceColorScheme="dark">
-      <Notifications />
-      <div>
-        <h1>{problemState.problemParts.map(([word]) => word).join(" ")}</h1>
-        <form onSubmit={onSubmit} key={problemState.uuid}>
-          <input name="foo" type="text" autoFocus />
-          <Button type="submit">Submit</Button>
-        </form>
-      </div>
-    </MantineProvider>
+    <AppShell header={{ height: 60 }}>
+      <AppShell.Header>
+        <Group h="100%" px="md">
+          <Title order={3}>Delingo</Title>
+        </Group>
+      </AppShell.Header>
+
+      <AppShell.Main>
+        <Center h="100%">
+          <Stack align="center" gap="xl">
+            <Title>
+              {problemState.problemParts.map(([word]) => word).join(" ")}
+            </Title>
+            <form onSubmit={onSubmit} key={problemState.uuid}>
+              <Group>
+                <TextInput
+                  name="foo"
+                  autoFocus
+                  placeholder="Type the German…"
+                  size="md"
+                />
+                <Button type="submit" size="md">
+                  Submit
+                </Button>
+              </Group>
+            </form>
+          </Stack>
+        </Center>
+      </AppShell.Main>
+    </AppShell>
   );
 }
