@@ -44,10 +44,11 @@ vite.config.ts          # Vite + Nitro + TanStack Start + React plugins
 ## Code Conventions
 
 - **Environment variables**: Always use `src/helpers/env.mjs` — never access `process.env` directly (enforced by ESLint rule).
-- **Routing**: File-based routing via TanStack Router. Route groups use parentheses: `(frontend)`.
+- **Routing**: File-based routing via TanStack Router. Route groups use parentheses: `(frontend)`. SSR is disabled (`ssr: false` on the root route).
 - **Imports**: Prettier auto-sorts imports — non-CSS imports first, then CSS imports.
 - **CSS**: CSS Modules for component styles (`.module.css`). PostCSS with CSS nesting enabled. Prettier sorts CSS declarations.
 - **Data schemas**: JSON data files in `src/helpers/` have matching Zod schemas (`nounSchema.ts`, `artikelSchema.ts`, etc.).
+- **Artikel data design**: The English translation is the "pivot" — if a German word covers multiple distinct English meanings (e.g. `sein` → "his" / "its", `ihr` → "her" / "their"), they are stored as separate rows with distinct `english` values rather than combined into one entry. The `disambiguators` field (`"singular" | "plural" | "formal" | "informal"`) is used only where the English word itself is ambiguous across multiple German words (e.g. "your" → `dein`, `euer`, `Ihr`).
 - **Problem system**: Abstract base class `AbstractProblem` with concrete implementations (e.g., `NominalProblem`, `SubjectVerbObjectProblem`). Each problem generates a `uuid`, `problemParts` (a tuple of `[englishWord, sourceObject]` pairs), and `solution` (the German answer string). The `ProblemPart<T>` type is exported from `AbstractProblem`.
 - **German capitalization in solutions**: German nouns are always capitalized in the data files. In full sentences (e.g., `SubjectVerbObjectProblem`), the first word is also capitalized (sentence case). In noun phrases (e.g., `NominalProblem`), the article stays lowercase — only the noun is capitalized.
 
