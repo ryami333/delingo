@@ -1,6 +1,6 @@
 export abstract class AbstractProblem {
   public uuid: string;
-  public abstract problem: string;
+  public abstract problemParts: readonly string[];
   public abstract solution: string;
 
   constructor() {

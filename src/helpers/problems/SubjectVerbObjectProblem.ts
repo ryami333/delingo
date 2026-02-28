@@ -6,7 +6,7 @@ import { AbstractProblem } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
 export class SubjectVerbObjectProblem extends AbstractProblem {
-  public problem: string;
+  public problemParts: readonly [string, string, string, string];
   public solution: string;
 
   constructor({
@@ -31,7 +31,7 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
       ? verb.englishThirdSingular
       : verb.english;
     const englishNoun = plural ? noun.pluralEnglish : noun.english;
-    this.problem = `${pronoun.english} ${englishVerb} ${artikel.english} ${englishNoun}`;
+    this.problemParts = [pronoun.english, englishVerb, artikel.english, englishNoun];
 
     // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ/genitiv)
     // Formal "Sie" always conjugates identically to 1st/3rd person plural in German
