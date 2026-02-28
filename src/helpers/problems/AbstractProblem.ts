@@ -6,6 +6,6 @@ export abstract class AbstractProblem {
   public abstract solution: string;
 
   constructor() {
-    this.uuid = window.crypto.randomUUID();
+    this.uuid = crypto.randomUUID();
   }
 }
