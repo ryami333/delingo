@@ -15,6 +15,7 @@ export const disambiguatorSchema = z.enum([
 ]);
 
 export const artikelSchema = z.object({
+  __type: z.literal("artikel").default("artikel"),
   word: z.string(),
   english: z.string(),
   disambiguators: z.array(disambiguatorSchema).optional(),
