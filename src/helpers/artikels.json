@@ -33,7 +33,8 @@
   },
   {
     "word": "dein",
-    "english": "your (informal singular)",
+    "english": "your",
+    "disambiguators": ["informal", "singular"],
     "nominativ": { "m": "dein", "f": "deine", "n": "dein", "pl": "deine" },
     "akkusativ": { "m": "deinen", "f": "deine", "n": "dein", "pl": "deine" },
     "dativ": { "m": "deinem", "f": "deiner", "n": "deinem", "pl": "deinen" },
@@ -50,6 +51,7 @@
   {
     "word": "ihr",
     "english": "her / their",
+    "disambiguators": ["singular", "plural"],
     "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
@@ -80,7 +82,8 @@
   },
   {
     "word": "euer",
-    "english": "your (informal plural)",
+    "english": "your",
+    "disambiguators": ["informal", "plural"],
     "nominativ": { "m": "euer", "f": "eure", "n": "euer", "pl": "eure" },
     "akkusativ": { "m": "euren", "f": "eure", "n": "euer", "pl": "eure" },
     "dativ": { "m": "eurem", "f": "eurer", "n": "eurem", "pl": "euren" },
@@ -88,7 +91,8 @@
   },
   {
     "word": "Ihr",
-    "english": "your (formal)",
+    "english": "your",
+    "disambiguators": ["formal"],
     "nominativ": { "m": "Ihr", "f": "Ihre", "n": "Ihr", "pl": "Ihre" },
     "akkusativ": { "m": "Ihren", "f": "Ihre", "n": "Ihr", "pl": "Ihre" },
     "dativ": { "m": "Ihrem", "f": "Ihrer", "n": "Ihrem", "pl": "Ihren" },
