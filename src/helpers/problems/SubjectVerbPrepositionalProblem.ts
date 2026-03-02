@@ -50,10 +50,7 @@ export class SubjectVerbPrepositionalProblem extends AbstractProblem {
     ];
 
     // German solution — the preposition governs the case, not the verb
-    const germanVerb =
-      pronoun.number === "formal"
-        ? verb.conjugation.thirdPerson.plural
-        : verb.conjugation[pronoun.person][pronoun.number];
+    const germanVerb = verb.conjugation[pronoun.person][pronoun.number];
 
     const artikelCase = artikel[preposition.form];
     const artikelForm = plural
