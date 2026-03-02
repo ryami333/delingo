@@ -1,72 +1,82 @@
 [
   {
-    "noun": "Zeit",
-    "pluralNoun": "Zeiten",
     "gender": "f",
     "english": "time",
-    "pluralEnglish": "times"
+    "pluralEnglish": "times",
+    "nominativ": { "singular": "Zeit", "plural": "Zeiten" },
+    "akkusativ": { "singular": "Zeit", "plural": "Zeiten" },
+    "dativ": { "singular": "Zeit", "plural": "Zeiten" }
   },
   {
-    "noun": "Jahr",
-    "pluralNoun": "Jahre",
     "gender": "n",
     "english": "year",
-    "pluralEnglish": "years"
+    "pluralEnglish": "years",
+    "nominativ": { "singular": "Jahr", "plural": "Jahre" },
+    "akkusativ": { "singular": "Jahr", "plural": "Jahre" },
+    "dativ": { "singular": "Jahr", "plural": "Jahren" }
   },
   {
-    "noun": "Mensch",
-    "pluralNoun": "Menschen",
     "gender": "m",
     "english": "person",
-    "pluralEnglish": "people"
+    "pluralEnglish": "people",
+    "nominativ": { "singular": "Mensch", "plural": "Menschen" },
+    "akkusativ": { "singular": "Menschen", "plural": "Menschen" },
+    "dativ": { "singular": "Menschen", "plural": "Menschen" }
   },
   {
-    "noun": "Tag",
-    "pluralNoun": "Tage",
     "gender": "m",
     "english": "day",
-    "pluralEnglish": "days"
+    "pluralEnglish": "days",
+    "nominativ": { "singular": "Tag", "plural": "Tage" },
+    "akkusativ": { "singular": "Tag", "plural": "Tage" },
+    "dativ": { "singular": "Tag", "plural": "Tagen" }
   },
   {
-    "noun": "Mann",
-    "pluralNoun": "Männer",
     "gender": "m",
     "english": "man",
-    "pluralEnglish": "men"
+    "pluralEnglish": "men",
+    "nominativ": { "singular": "Mann", "plural": "Männer" },
+    "akkusativ": { "singular": "Mann", "plural": "Männer" },
+    "dativ": { "singular": "Mann", "plural": "Männern" }
   },
   {
-    "noun": "Frau",
-    "pluralNoun": "Frauen",
     "gender": "f",
     "english": "woman",
-    "pluralEnglish": "women"
+    "pluralEnglish": "women",
+    "nominativ": { "singular": "Frau", "plural": "Frauen" },
+    "akkusativ": { "singular": "Frau", "plural": "Frauen" },
+    "dativ": { "singular": "Frau", "plural": "Frauen" }
   },
   {
-    "noun": "Hand",
-    "pluralNoun": "Hände",
     "gender": "f",
     "english": "hand",
-    "pluralEnglish": "hands"
+    "pluralEnglish": "hands",
+    "nominativ": { "singular": "Hand", "plural": "Hände" },
+    "akkusativ": { "singular": "Hand", "plural": "Hände" },
+    "dativ": { "singular": "Hand", "plural": "Händen" }
   },
   {
-    "noun": "Kind",
-    "pluralNoun": "Kinder",
     "gender": "n",
     "english": "child",
-    "pluralEnglish": "children"
+    "pluralEnglish": "children",
+    "nominativ": { "singular": "Kind", "plural": "Kinder" },
+    "akkusativ": { "singular": "Kind", "plural": "Kinder" },
+    "dativ": { "singular": "Kind", "plural": "Kindern" }
   },
   {
-    "noun": "Land",
-    "pluralNoun": "Länder",
     "gender": "n",
     "english": "country",
-    "pluralEnglish": "countries"
+    "pluralEnglish": "countries",
+    "nominativ": { "singular": "Land", "plural": "Länder" },
+    "akkusativ": { "singular": "Land", "plural": "Länder" },
+    "dativ": { "singular": "Land", "plural": "Ländern" }
   },
   {
-    "noun": "Haus",
-    "pluralNoun": "Häuser",
     "gender": "n",
     "english": "house",
-    "pluralEnglish": "houses"
+    "pluralEnglish": "houses",
+    "nominativ": { "singular": "Haus", "plural": "Häuser" },
+    "akkusativ": { "singular": "Haus", "plural": "Häuser" },
+    "dativ": { "singular": "Haus", "plural": "Häusern" }
   }
 ]

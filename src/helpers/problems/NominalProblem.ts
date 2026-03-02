@@ -26,7 +26,9 @@ export class NominalProblem extends AbstractProblem {
     ];
 
     const artikelSolution = artikel.nominativ[plural ? "pl" : noun.gender];
-    const nounSolution = plural ? noun.pluralNoun : noun.noun;
+    const nounSolution = plural
+      ? noun.nominativ.plural
+      : noun.nominativ.singular;
     this.solution = `${artikelSolution} ${nounSolution}`;
   }
 }
