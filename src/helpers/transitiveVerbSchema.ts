@@ -1,7 +1,7 @@
 import z from "zod";
 
-export const verbSchema = z.object({
-  __type: z.literal("verb").default("verb"),
+export const transitiveVerbSchema = z.object({
+  __type: z.literal("transitiveVerb").default("transitiveVerb"),
   verb: z.string(),
   english: z.string(),
   englishThirdSingular: z.string(),
@@ -22,4 +22,4 @@ export const verbSchema = z.object({
   }),
 });
 
-export type Verb = z.infer<typeof verbSchema>;
+export type TransitiveVerb = z.infer<typeof transitiveVerbSchema>;
