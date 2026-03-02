@@ -7,9 +7,10 @@
   },
   {
     "pronoun": "du",
-    "english": "you (informal singular)",
+    "english": "you",
     "person": "secondPerson",
-    "number": "singular"
+    "number": "singular",
+    "disambiguators": ["informal"]
   },
   {
     "pronoun": "er",
@@ -37,9 +38,10 @@
   },
   {
     "pronoun": "ihr",
-    "english": "you (informal plural)",
+    "english": "you",
     "person": "secondPerson",
-    "number": "plural"
+    "number": "plural",
+    "disambiguators": ["informal"]
   },
   {
     "pronoun": "sie",
@@ -49,9 +51,10 @@
   },
   {
     "pronoun": "Sie",
-    "english": "you (formal)",
-    "person": "secondPerson",
-    "number": "formal"
+    "english": "you",
+    "person": "thirdPerson",
+    "number": "plural",
+    "disambiguators": ["formal"]
   },
   {
     "pronoun": "man",

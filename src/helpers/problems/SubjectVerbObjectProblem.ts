@@ -46,11 +46,7 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     ];
 
     // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ)
-    // Formal "Sie" always conjugates identically to 1st/3rd person plural in German
-    const germanVerb =
-      pronoun.number === "formal"
-        ? verb.conjugation.thirdPerson.plural
-        : verb.conjugation[pronoun.person][pronoun.number];
+    const germanVerb = verb.conjugation[pronoun.person][pronoun.number];
 
     // Fall back to singular if this artikel has no plural form
     const artikelCase = artikel[verb.form];
