@@ -5,7 +5,7 @@ export const verbSchema = z.object({
   verb: z.string(),
   english: z.string(),
   englishThirdSingular: z.string(),
-  form: z.enum(["nominativ", "akkusativ", "dativ", "genitiv"]),
+  form: z.enum(["nominativ", "akkusativ", "dativ"]),
   conjugation: z.object({
     firstPerson: z.object({
       singular: z.string(),
