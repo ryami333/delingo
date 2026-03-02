@@ -32,10 +32,12 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     // English problem
     const isThirdPersonSingular =
       pronoun.person === "thirdPerson" && pronoun.number === "singular";
+
     const englishVerb = isThirdPersonSingular
       ? verb.englishThirdSingular
       : verb.english;
     const englishNoun = plural ? noun.pluralEnglish : noun.english;
+
     this.problemParts = [
       [pronoun.english, pronoun],
       [englishVerb, verb],
@@ -43,7 +45,7 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
       [englishNoun, noun],
     ];
 
-    // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ/genitiv)
+    // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ)
     // Formal "Sie" always conjugates identically to 1st/3rd person plural in German
     const germanVerb =
       pronoun.number === "formal"
@@ -55,7 +57,9 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     const artikelForm = plural
       ? (artikelCase.pl ?? artikelCase[noun.gender])
       : artikelCase[noun.gender];
-    const germanNoun = capitalize(plural ? noun.pluralNoun : noun.noun);
+
+    const nounCase = noun[verb.form];
+    const germanNoun = capitalize(plural ? nounCase.plural : nounCase.singular);
 
     this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${artikelForm} ${germanNoun}`;
   }
