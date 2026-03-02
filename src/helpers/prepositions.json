@@ -1,0 +1,47 @@
+[
+  {
+    "preposition": "durch",
+    "english": "through",
+    "form": "akkusativ"
+  },
+  {
+    "preposition": "für",
+    "english": "for",
+    "form": "akkusativ"
+  },
+  {
+    "preposition": "gegen",
+    "english": "against",
+    "form": "akkusativ"
+  },
+  {
+    "preposition": "ohne",
+    "english": "without",
+    "form": "akkusativ"
+  },
+  {
+    "preposition": "um",
+    "english": "around",
+    "form": "akkusativ"
+  },
+  {
+    "preposition": "aus",
+    "english": "from",
+    "form": "dativ"
+  },
+  {
+    "preposition": "mit",
+    "english": "with",
+    "form": "dativ"
+  },
+  {
+    "preposition": "von",
+    "english": "of",
+    "form": "dativ"
+  },
+  {
+    "preposition": "zu",
+    "english": "to",
+    "form": "dativ"
+  }
+]
