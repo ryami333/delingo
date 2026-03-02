@@ -1,8 +1,8 @@
 import { Artikel, Disambiguator } from "../helpers/artikelSchema";
 
 const disambiguatorLabels = {
-  plural: "pl.",
-  singular: "sin.",
+  plural: "👥",
+  singular: "👤",
   formal: "f.",
   informal: "inf.",
 } as Record<Disambiguator, string>;
