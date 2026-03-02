@@ -1,0 +1,52 @@
+[
+  {
+    "verb": "gehen",
+    "english": "go",
+    "englishThirdSingular": "goes",
+    "conjugation": {
+      "firstPerson": { "singular": "gehe", "plural": "gehen" },
+      "secondPerson": { "singular": "gehst", "plural": "geht" },
+      "thirdPerson": { "singular": "geht", "plural": "gehen" }
+    }
+  },
+  {
+    "verb": "kommen",
+    "english": "come",
+    "englishThirdSingular": "comes",
+    "conjugation": {
+      "firstPerson": { "singular": "komme", "plural": "kommen" },
+      "secondPerson": { "singular": "kommst", "plural": "kommt" },
+      "thirdPerson": { "singular": "kommt", "plural": "kommen" }
+    }
+  },
+  {
+    "verb": "laufen",
+    "english": "run",
+    "englishThirdSingular": "runs",
+    "conjugation": {
+      "firstPerson": { "singular": "laufe", "plural": "laufen" },
+      "secondPerson": { "singular": "läufst", "plural": "lauft" },
+      "thirdPerson": { "singular": "läuft", "plural": "laufen" }
+    }
+  },
+  {
+    "verb": "fahren",
+    "english": "drive",
+    "englishThirdSingular": "drives",
+    "conjugation": {
+      "firstPerson": { "singular": "fahre", "plural": "fahren" },
+      "secondPerson": { "singular": "fährst", "plural": "fahrt" },
+      "thirdPerson": { "singular": "fährt", "plural": "fahren" }
+    }
+  },
+  {
+    "verb": "spielen",
+    "english": "play",
+    "englishThirdSingular": "plays",
+    "conjugation": {
+      "firstPerson": { "singular": "spiele", "plural": "spielen" },
+      "secondPerson": { "singular": "spielst", "plural": "spielt" },
+      "thirdPerson": { "singular": "spielt", "plural": "spielen" }
+    }
+  }
+]

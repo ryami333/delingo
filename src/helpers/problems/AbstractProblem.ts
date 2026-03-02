@@ -1,9 +1,17 @@
 import { Artikel } from "../artikelSchema";
+import { IntransitiveVerb } from "../intransitiveVerbSchema";
 import { Noun } from "../nounSchema";
+import { Preposition } from "../prepositionSchema";
 import { Pronoun } from "../pronounSchema";
-import { Verb } from "../verbSchema";
+import { TransitiveVerb } from "../transitiveVerbSchema";
 
-export type Entity = Noun | Artikel | Pronoun | Verb;
+export type Entity =
+  | Noun
+  | Artikel
+  | Preposition
+  | Pronoun
+  | TransitiveVerb
+  | IntransitiveVerb;
 export type ProblemPart<T extends Entity = Entity> = readonly [string, T];
 
 export abstract class AbstractProblem {

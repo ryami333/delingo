@@ -1,14 +1,16 @@
 import { Artikel } from "../artikelSchema";
+import { IntransitiveVerb } from "../intransitiveVerbSchema";
 import { Noun } from "../nounSchema";
+import { Preposition } from "../prepositionSchema";
 import { Pronoun } from "../pronounSchema";
-import { TransitiveVerb } from "../transitiveVerbSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
-export class SubjectVerbObjectProblem extends AbstractProblem {
+export class SubjectVerbPrepositionalProblem extends AbstractProblem {
   public problemParts: readonly [
     ProblemPart<Pronoun>,
-    ProblemPart<TransitiveVerb>,
+    ProblemPart<IntransitiveVerb>,
+    ProblemPart<Preposition>,
     ProblemPart<Artikel>,
     ProblemPart<Noun>,
   ];
@@ -17,12 +19,14 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
   constructor({
     pronoun,
     verb,
+    preposition,
     artikel,
     noun,
     plural,
   }: {
     pronoun: Pronoun;
-    verb: TransitiveVerb;
+    verb: IntransitiveVerb;
+    preposition: Preposition;
     artikel: Artikel;
     noun: Noun;
     plural: boolean;
@@ -32,7 +36,6 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     // English problem
     const isThirdPersonSingular =
       pronoun.person === "thirdPerson" && pronoun.number === "singular";
-
     const englishVerb = isThirdPersonSingular
       ? verb.englishThirdSingular
       : verb.english;
@@ -41,26 +44,25 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     this.problemParts = [
       [pronoun.english, pronoun],
       [englishVerb, verb],
+      [preposition.english, preposition],
       [artikel.english, artikel],
       [englishNoun, noun],
     ];
 
-    // German solution — verb form determined by verb.form (nominativ/akkusativ/dativ)
-    // Formal "Sie" always conjugates identically to 1st/3rd person plural in German
+    // German solution — the preposition governs the case, not the verb
     const germanVerb =
       pronoun.number === "formal"
         ? verb.conjugation.thirdPerson.plural
         : verb.conjugation[pronoun.person][pronoun.number];
 
-    // Fall back to singular if this artikel has no plural form
-    const artikelCase = artikel[verb.form];
+    const artikelCase = artikel[preposition.form];
     const artikelForm = plural
       ? (artikelCase.pl ?? artikelCase[noun.gender])
       : artikelCase[noun.gender];
 
-    const nounCase = noun[verb.form];
+    const nounCase = noun[preposition.form];
     const germanNoun = capitalize(plural ? nounCase.plural : nounCase.singular);
 
-    this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${artikelForm} ${germanNoun}`;
+    this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${preposition.preposition} ${artikelForm} ${germanNoun}`;
   }
 }
