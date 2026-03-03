@@ -4,11 +4,13 @@ import { Noun } from "../nounSchema";
 import { Preposition } from "../prepositionSchema";
 import { Pronoun } from "../pronounSchema";
 import { TransitiveVerb } from "../transitiveVerbSchema";
+import { Wechselpreposition } from "../wechselprepositionSchema";
 
 export type Entity =
   | Noun
   | Artikel
   | Preposition
+  | Wechselpreposition
   | Pronoun
   | TransitiveVerb
   | IntransitiveVerb;
