@@ -16,6 +16,11 @@ export type Entity =
   | IntransitiveVerb;
 export type ProblemPart<T extends Entity = Entity> = readonly [string, T];
 
+/**
+ * Base class for all problem types. Each problem pairs English prompts
+ * (`problemParts`) with their source data objects so the UI can render
+ * the question, and exposes a `solution` string the user must produce.
+ */
 export abstract class AbstractProblem {
   public uuid: string;
   public abstract problemParts: readonly ProblemPart[];

@@ -3,6 +3,15 @@ import { Noun } from "../nounSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
+/**
+ * Tests nominative article + noun agreement. Given an English article and noun,
+ * the user must produce the correct German nominative form.
+ *
+ * - "The man" → "der Mann"
+ * - "A child" → "ein Kind"
+ * - "My women" → "meine Frauen"
+ * - "No house" → "kein Haus"
+ */
 export class NominalProblem extends AbstractProblem {
   public problemParts: readonly [ProblemPart<Artikel>, ProblemPart<Noun>];
   public solution: string;

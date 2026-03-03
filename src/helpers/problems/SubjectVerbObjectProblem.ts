@@ -5,6 +5,14 @@ import { TransitiveVerb } from "../transitiveVerbSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
+/**
+ * Tests a full subject + transitive-verb + article + noun sentence. The verb's
+ * `form` property determines the grammatical case of the object (akkusativ or dativ).
+ *
+ * - "He sees the man" → "Er sieht den Mann" (akkusativ)
+ * - "She helps a child" → "Sie hilft einem Kind" (dativ)
+ * - "I love my women" → "Ich liebe meine Frauen" (akkusativ, plural)
+ */
 export class SubjectVerbObjectProblem extends AbstractProblem {
   public problemParts: readonly [
     ProblemPart<Pronoun>,
