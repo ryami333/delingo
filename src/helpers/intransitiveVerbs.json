@@ -1,6 +1,7 @@
 [
   {
     "verb": "gehen",
+    "direction": "directional",
     "english": "go",
     "englishThirdSingular": "goes",
     "conjugation": {
@@ -11,6 +12,7 @@
   },
   {
     "verb": "kommen",
+    "direction": "directional",
     "english": "come",
     "englishThirdSingular": "comes",
     "conjugation": {
@@ -21,6 +23,7 @@
   },
   {
     "verb": "laufen",
+    "direction": "directional",
     "english": "run",
     "englishThirdSingular": "runs",
     "conjugation": {
@@ -31,6 +34,7 @@
   },
   {
     "verb": "fahren",
+    "direction": "directional",
     "english": "drive",
     "englishThirdSingular": "drives",
     "conjugation": {
@@ -41,12 +45,46 @@
   },
   {
     "verb": "spielen",
+    "direction": "directional",
     "english": "play",
     "englishThirdSingular": "plays",
     "conjugation": {
       "firstPerson": { "singular": "spiele", "plural": "spielen" },
       "secondPerson": { "singular": "spielst", "plural": "spielt" },
       "thirdPerson": { "singular": "spielt", "plural": "spielen" }
+    }
+  },
+  {
+    "verb": "stehen",
+    "direction": "locative",
+    "english": "stand",
+    "englishThirdSingular": "stands",
+    "conjugation": {
+      "firstPerson": { "singular": "stehe", "plural": "stehen" },
+      "secondPerson": { "singular": "stehst", "plural": "steht" },
+      "thirdPerson": { "singular": "steht", "plural": "stehen" }
+    }
+  },
+  {
+    "verb": "sitzen",
+    "direction": "locative",
+    "english": "sit",
+    "englishThirdSingular": "sits",
+    "conjugation": {
+      "firstPerson": { "singular": "sitze", "plural": "sitzen" },
+      "secondPerson": { "singular": "sitzt", "plural": "sitzt" },
+      "thirdPerson": { "singular": "sitzt", "plural": "sitzen" }
+    }
+  },
+  {
+    "verb": "liegen",
+    "direction": "locative",
+    "english": "lie",
+    "englishThirdSingular": "lies",
+    "conjugation": {
+      "firstPerson": { "singular": "liege", "plural": "liegen" },
+      "secondPerson": { "singular": "liegst", "plural": "liegt" },
+      "thirdPerson": { "singular": "liegt", "plural": "liegen" }
     }
   }
 ]
