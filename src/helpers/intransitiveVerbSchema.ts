@@ -3,6 +3,7 @@ import z from "zod";
 export const intransitiveVerbSchema = z.object({
   __type: z.literal("intransitiveVerb").default("intransitiveVerb"),
   verb: z.string(),
+  direction: z.enum(["directional", "locative"]),
   english: z.string(),
   englishThirdSingular: z.string(),
   conjugation: z.object({
