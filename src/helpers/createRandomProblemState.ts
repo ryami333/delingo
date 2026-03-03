@@ -10,13 +10,16 @@ import prepositions from "./prepositions.json";
 import { NominalProblem } from "./problems/NominalProblem";
 import { SubjectVerbObjectProblem } from "./problems/SubjectVerbObjectProblem";
 import { SubjectVerbPrepositionalProblem } from "./problems/SubjectVerbPrepositionalProblem";
+import { SubjectVerbWechselProblem } from "./problems/SubjectVerbWechselProblem";
 import { pronounSchema } from "./pronounSchema";
 import pronouns from "./pronouns.json";
 import { transitiveVerbSchema } from "./transitiveVerbSchema";
 import transitiveVerbs from "./transitiveVerbs.json";
+import { wechselprepositionSchema } from "./wechselprepositionSchema";
+import wechselprepositions from "./wechselprepositions.json";
 
 export const createRandomProblemState = () => {
-  const optionIndex = Math.floor(Math.random() * 3);
+  const optionIndex = Math.floor(Math.random() * 4);
 
   switch (optionIndex) {
     case 0: {
@@ -40,6 +43,18 @@ export const createRandomProblemState = () => {
         pronoun: pronounSchema.parse(getRandomItem(pronouns)),
         verb: intransitiveVerbSchema.parse(getRandomItem(intransitiveVerbs)),
         preposition: prepositionSchema.parse(getRandomItem(prepositions)),
+        noun: nounSchema.parse(getRandomItem(nouns)),
+        artikel: artikelSchema.parse(getRandomItem(artikels)),
+        plural: Math.random() > 0.75,
+      });
+    }
+    case 3: {
+      return new SubjectVerbWechselProblem({
+        pronoun: pronounSchema.parse(getRandomItem(pronouns)),
+        verb: intransitiveVerbSchema.parse(getRandomItem(intransitiveVerbs)),
+        preposition: wechselprepositionSchema.parse(
+          getRandomItem(wechselprepositions),
+        ),
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
         plural: Math.random() > 0.75,
