@@ -1,0 +1,11 @@
+[
+  { "preposition": "an", "english": "at / on" },
+  { "preposition": "auf", "english": "on / onto" },
+  { "preposition": "hinter", "english": "behind" },
+  { "preposition": "in", "english": "in / into" },
+  { "preposition": "neben", "english": "next to" },
+  { "preposition": "über", "english": "over / across" },
+  { "preposition": "unter", "english": "under / among" },
+  { "preposition": "vor", "english": "in front of" },
+  { "preposition": "zwischen", "english": "between" }
+]
