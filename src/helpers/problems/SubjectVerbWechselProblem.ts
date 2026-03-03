@@ -6,6 +6,14 @@ import { Wechselpreposition } from "../wechselprepositionSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
+/**
+ * Tests a sentence with a Wechselpräposition (two-way preposition such as
+ * in, an, auf, etc.). The case depends on the verb's direction: directional
+ * verbs take akkusativ, locative verbs take dativ.
+ *
+ * - "He goes into the house" → "Er geht in das Haus" (akkusativ, directional)
+ * - "She sits on the chair" → "Sie sitzt auf dem Stuhl" (dativ, locative)
+ */
 export class SubjectVerbWechselProblem extends AbstractProblem {
   public problemParts: readonly [
     ProblemPart<Pronoun>,

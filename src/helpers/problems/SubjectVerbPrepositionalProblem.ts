@@ -6,6 +6,14 @@ import { Pronoun } from "../pronounSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 
+/**
+ * Tests a sentence with a fixed-case preposition. The preposition's `form`
+ * property determines the grammatical case of the noun phrase (always akkusativ
+ * or always dativ, never varying).
+ *
+ * - "He walks with the man" → "Er geht mit dem Mann" (dativ)
+ * - "She works for a company" → "Sie arbeitet für eine Firma" (akkusativ)
+ */
 export class SubjectVerbPrepositionalProblem extends AbstractProblem {
   public problemParts: readonly [
     ProblemPart<Pronoun>,
