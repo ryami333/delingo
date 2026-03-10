@@ -10,6 +10,7 @@ import {
   Title,
 } from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
+import { diffWords } from "diff";
 import { useState } from "react";
 
 export const Route = createFileRoute("/(frontend)/")({
@@ -17,21 +18,31 @@ export const Route = createFileRoute("/(frontend)/")({
 });
 
 function HomePage() {
-  const [problemState, setProblemState] = useState<
-    ReturnType<typeof createRandomProblemState>
-  >(() => createRandomProblemState());
+  const [problemState, setProblemState] = useState<{
+    problem: ReturnType<typeof createRandomProblemState>;
+    previousGuess: string | null;
+  }>(() => ({
+    problem: createRandomProblemState(),
+    previousGuess: null,
+  }));
 
   const onSubmit: React.SubmitEventHandler = (e) => {
     e.preventDefault();
     if (e.currentTarget instanceof HTMLFormElement) {
       const formData = new FormData(e.currentTarget);
-      const inputVal = formData.get("foo");
+      const inputVal = formData.get("foo")?.toString() ?? "";
 
-      console.log(problemState.solution);
-
-      if (problemState.solution === inputVal) {
+      if (problemState.problem.solution === inputVal) {
         // TODO: guard against same index as last time.
-        setProblemState(createRandomProblemState());
+        setProblemState({
+          problem: createRandomProblemState(),
+          previousGuess: null,
+        });
+      } else {
+        setProblemState((current) => ({
+          ...current,
+          previousGuess: inputVal,
+        }));
       }
     }
   };
@@ -49,23 +60,25 @@ function HomePage() {
           <Stack align="center" gap="xl">
             <Title>
               <span style={{ whiteSpace: "pre" }}>
-                {problemState.problemParts.flatMap((problemPart, index) => {
-                  const [word, entity] = problemPart;
-                  const el =
-                    entity.__type === "artikel" ? (
-                      <EnglishFormattedArtikel
-                        key={index}
-                        contextualWord={word}
-                        artikel={entity}
-                      />
-                    ) : (
-                      <span key={index}>{word}</span>
-                    );
-                  return index === 0 ? [el] : [" ", el];
-                })}
+                {problemState.problem.problemParts.flatMap(
+                  (problemPart, index) => {
+                    const [word, entity] = problemPart;
+                    const el =
+                      entity.__type === "artikel" ? (
+                        <EnglishFormattedArtikel
+                          key={index}
+                          contextualWord={word}
+                          artikel={entity}
+                        />
+                      ) : (
+                        <span key={index}>{word}</span>
+                      );
+                    return index === 0 ? [el] : [" ", el];
+                  },
+                )}
               </span>
             </Title>
-            <form onSubmit={onSubmit} key={problemState.uuid}>
+            <form onSubmit={onSubmit} key={problemState.problem.uuid}>
               <Group>
                 <TextInput
                   name="foo"
