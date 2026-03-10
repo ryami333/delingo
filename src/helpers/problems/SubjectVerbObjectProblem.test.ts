@@ -244,6 +244,48 @@ describe("SubjectVerbObjectProblem", () => {
     });
   });
 
+  describe("preferPlural ignored when unsupported", () => {
+    test("indefinite article ignores preferPlural in akkusativ: Er sieht ein Kind", () => {
+      const problem = new SubjectVerbObjectProblem({
+        pronoun: findPronoun("he"),
+        verb: findVerb("see"),
+        artikel: findArtikel("a / an"),
+        noun: findNoun("child"),
+        preferPlural: true,
+      });
+
+      expect(problem.solution).toBe("Er sieht ein Kind");
+    });
+
+    test("indefinite article ignores preferPlural in dativ: Er hilft einem Kind", () => {
+      const problem = new SubjectVerbObjectProblem({
+        pronoun: findPronoun("he"),
+        verb: findVerb("help"),
+        artikel: findArtikel("a / an"),
+        noun: findNoun("child"),
+        preferPlural: true,
+      });
+
+      expect(problem.solution).toBe("Er hilft einem Kind");
+    });
+
+    test("English prompt shows singular noun when preferPlural is ignored", () => {
+      const problem = new SubjectVerbObjectProblem({
+        pronoun: findPronoun("he"),
+        verb: findVerb("see"),
+        artikel: findArtikel("a / an"),
+        noun: findNoun("child"),
+        preferPlural: true,
+      });
+
+      const englishPrompt = problem.problemParts
+        .map(([english]) => english)
+        .join(" ");
+      expect(englishPrompt).toContain("child");
+      expect(englishPrompt).not.toContain("children");
+    });
+  });
+
   describe("sentence capitalization", () => {
     test("pronoun is capitalized at start of sentence: Er, not er", () => {
       const problem = new SubjectVerbObjectProblem({

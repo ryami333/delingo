@@ -132,6 +132,32 @@ describe("NominalProblem", () => {
     });
   });
 
+  describe("preferPlural ignored when unsupported", () => {
+    test("indefinite article ignores preferPlural: ein Kind, not *ein Kinder", () => {
+      const problem = new NominalProblem({
+        artikel: findArtikel("a / an"),
+        noun: findNoun("child"),
+        preferPlural: true,
+      });
+
+      expect(problem.solution).toBe("ein Kind");
+    });
+
+    test("English prompt shows singular noun when preferPlural is ignored", () => {
+      const problem = new NominalProblem({
+        artikel: findArtikel("a / an"),
+        noun: findNoun("child"),
+        preferPlural: true,
+      });
+
+      const englishPrompt = problem.problemParts
+        .map(([english]) => english)
+        .join(" ");
+      expect(englishPrompt).toContain("child");
+      expect(englishPrompt).not.toContain("children");
+    });
+  });
+
   describe("noun-phrase capitalization", () => {
     test("article is lowercase in noun phrases: der Mann, not Der Mann", () => {
       const problem = new NominalProblem({

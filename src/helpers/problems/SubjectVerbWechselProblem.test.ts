@@ -256,6 +256,51 @@ describe("SubjectVerbWechselProblem", () => {
     });
   });
 
+  describe("preferPlural ignored when unsupported", () => {
+    test("indefinite article ignores preferPlural with directional verb: Er geht in ein Haus", () => {
+      const problem = new SubjectVerbWechselProblem({
+        pronoun: findPronoun("he"),
+        verb: findVerb("go"),
+        preposition: findWechselpreposition("in / into"),
+        artikel: findArtikel("a / an"),
+        noun: findNoun("house"),
+        preferPlural: true,
+      });
+
+      expect(problem.solution).toBe("Er geht in ein Haus");
+    });
+
+    test("indefinite article ignores preferPlural with locative verb: Er sitzt in einem Haus", () => {
+      const problem = new SubjectVerbWechselProblem({
+        pronoun: findPronoun("he"),
+        verb: findVerb("sit"),
+        preposition: findWechselpreposition("in / into"),
+        artikel: findArtikel("a / an"),
+        noun: findNoun("house"),
+        preferPlural: true,
+      });
+
+      expect(problem.solution).toBe("Er sitzt in einem Haus");
+    });
+
+    test("English prompt shows singular noun when preferPlural is ignored", () => {
+      const problem = new SubjectVerbWechselProblem({
+        pronoun: findPronoun("he"),
+        verb: findVerb("go"),
+        preposition: findWechselpreposition("in / into"),
+        artikel: findArtikel("a / an"),
+        noun: findNoun("house"),
+        preferPlural: true,
+      });
+
+      const englishPrompt = problem.problemParts
+        .map(([english]) => english)
+        .join(" ");
+      expect(englishPrompt).toContain("house");
+      expect(englishPrompt).not.toContain("houses");
+    });
+  });
+
   describe("sentence capitalization", () => {
     test("pronoun is capitalized at start of sentence: Er, not er", () => {
       const problem = new SubjectVerbWechselProblem({
