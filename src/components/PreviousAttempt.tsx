@@ -11,5 +11,11 @@ export function PreviousAttempt({
     intlSegmenter: new Intl.Segmenter("de-DE", { granularity: "word" }),
   });
 
-  return JSON.stringify(diff, null, 2);
+  return diff
+    .filter((item) => !item.added)
+    .map((item, index) => (
+      <span key={index} style={{ color: item.removed ? "red" : "green" }}>
+        {item.value}
+      </span>
+    ));
 }
