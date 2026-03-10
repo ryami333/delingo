@@ -63,8 +63,7 @@ function HomePage() {
       </AppShell.Header>
 
       <AppShell.Main>
-        <Center h="100%">
-          <Stack align="center" gap="xl">
+        <Stack align="center" gap="xl">
             <Title>
               <span style={{ whiteSpace: "pre" }}>
                 {problemState.problem.problemParts.map((problemPart, index) => (
@@ -117,7 +116,6 @@ function HomePage() {
               />
             )}
           </Stack>
-        </Center>
       </AppShell.Main>
     </AppShell>
   );
