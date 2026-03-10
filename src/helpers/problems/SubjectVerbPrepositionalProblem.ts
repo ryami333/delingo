@@ -15,6 +15,7 @@ import capitalize from "lodash/capitalize";
  * - "She works for a company" → "Sie arbeitet für eine Firma" (akkusativ)
  */
 export class SubjectVerbPrepositionalProblem extends AbstractProblem {
+  public readonly __type = "SubjectVerbPrepositionalProblem" as const;
   public problemParts: readonly [
     ProblemPart<Pronoun>,
     ProblemPart<IntransitiveVerb>,

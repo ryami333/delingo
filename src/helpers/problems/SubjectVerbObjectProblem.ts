@@ -14,6 +14,7 @@ import capitalize from "lodash/capitalize";
  * - "I love my women" → "Ich liebe meine Frauen" (akkusativ, plural)
  */
 export class SubjectVerbObjectProblem extends AbstractProblem {
+  public readonly __type = "SubjectVerbObjectProblem" as const;
   public problemParts: readonly [
     ProblemPart<Pronoun>,
     ProblemPart<TransitiveVerb>,

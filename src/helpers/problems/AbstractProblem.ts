@@ -23,6 +23,7 @@ export type ProblemPart<T extends Entity = Entity> = readonly [string, T];
  */
 export abstract class AbstractProblem {
   public uuid: string;
+  public abstract readonly __type: string;
   public abstract problemParts: readonly ProblemPart[];
   public abstract solution: string;
 
