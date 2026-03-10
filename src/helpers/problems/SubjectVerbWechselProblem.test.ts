@@ -44,7 +44,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("behind"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht hinter den Mann");
@@ -57,7 +57,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("behind"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht hinter die Frau");
@@ -70,7 +70,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht in das Haus");
@@ -85,7 +85,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("behind"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er steht hinter dem Mann");
@@ -98,7 +98,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("behind"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er steht hinter der Frau");
@@ -111,7 +111,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sitzt in dem Haus");
@@ -126,7 +126,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht in das Haus");
@@ -139,7 +139,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sitzt in dem Haus");
@@ -154,20 +154,20 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Ich gehe in das Haus");
     });
 
-    test("first person plural: Wir gehen in das Haus", () => {
+    test("first person preferPlural: Wir gehen in das Haus", () => {
       const problem = new SubjectVerbWechselProblem({
         pronoun: findPronoun("we"),
         verb: findVerb("go"),
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Wir gehen in das Haus");
@@ -180,7 +180,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er läuft in das Haus");
@@ -188,14 +188,14 @@ describe("SubjectVerbWechselProblem", () => {
   });
 
   describe("pluralization", () => {
-    test("directional akkusativ plural: Er geht in die Häuser", () => {
+    test("directional akkusativ preferPlural: Er geht in die Häuser", () => {
       const problem = new SubjectVerbWechselProblem({
         pronoun: findPronoun("he"),
         verb: findVerb("go"),
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("Er geht in die Häuser");
@@ -208,7 +208,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("Er sitzt in den Häusern");
@@ -223,7 +223,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("behind"),
         artikel: findArtikel("a / an"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er steht hinter einem Mann");
@@ -236,7 +236,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("behind"),
         artikel: findArtikel("a / an"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er steht hinter einer Frau");
@@ -249,7 +249,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("a / an"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sitzt in einem Haus");
@@ -264,7 +264,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht in das Haus");
@@ -278,7 +278,7 @@ describe("SubjectVerbWechselProblem", () => {
         preposition: findWechselpreposition("in / into"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht in das Haus");

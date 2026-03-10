@@ -19,23 +19,24 @@ export class NominalProblem extends AbstractProblem {
   constructor({
     artikel,
     noun,
-    plural,
+    preferPlural,
   }: {
     artikel: Artikel;
     noun: Noun;
-    plural: boolean;
+    preferPlural: boolean;
   }) {
     super();
 
     const artikelProblem = capitalize(artikel.english);
-    const nounProblem = plural ? noun.pluralEnglish : noun.english;
+    const nounProblem = preferPlural ? noun.pluralEnglish : noun.english;
     this.problemParts = [
       [artikelProblem, artikel],
       [nounProblem, noun],
     ];
 
-    const artikelSolution = artikel.nominativ[plural ? "pl" : noun.gender];
-    const nounSolution = plural
+    const artikelSolution =
+      artikel.nominativ[preferPlural ? "pl" : noun.gender];
+    const nounSolution = preferPlural
       ? noun.nominativ.plural
       : noun.nominativ.singular;
     this.solution = `${artikelSolution} ${nounSolution}`;
