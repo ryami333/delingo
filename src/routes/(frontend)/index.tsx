@@ -1,11 +1,13 @@
 import { EnglishFormattedArtikel } from "../../components/EnglishFormattedArtikel";
 import { EnglishFormattedPronoun } from "../../components/EnglishFormattedPronoun";
+import { PartsAccordion } from "../../components/PartsAccordion";
 import { PreviousAttempt } from "../../components/PreviousAttempt";
 import { createRandomProblemState } from "../../helpers/createRandomProblemState";
 import {
   AppShell,
   Button,
   Center,
+  Container,
   Group,
   Stack,
   TextInput,
@@ -63,59 +65,73 @@ function HomePage() {
       </AppShell.Header>
 
       <AppShell.Main>
-        <Stack align="center" gap="xl">
-            <Title>
-              <span style={{ whiteSpace: "pre" }}>
-                {problemState.problem.problemParts.map((problemPart, index) => (
-                  <>
-                    {index !== 0 && " "}
-                    {(() => {
-                      const [word, entity] = problemPart;
-                      switch (entity.__type) {
-                        case "artikel": {
-                          return (
-                            <EnglishFormattedArtikel
-                              contextualWord={word}
-                              artikel={entity}
-                            />
-                          );
-                        }
-                        case "pronoun": {
-                          return (
-                            <EnglishFormattedPronoun
-                              contextualWord={word}
-                              pronoun={entity}
-                            />
-                          );
-                        }
-                        default:
-                          return <span>{word}</span>;
-                      }
-                    })()}
-                  </>
-                ))}
-              </span>
-            </Title>
-            <form onSubmit={onSubmit} key={problemState.problem.uuid}>
-              <Group>
-                <TextInput
-                  name="foo"
-                  autoFocus
-                  placeholder="Type the German…"
-                  size="md"
+        <Center>
+          <div style={{ width: "min(100%, 600px)" }}>
+            <Stack align="stretch" gap="xl">
+              <Title>
+                <Center>
+                  <span style={{ whiteSpace: "pre" }}>
+                    {problemState.problem.problemParts.map(
+                      (problemPart, index) => (
+                        <>
+                          {index !== 0 && " "}
+                          {(() => {
+                            const [word, entity] = problemPart;
+                            switch (entity.__type) {
+                              case "artikel": {
+                                return (
+                                  <EnglishFormattedArtikel
+                                    contextualWord={word}
+                                    artikel={entity}
+                                  />
+                                );
+                              }
+                              case "pronoun": {
+                                return (
+                                  <EnglishFormattedPronoun
+                                    contextualWord={word}
+                                    pronoun={entity}
+                                  />
+                                );
+                              }
+                              default:
+                                return <span>{word}</span>;
+                            }
+                          })()}
+                        </>
+                      ),
+                    )}
+                  </span>
+                </Center>
+              </Title>
+              <form onSubmit={onSubmit} key={problemState.problem.uuid}>
+                <Center>
+                  <Group>
+                    <TextInput
+                      name="foo"
+                      autoFocus
+                      placeholder="Type the German…"
+                      size="md"
+                    />
+                    <Button type="submit" size="md">
+                      Submit
+                    </Button>
+                  </Group>
+                </Center>
+              </form>
+              {problemState.previousGuess !== null && (
+                <PreviousAttempt
+                  received={problemState.previousGuess}
+                  expected={problemState.problem.solution}
                 />
-                <Button type="submit" size="md">
-                  Submit
-                </Button>
-              </Group>
-            </form>
-            {problemState.previousGuess !== null && (
-              <PreviousAttempt
-                received={problemState.previousGuess}
-                expected={problemState.problem.solution}
+              )}
+              <PartsAccordion
+                key={problemState.problem.uuid}
+                parts={problemState.problem.problemParts}
               />
-            )}
-          </Stack>
+            </Stack>
+          </div>
+        </Center>
       </AppShell.Main>
     </AppShell>
   );
