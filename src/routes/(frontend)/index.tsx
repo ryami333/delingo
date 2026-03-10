@@ -28,6 +28,7 @@ function HomePage() {
   }));
 
   useEffect(() => {
+    console.log(problemState.problem.__type);
     console.log(problemState.problem.problemParts);
     console.log(problemState.problem.solution);
   }, [problemState.problem]);
