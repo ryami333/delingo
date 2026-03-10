@@ -16,7 +16,7 @@ import capitalize from "lodash/capitalize";
  */
 export class SubjectVerbWechselProblem extends AbstractProblem {
   public readonly __type = "SubjectVerbWechselProblem" as const;
-  public problemParts: readonly [
+  public problemParts: [
     ProblemPart<Pronoun>,
     ProblemPart<IntransitiveVerb>,
     ProblemPart<Wechselpreposition>,
