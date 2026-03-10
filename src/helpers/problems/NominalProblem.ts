@@ -13,6 +13,7 @@ import capitalize from "lodash/capitalize";
  * - "No house" → "kein Haus"
  */
 export class NominalProblem extends AbstractProblem {
+  public readonly __type = "NominalProblem" as const;
   public problemParts: readonly [ProblemPart<Artikel>, ProblemPart<Noun>];
   public solution: string;
 

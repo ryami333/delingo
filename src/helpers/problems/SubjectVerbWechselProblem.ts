@@ -15,6 +15,7 @@ import capitalize from "lodash/capitalize";
  * - "She sits on the chair" → "Sie sitzt auf dem Stuhl" (dativ, locative)
  */
 export class SubjectVerbWechselProblem extends AbstractProblem {
+  public readonly __type = "SubjectVerbWechselProblem" as const;
   public problemParts: readonly [
     ProblemPart<Pronoun>,
     ProblemPart<IntransitiveVerb>,
