@@ -5,8 +5,8 @@ const meta = {
   title: "Components/PreviousAttempt",
   component: PreviousAttempt,
   args: {
-    received: "mein Mann",
-    expected: "mein Man",
+    received: "mein Man",
+    expected: "mein Mann",
   },
 } satisfies Meta<typeof PreviousAttempt>;
 
