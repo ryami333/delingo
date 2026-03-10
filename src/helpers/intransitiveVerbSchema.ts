@@ -1,3 +1,4 @@
+import intransitiveVerbs from "./intransitiveVerbs.json";
 import z from "zod";
 
 export const intransitiveVerbSchema = z.object({
@@ -23,3 +24,5 @@ export const intransitiveVerbSchema = z.object({
 });
 
 export type IntransitiveVerb = z.infer<typeof intransitiveVerbSchema>;
+
+export { intransitiveVerbs };

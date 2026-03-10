@@ -1,4 +1,5 @@
 import { disambiguatorSchema } from "./artikelSchema";
+import pronouns from "./pronouns.json";
 import z from "zod";
 
 export const pronounSchema = z.object({
@@ -11,3 +12,5 @@ export const pronounSchema = z.object({
 });
 
 export type Pronoun = z.infer<typeof pronounSchema>;
+
+export { pronouns };

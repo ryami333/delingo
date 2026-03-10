@@ -1,3 +1,4 @@
+import nouns from "./nouns.json";
 import z from "zod";
 
 const nounCaseSchema = z.object({
@@ -16,3 +17,5 @@ export const nounSchema = z.object({
 });
 
 export type Noun = z.infer<typeof nounSchema>;
+
+export { nouns };

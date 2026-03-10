@@ -1,3 +1,4 @@
+import prepositions from "./prepositions.json";
 import z from "zod";
 
 export const prepositionSchema = z.object({
@@ -8,3 +9,5 @@ export const prepositionSchema = z.object({
 });
 
 export type Preposition = z.infer<typeof prepositionSchema>;
+
+export { prepositions };
