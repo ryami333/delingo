@@ -3789,7 +3789,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:^8.0.2":
+"diff@npm:^8.0.2, diff@npm:^8.0.3":
   version: 8.0.3
   resolution: "diff@npm:8.0.3"
   checksum: 10c0/d29321c70d3545fdcb56c5fdd76028c3f04c012462779e062303d4c3c531af80d2c360c26b871e6e2b9a971d2422d47e1779a859106c4cac4b5d2d143df70e20
@@ -5035,6 +5035,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:^5.1.4"
     autoprefixer: "npm:^10.4.24"
     classnames: "npm:^2.5.1"
+    diff: "npm:^8.0.3"
     eslint: "npm:9.39.3"
     eslint-plugin-storybook: "npm:10.2.11"
     lodash: "npm:^4.17.23"
