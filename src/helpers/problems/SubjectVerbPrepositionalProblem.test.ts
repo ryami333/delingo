@@ -44,7 +44,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit dem Mann");
@@ -57,7 +57,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit der Frau");
@@ -70,7 +70,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit dem Kind");
@@ -85,7 +85,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht für den Mann");
@@ -98,7 +98,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht für die Frau");
@@ -111,7 +111,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht für das Kind");
@@ -126,7 +126,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit dem Mann");
@@ -139,7 +139,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht für den Mann");
@@ -154,20 +154,20 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Ich gehe mit dem Mann");
     });
 
-    test("first person plural: Wir gehen mit dem Mann", () => {
+    test("first person preferPlural: Wir gehen mit dem Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("we"),
         verb: findVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Wir gehen mit dem Mann");
@@ -180,7 +180,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("through"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er läuft durch das Haus");
@@ -195,20 +195,20 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("Er geht mit den Männern");
     });
 
-    test("akkusativ plural: Er geht für die Männer", () => {
+    test("akkusativ preferPlural: Er geht für die Männer", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
         verb: findVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("Er geht für die Männer");
@@ -223,7 +223,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit einem Mann");
@@ -236,7 +236,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit einer Frau");
@@ -249,7 +249,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit einem Kind");
@@ -264,7 +264,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit dem Mann");
@@ -278,7 +278,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er geht mit dem Mann");

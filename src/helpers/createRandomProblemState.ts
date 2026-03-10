@@ -28,14 +28,14 @@ export const createRandomProblemState = () => {
         verb: transitiveVerbSchema.parse(getRandomItem(transitiveVerbs)),
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
-        plural: Math.random() > 0.75,
+        preferPlural: Math.random() > 0.75,
       });
     }
     case 1: {
       return new NominalProblem({
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
-        plural: Math.random() > 0.75,
+        preferPlural: Math.random() > 0.75,
       });
     }
     case 2: {
@@ -45,7 +45,7 @@ export const createRandomProblemState = () => {
         preposition: prepositionSchema.parse(getRandomItem(prepositions)),
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
-        plural: Math.random() > 0.75,
+        preferPlural: Math.random() > 0.75,
       });
     }
     case 3: {
@@ -57,7 +57,7 @@ export const createRandomProblemState = () => {
         ),
         noun: nounSchema.parse(getRandomItem(nouns)),
         artikel: artikelSchema.parse(getRandomItem(artikels)),
-        plural: Math.random() > 0.75,
+        preferPlural: Math.random() > 0.75,
       });
     }
     default: {

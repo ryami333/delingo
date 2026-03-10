@@ -27,13 +27,13 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     verb,
     artikel,
     noun,
-    plural,
+    preferPlural,
   }: {
     pronoun: Pronoun;
     verb: TransitiveVerb;
     artikel: Artikel;
     noun: Noun;
-    plural: boolean;
+    preferPlural: boolean;
   }) {
     super();
 
@@ -44,7 +44,7 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
     const englishVerb = isThirdPersonSingular
       ? verb.englishThirdSingular
       : verb.english;
-    const englishNoun = plural ? noun.pluralEnglish : noun.english;
+    const englishNoun = preferPlural ? noun.pluralEnglish : noun.english;
 
     this.problemParts = [
       [pronoun.english, pronoun],
@@ -58,12 +58,14 @@ export class SubjectVerbObjectProblem extends AbstractProblem {
 
     // Fall back to singular if this artikel has no plural form
     const artikelCase = artikel[verb.form];
-    const artikelForm = plural
+    const artikelForm = preferPlural
       ? (artikelCase.pl ?? artikelCase[noun.gender])
       : artikelCase[noun.gender];
 
     const nounCase = noun[verb.form];
-    const germanNoun = capitalize(plural ? nounCase.plural : nounCase.singular);
+    const germanNoun = capitalize(
+      preferPlural ? nounCase.plural : nounCase.singular,
+    );
 
     this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${artikelForm} ${germanNoun}`;
   }

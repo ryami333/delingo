@@ -35,7 +35,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht den Mann");
@@ -47,7 +47,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht die Frau");
@@ -59,7 +59,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht das Kind");
@@ -73,7 +73,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er hilft dem Mann");
@@ -85,7 +85,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er hilft der Frau");
@@ -97,7 +97,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er hilft dem Kind");
@@ -111,7 +111,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("am / are / is"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er ist der Mann");
@@ -123,7 +123,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("become"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er wird der Mann");
@@ -137,19 +137,19 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Ich sehe den Mann");
     });
 
-    test("first person plural: Wir sehen den Mann", () => {
+    test("first person preferPlural: Wir sehen den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("we"),
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Wir sehen den Mann");
@@ -161,19 +161,19 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht den Mann");
     });
 
-    test("third person plural: Sie sehen den Mann", () => {
+    test("third person preferPlural: Sie sehen den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("they"),
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Sie sehen den Mann");
@@ -187,7 +187,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("Er sieht die Männer");
@@ -199,7 +199,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("Er hilft den Männern");
@@ -213,7 +213,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht einen Mann");
@@ -225,7 +225,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht eine Frau");
@@ -237,7 +237,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht ein Kind");
@@ -251,7 +251,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht den Mann");
@@ -264,7 +264,7 @@ describe("SubjectVerbObjectProblem", () => {
         verb: findVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("Er sieht den Mann");

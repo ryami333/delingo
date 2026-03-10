@@ -19,7 +19,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("der Mann");
@@ -29,7 +29,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("die Frau");
@@ -39,7 +39,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("das Kind");
@@ -47,11 +47,11 @@ describe("NominalProblem", () => {
   });
 
   describe("pluralization", () => {
-    test("definite article collapses to die in nominative plural: die Männer", () => {
+    test("definite article collapses to die in nominative preferPlural: die Männer", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("die Männer");
@@ -61,7 +61,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("die Frauen");
@@ -71,7 +71,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("child"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("die Kinder");
@@ -83,7 +83,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("a / an"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("ein Mann");
@@ -93,7 +93,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("a / an"),
         noun: findNoun("woman"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("eine Frau");
@@ -103,7 +103,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("ein Kind");
@@ -115,7 +115,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("no / not a"),
         noun: findNoun("man"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("keine Männer");
@@ -125,7 +125,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("my"),
         noun: findNoun("child"),
-        plural: true,
+        preferPlural: true,
       });
 
       expect(problem.solution).toBe("meine Kinder");
@@ -137,7 +137,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("der Mann");
@@ -148,7 +148,7 @@ describe("NominalProblem", () => {
       const problem = new NominalProblem({
         artikel: findArtikel("the"),
         noun: findNoun("man"),
-        plural: false,
+        preferPlural: false,
       });
 
       expect(problem.solution).toBe("der Mann");
