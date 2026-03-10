@@ -1,3 +1,4 @@
+import artikels from "./artikels.json";
 import z from "zod";
 
 const artikelCaseSchema = z.object({
@@ -30,3 +31,5 @@ export const artikelSchema = z.object({
 
 export type Artikel = z.infer<typeof artikelSchema>;
 export type Disambiguator = z.infer<typeof disambiguatorSchema>;
+
+export { artikels };

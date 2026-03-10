@@ -1,3 +1,4 @@
+import wechselPrepositions from "./wechselprepositions.json";
 import z from "zod";
 
 export const wechselprepositionSchema = z.object({
@@ -7,3 +8,5 @@ export const wechselprepositionSchema = z.object({
 });
 
 export type Wechselpreposition = z.infer<typeof wechselprepositionSchema>;
+
+export { wechselPrepositions };

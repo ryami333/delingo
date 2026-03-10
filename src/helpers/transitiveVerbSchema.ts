@@ -1,3 +1,4 @@
+import transitiveVerbs from "./transitiveVerbs.json";
 import z from "zod";
 
 export const transitiveVerbSchema = z.object({
@@ -23,3 +24,5 @@ export const transitiveVerbSchema = z.object({
 });
 
 export type TransitiveVerb = z.infer<typeof transitiveVerbSchema>;
+
+export { transitiveVerbs };
