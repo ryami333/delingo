@@ -14,7 +14,7 @@ export type Entity =
   | Pronoun
   | TransitiveVerb
   | IntransitiveVerb;
-export type ProblemPart<T extends Entity = Entity> = readonly [string, T];
+export type ProblemPart<T extends Entity = Entity> = [string, T];
 
 /**
  * Base class for all problem types. Each problem pairs English prompts
@@ -24,7 +24,7 @@ export type ProblemPart<T extends Entity = Entity> = readonly [string, T];
 export abstract class AbstractProblem {
   public uuid: string;
   public abstract readonly __type: string;
-  public abstract problemParts: readonly ProblemPart[];
+  public abstract problemParts: ProblemPart[];
   public abstract solution: string;
 
   constructor() {

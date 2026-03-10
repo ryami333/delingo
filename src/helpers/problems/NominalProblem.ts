@@ -14,7 +14,7 @@ import capitalize from "lodash/capitalize";
  */
 export class NominalProblem extends AbstractProblem {
   public readonly __type = "NominalProblem" as const;
-  public problemParts: readonly [ProblemPart<Artikel>, ProblemPart<Noun>];
+  public problemParts: [ProblemPart<Artikel>, ProblemPart<Noun>];
   public solution: string;
 
   constructor({
