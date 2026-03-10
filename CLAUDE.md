@@ -17,7 +17,7 @@ German language learning app — gamified drills for mastering articles (der/die
 yarn dev              # Dev server on localhost:3000
 yarn build            # Production build
 yarn start            # Run production build
-yarn test             # Jest (currently no tests)
+yarn test             # Vitest
 yarn lint             # Run all linting (typecheck + eslint + prettier)
 yarn lint:typecheck   # TypeScript type checking
 yarn lint:eslint      # ESLint
