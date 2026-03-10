@@ -14,11 +14,14 @@ export const disambiguatorSchema = z.enum([
   "informal",
 ]);
 
+const pluralitySchema = z.enum(["singular", "plural"]);
+
 export const artikelSchema = z.object({
   __type: z.literal("artikel").default("artikel"),
   word: z.string(),
   english: z.string(),
   disambiguators: z.array(disambiguatorSchema).optional(),
+  supportedPlurality: z.array(pluralitySchema),
   nominativ: artikelCaseSchema,
   akkusativ: artikelCaseSchema,
   dativ: artikelCaseSchema,
