@@ -153,8 +153,8 @@ describe("NominalProblem", () => {
       const englishPrompt = problem.problemParts
         .map(([english]) => english)
         .join(" ");
-      expect(englishPrompt).toContain("child");
-      expect(englishPrompt).not.toContain("children");
+      expect(englishPrompt).toBe("A / an child");
+      expect(englishPrompt).not.toBe("A / an children");
     });
   });
 

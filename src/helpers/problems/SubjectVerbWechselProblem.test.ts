@@ -296,8 +296,8 @@ describe("SubjectVerbWechselProblem", () => {
       const englishPrompt = problem.problemParts
         .map(([english]) => english)
         .join(" ");
-      expect(englishPrompt).toContain("house");
-      expect(englishPrompt).not.toContain("houses");
+      expect(englishPrompt).toBe("he goes in / into a / an house");
+      expect(englishPrompt).not.toBe("he goes in / into a / an houses");
     });
   });
 
