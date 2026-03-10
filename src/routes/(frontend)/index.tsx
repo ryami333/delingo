@@ -1,4 +1,5 @@
 import { EnglishFormattedArtikel } from "../../components/EnglishFormattedArtikel";
+import { PreviousAttempt } from "../../components/PreviousAttempt";
 import { createRandomProblemState } from "../../helpers/createRandomProblemState";
 import {
   AppShell,
@@ -10,7 +11,6 @@ import {
   Title,
 } from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
-import { diffWords } from "diff";
 import { useState } from "react";
 
 export const Route = createFileRoute("/(frontend)/")({
@@ -91,6 +91,12 @@ function HomePage() {
                 </Button>
               </Group>
             </form>
+            {problemState.previousGuess !== null && (
+              <PreviousAttempt
+                received={problemState.previousGuess}
+                expected={problemState.problem.solution}
+              />
+            )}
           </Stack>
         </Center>
       </AppShell.Main>
