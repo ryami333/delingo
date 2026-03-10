@@ -41,13 +41,17 @@ export class SubjectVerbWechselProblem extends AbstractProblem {
   }) {
     super();
 
+    const plural = preferPlural
+      ? artikel.supportedPlurality.includes("plural")
+      : false;
+
     // English problem
     const isThirdPersonSingular =
       pronoun.person === "thirdPerson" && pronoun.number === "singular";
     const englishVerb = isThirdPersonSingular
       ? verb.englishThirdSingular
       : verb.english;
-    const englishNoun = preferPlural ? noun.pluralEnglish : noun.english;
+    const englishNoun = plural ? noun.pluralEnglish : noun.english;
 
     this.problemParts = [
       [pronoun.english, pronoun],
@@ -63,14 +67,10 @@ export class SubjectVerbWechselProblem extends AbstractProblem {
     const germanVerb = verb.conjugation[pronoun.person][pronoun.number];
 
     const artikelCase = artikel[caseForm];
-    const artikelForm = preferPlural
-      ? (artikelCase.pl ?? artikelCase[noun.gender])
-      : artikelCase[noun.gender];
+    const artikelForm = plural ? artikelCase.pl : artikelCase[noun.gender];
 
     const nounCase = noun[caseForm];
-    const germanNoun = capitalize(
-      preferPlural ? nounCase.plural : nounCase.singular,
-    );
+    const germanNoun = capitalize(plural ? nounCase.plural : nounCase.singular);
 
     this.solution = `${capitalize(pronoun.pronoun)} ${germanVerb} ${preposition.preposition} ${artikelForm} ${germanNoun}`;
   }
