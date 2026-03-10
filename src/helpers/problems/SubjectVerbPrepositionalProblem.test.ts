@@ -296,8 +296,8 @@ describe("SubjectVerbPrepositionalProblem", () => {
       const englishPrompt = problem.problemParts
         .map(([english]) => english)
         .join(" ");
-      expect(englishPrompt).toContain("child");
-      expect(englishPrompt).not.toContain("children");
+      expect(englishPrompt).toBe("he goes with a / an child");
+      expect(englishPrompt).not.toBe("he goes with a / an children");
     });
   });
 
