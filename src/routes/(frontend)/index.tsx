@@ -1,4 +1,5 @@
 import { EnglishFormattedArtikel } from "../../components/EnglishFormattedArtikel";
+import { EnglishFormattedPronoun } from "../../components/EnglishFormattedPronoun";
 import { PreviousAttempt } from "../../components/PreviousAttempt";
 import { createRandomProblemState } from "../../helpers/createRandomProblemState";
 import {
@@ -11,7 +12,7 @@ import {
   Title,
 } from "@mantine/core";
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/(frontend)/")({
   component: HomePage,
@@ -65,22 +66,34 @@ function HomePage() {
           <Stack align="center" gap="xl">
             <Title>
               <span style={{ whiteSpace: "pre" }}>
-                {problemState.problem.problemParts.flatMap(
-                  (problemPart, index) => {
-                    const [word, entity] = problemPart;
-                    const el =
-                      entity.__type === "artikel" ? (
-                        <EnglishFormattedArtikel
-                          key={index}
-                          contextualWord={word}
-                          artikel={entity}
-                        />
-                      ) : (
-                        <span key={index}>{word}</span>
-                      );
-                    return index === 0 ? [el] : [" ", el];
-                  },
-                )}
+                {problemState.problem.problemParts.map((problemPart, index) => (
+                  <>
+                    {index !== 0 && " "}
+                    {(() => {
+                      const [word, entity] = problemPart;
+                      switch (entity.__type) {
+                        case "artikel": {
+                          return (
+                            <EnglishFormattedArtikel
+                              contextualWord={word}
+                              artikel={entity}
+                            />
+                          );
+                        }
+                        case "pronoun": {
+                          return (
+                            <EnglishFormattedPronoun
+                              contextualWord={word}
+                              pronoun={entity}
+                            />
+                          );
+                        }
+                        default:
+                          return <span>{word}</span>;
+                      }
+                    })()}
+                  </>
+                ))}
               </span>
             </Title>
             <form onSubmit={onSubmit} key={problemState.problem.uuid}>
