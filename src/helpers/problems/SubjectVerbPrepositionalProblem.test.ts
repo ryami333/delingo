@@ -1,46 +1,19 @@
-import { artikelSchema } from "../artikelSchema";
-import artikels from "../artikels.json";
-import { intransitiveVerbSchema } from "../intransitiveVerbSchema";
-import intransitiveVerbs from "../intransitiveVerbs.json";
-import { nounSchema } from "../nounSchema";
-import nouns from "../nouns.json";
-import { prepositionSchema } from "../prepositionSchema";
-import prepositions from "../prepositions.json";
-import { pronounSchema } from "../pronounSchema";
-import pronouns from "../pronouns.json";
+import {
+  findArtikel,
+  findIntransitiveVerb,
+  findNoun,
+  findPreposition,
+  findPronoun,
+} from "../testHelpers";
 import { SubjectVerbPrepositionalProblem } from "./SubjectVerbPrepositionalProblem";
 import { describe, expect, test } from "vitest";
-
-function findArtikel(english: string) {
-  return artikelSchema.parse(artikels.find((item) => item.english === english));
-}
-
-function findNoun(english: string) {
-  return nounSchema.parse(nouns.find((item) => item.english === english));
-}
-
-function findPronoun(english: string) {
-  return pronounSchema.parse(pronouns.find((item) => item.english === english));
-}
-
-function findVerb(english: string) {
-  return intransitiveVerbSchema.parse(
-    intransitiveVerbs.find((item) => item.english === english),
-  );
-}
-
-function findPreposition(english: string) {
-  return prepositionSchema.parse(
-    prepositions.find((item) => item.english === english),
-  );
-}
 
 describe("SubjectVerbPrepositionalProblem", () => {
   describe("dativ preposition — article inflection by gender", () => {
     test("masculine article in dativ after mit: mit dem Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -53,7 +26,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("feminine article in dativ after mit: mit der Frau", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
@@ -66,7 +39,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("neuter article in dativ after mit: mit dem Kind", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
@@ -81,7 +54,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("masculine article in akkusativ after für: für den Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -94,7 +67,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("feminine article unchanged in akkusativ after für: für die Frau", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
@@ -107,7 +80,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("neuter article unchanged in akkusativ after für: für das Kind", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
@@ -122,7 +95,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("same verb with dativ preposition: Er geht mit dem Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -135,7 +108,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("same verb with akkusativ preposition: Er geht für den Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -150,7 +123,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("first person singular: Ich gehe mit dem Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("I"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -163,7 +136,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("first person preferPlural: Wir gehen mit dem Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("we"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -176,7 +149,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("third person singular with stem change: Er läuft durch das Haus", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("run"),
+        verb: findIntransitiveVerb("run"),
         preposition: findPreposition("through"),
         artikel: findArtikel("the"),
         noun: findNoun("house"),
@@ -191,7 +164,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("dativ plural with -n suffix on noun: Er geht mit den Männern", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -204,7 +177,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("akkusativ preferPlural: Er geht für die Männer", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -219,7 +192,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("indefinite masculine in dativ: einem Mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("man"),
@@ -232,7 +205,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("indefinite feminine in dativ: einer Frau", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("woman"),
@@ -245,7 +218,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("indefinite neuter in dativ: einem Kind", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
@@ -260,7 +233,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("indefinite article ignores preferPlural in dativ: Er geht mit einem Kind", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
@@ -273,7 +246,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("indefinite article ignores preferPlural in akkusativ: Er geht für ein Kind", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("for"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
@@ -286,7 +259,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("English prompt shows singular noun when preferPlural is ignored", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
@@ -305,7 +278,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("pronoun is capitalized at start of sentence: Er, not er", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
@@ -319,7 +292,7 @@ describe("SubjectVerbPrepositionalProblem", () => {
     test("noun is always capitalized: mit dem Mann, not mit dem mann", () => {
       const problem = new SubjectVerbPrepositionalProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("go"),
+        verb: findIntransitiveVerb("go"),
         preposition: findPreposition("with"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),

@@ -1,17 +1,6 @@
-import { artikelSchema } from "../artikelSchema";
-import artikels from "../artikels.json";
-import { nounSchema } from "../nounSchema";
-import nouns from "../nouns.json";
+import { findArtikel, findNoun } from "../testHelpers";
 import { NominalProblem } from "./NominalProblem";
 import { describe, expect, test } from "vitest";
-
-function findArtikel(english: string) {
-  return artikelSchema.parse(artikels.find((item) => item.english === english));
-}
-
-function findNoun(english: string) {
-  return nounSchema.parse(nouns.find((item) => item.english === english));
-}
 
 describe("NominalProblem", () => {
   describe("definite article gender inflection", () => {

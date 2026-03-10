@@ -1,38 +1,18 @@
-import { artikelSchema } from "../artikelSchema";
-import artikels from "../artikels.json";
-import { nounSchema } from "../nounSchema";
-import nouns from "../nouns.json";
-import { pronounSchema } from "../pronounSchema";
-import pronouns from "../pronouns.json";
-import { transitiveVerbSchema } from "../transitiveVerbSchema";
-import transitiveVerbs from "../transitiveVerbs.json";
+import {
+  findArtikel,
+  findNoun,
+  findPronoun,
+  findTransitiveVerb,
+} from "../testHelpers";
 import { SubjectVerbObjectProblem } from "./SubjectVerbObjectProblem";
 import { describe, expect, test } from "vitest";
-
-function findArtikel(english: string) {
-  return artikelSchema.parse(artikels.find((item) => item.english === english));
-}
-
-function findNoun(english: string) {
-  return nounSchema.parse(nouns.find((item) => item.english === english));
-}
-
-function findPronoun(english: string) {
-  return pronounSchema.parse(pronouns.find((item) => item.english === english));
-}
-
-function findVerb(english: string) {
-  return transitiveVerbSchema.parse(
-    transitiveVerbs.find((item) => item.english === english),
-  );
-}
 
 describe("SubjectVerbObjectProblem", () => {
   describe("akkusativ article inflection by gender", () => {
     test("masculine article changes in akkusativ: der → den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -44,7 +24,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("feminine article stays unchanged in akkusativ: die Frau", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
         preferPlural: false,
@@ -56,7 +36,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("neuter article stays unchanged in akkusativ: das Kind", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
         preferPlural: false,
@@ -70,7 +50,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("masculine article in dativ: der → dem Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("help"),
+        verb: findTransitiveVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -82,7 +62,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("feminine article in dativ: die → der Frau", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("help"),
+        verb: findTransitiveVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("woman"),
         preferPlural: false,
@@ -94,7 +74,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("neuter article in dativ: das → dem Kind", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("help"),
+        verb: findTransitiveVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("child"),
         preferPlural: false,
@@ -108,7 +88,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("copular verb keeps object in nominative case: Er ist der Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("am / are / is"),
+        verb: findTransitiveVerb("am / are / is"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -120,7 +100,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("werden keeps object in nominative case: Er wird der Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("become"),
+        verb: findTransitiveVerb("become"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -134,7 +114,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("first person singular: Ich sehe den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("I"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -146,7 +126,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("first person preferPlural: Wir sehen den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("we"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -158,7 +138,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("third person singular with stem change: Er sieht den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -170,7 +150,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("third person preferPlural: Sie sehen den Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("they"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -184,7 +164,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("akkusativ plural article and noun: Er sieht die Männer", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: true,
@@ -196,7 +176,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("dativ plural article and noun with -n suffix: Er hilft den Männern", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("help"),
+        verb: findTransitiveVerb("help"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: true,
@@ -210,7 +190,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("indefinite masculine changes in akkusativ: ein → einen Mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -222,7 +202,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("indefinite feminine unchanged in akkusativ: eine Frau", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("woman"),
         preferPlural: false,
@@ -234,7 +214,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("indefinite neuter unchanged in akkusativ: ein Kind", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
         preferPlural: false,
@@ -248,7 +228,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("indefinite article ignores preferPlural in akkusativ: Er sieht ein Kind", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
         preferPlural: true,
@@ -260,7 +240,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("indefinite article ignores preferPlural in dativ: Er hilft einem Kind", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("help"),
+        verb: findTransitiveVerb("help"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
         preferPlural: true,
@@ -272,7 +252,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("English prompt shows singular noun when preferPlural is ignored", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("a / an"),
         noun: findNoun("child"),
         preferPlural: true,
@@ -290,7 +270,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("pronoun is capitalized at start of sentence: Er, not er", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
@@ -303,7 +283,7 @@ describe("SubjectVerbObjectProblem", () => {
     test("noun is always capitalized: den Mann, not den mann", () => {
       const problem = new SubjectVerbObjectProblem({
         pronoun: findPronoun("he"),
-        verb: findVerb("see"),
+        verb: findTransitiveVerb("see"),
         artikel: findArtikel("the"),
         noun: findNoun("man"),
         preferPlural: false,
