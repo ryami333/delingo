@@ -26,6 +26,11 @@ function HomePage() {
     previousGuess: null,
   }));
 
+  useEffect(() => {
+    console.log(problemState.problem.problemParts);
+    console.log(problemState.problem.solution);
+  }, [problemState.problem]);
+
   const onSubmit: React.SubmitEventHandler = (e) => {
     e.preventDefault();
     if (e.currentTarget instanceof HTMLFormElement) {
