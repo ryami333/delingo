@@ -2,6 +2,7 @@
   {
     "word": "der",
     "english": "the",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "der", "f": "die", "n": "das", "pl": "die" },
     "akkusativ": { "m": "den", "f": "die", "n": "das", "pl": "die" },
     "dativ": { "m": "dem", "f": "der", "n": "dem", "pl": "den" },
@@ -10,6 +11,7 @@
   {
     "word": "ein",
     "english": "a / an",
+    "supportedPlurality": ["singular"],
     "nominativ": { "m": "ein", "f": "eine", "n": "ein", "pl": null },
     "akkusativ": { "m": "einen", "f": "eine", "n": "ein", "pl": null },
     "dativ": { "m": "einem", "f": "einer", "n": "einem", "pl": null },
@@ -18,6 +20,7 @@
   {
     "word": "kein",
     "english": "no / not a",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "kein", "f": "keine", "n": "kein", "pl": "keine" },
     "akkusativ": { "m": "keinen", "f": "keine", "n": "kein", "pl": "keine" },
     "dativ": { "m": "keinem", "f": "keiner", "n": "keinem", "pl": "keinen" },
@@ -26,6 +29,7 @@
   {
     "word": "mein",
     "english": "my",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "mein", "f": "meine", "n": "mein", "pl": "meine" },
     "akkusativ": { "m": "meinen", "f": "meine", "n": "mein", "pl": "meine" },
     "dativ": { "m": "meinem", "f": "meiner", "n": "meinem", "pl": "meinen" },
@@ -35,6 +39,7 @@
     "word": "dein",
     "english": "your",
     "disambiguators": ["informal", "singular"],
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "dein", "f": "deine", "n": "dein", "pl": "deine" },
     "akkusativ": { "m": "deinen", "f": "deine", "n": "dein", "pl": "deine" },
     "dativ": { "m": "deinem", "f": "deiner", "n": "deinem", "pl": "deinen" },
@@ -43,6 +48,7 @@
   {
     "word": "sein",
     "english": "his",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "sein", "f": "seine", "n": "sein", "pl": "seine" },
     "akkusativ": { "m": "seinen", "f": "seine", "n": "sein", "pl": "seine" },
     "dativ": { "m": "seinem", "f": "seiner", "n": "seinem", "pl": "seinen" },
@@ -51,6 +57,7 @@
   {
     "word": "sein",
     "english": "its",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "sein", "f": "seine", "n": "sein", "pl": "seine" },
     "akkusativ": { "m": "seinen", "f": "seine", "n": "sein", "pl": "seine" },
     "dativ": { "m": "seinem", "f": "seiner", "n": "seinem", "pl": "seinen" },
@@ -59,6 +66,7 @@
   {
     "word": "ihr",
     "english": "her",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
@@ -68,6 +76,7 @@
     "word": "ihr",
     "english": "their",
     "disambiguators": ["plural"],
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "ihr", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "akkusativ": { "m": "ihren", "f": "ihre", "n": "ihr", "pl": "ihre" },
     "dativ": { "m": "ihrem", "f": "ihrer", "n": "ihrem", "pl": "ihren" },
@@ -76,6 +85,7 @@
   {
     "word": "unser",
     "english": "our",
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "unser", "f": "unsere", "n": "unser", "pl": "unsere" },
     "akkusativ": {
       "m": "unseren",
@@ -100,6 +110,7 @@
     "word": "euer",
     "english": "your",
     "disambiguators": ["informal", "plural"],
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "euer", "f": "eure", "n": "euer", "pl": "eure" },
     "akkusativ": { "m": "euren", "f": "eure", "n": "euer", "pl": "eure" },
     "dativ": { "m": "eurem", "f": "eurer", "n": "eurem", "pl": "euren" },
@@ -109,6 +120,7 @@
     "word": "Ihr",
     "english": "your",
     "disambiguators": ["formal"],
+    "supportedPlurality": ["singular", "plural"],
     "nominativ": { "m": "Ihr", "f": "Ihre", "n": "Ihr", "pl": "Ihre" },
     "akkusativ": { "m": "Ihren", "f": "Ihre", "n": "Ihr", "pl": "Ihre" },
     "dativ": { "m": "Ihrem", "f": "Ihrer", "n": "Ihrem", "pl": "Ihren" },
