@@ -23,7 +23,13 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
     ],
   }),
-  component: RootComponent,
+  component: function _RootComponent() {
+    return (
+      <RootComponent>
+        <Outlet />
+      </RootComponent>
+    );
+  },
   shellComponent: RootDocument,
 });
 
@@ -41,11 +47,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   );
 }
 
-function RootComponent() {
+export function RootComponent({ children }: { children: React.ReactNode }) {
   return (
     <MantineProvider forceColorScheme="dark">
       <Notifications />
-      <Outlet />
+      {children}
     </MantineProvider>
   );
 }
