@@ -1,12 +1,11 @@
-import { Disambiguator } from "../helpers/artikelSchema";
-import { Pronoun } from "../helpers/pronounSchema";
+import { Pronoun, PronounDisambiguator } from "../helpers/pronounSchema";
 
-const disambiguatorLabels = {
+const disambiguatorLabels: Record<PronounDisambiguator, string> = {
   plural: "👥",
   singular: "👤",
   formal: "f.",
   informal: "inf.",
-} as Record<Disambiguator, string>;
+};
 
 export function EnglishFormattedPronoun({
   contextualWord,

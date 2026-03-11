@@ -1,11 +1,11 @@
-import { Artikel, Disambiguator } from "../helpers/artikelSchema";
+import { Artikel, ArtikelDisambiguator } from "../helpers/artikelSchema";
 
-const disambiguatorLabels = {
+const disambiguatorLabels: Record<ArtikelDisambiguator, string> = {
   plural: "👥",
   singular: "👤",
   formal: "f.",
   informal: "inf.",
-} as Record<Disambiguator, string>;
+};
 
 export function EnglishFormattedArtikel({
   contextualWord,
