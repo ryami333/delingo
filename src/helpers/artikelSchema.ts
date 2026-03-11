@@ -8,7 +8,7 @@ const artikelCaseSchema = z.object({
   pl: z.string().nullable(),
 });
 
-export const disambiguatorSchema = z.enum([
+export const artikelDisambiguatorSchema = z.enum([
   "singular",
   "plural",
   "formal",
@@ -21,7 +21,7 @@ export const artikelSchema = z.object({
   __type: z.literal("artikel").default("artikel"),
   word: z.string(),
   english: z.string(),
-  disambiguators: z.array(disambiguatorSchema).optional(),
+  disambiguators: z.array(artikelDisambiguatorSchema).optional(),
   supportedPlurality: z.array(pluralitySchema),
   nominativ: artikelCaseSchema,
   akkusativ: artikelCaseSchema,
@@ -30,6 +30,6 @@ export const artikelSchema = z.object({
 });
 
 export type Artikel = z.infer<typeof artikelSchema>;
-export type Disambiguator = z.infer<typeof disambiguatorSchema>;
+export type ArtikelDisambiguator = z.infer<typeof artikelDisambiguatorSchema>;
 
 export { artikels };

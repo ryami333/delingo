@@ -10,7 +10,7 @@
     "english": "you",
     "person": "secondPerson",
     "number": "singular",
-    "disambiguators": ["informal"]
+    "disambiguators": ["singular", "informal"]
   },
   {
     "pronoun": "er",
@@ -41,7 +41,7 @@
     "english": "you",
     "person": "secondPerson",
     "number": "plural",
-    "disambiguators": ["informal"]
+    "disambiguators": ["plural", "informal"]
   },
   {
     "pronoun": "sie",
@@ -54,7 +54,7 @@
     "english": "you",
     "person": "thirdPerson",
     "number": "plural",
-    "disambiguators": ["formal"]
+    "disambiguators": ["plural", "formal"]
   },
   {
     "pronoun": "man",
