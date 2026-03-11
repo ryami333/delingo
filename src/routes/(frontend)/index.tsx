@@ -104,7 +104,10 @@ function HomePage() {
                   </span>
                 </Center>
               </Title>
-              <form onSubmit={onSubmit} key={problemState.problem.uuid}>
+              <form
+                onSubmit={onSubmit}
+                key={`form-${problemState.problem.uuid}`}
+              >
                 <Center>
                   <Group>
                     <TextInput
@@ -126,7 +129,7 @@ function HomePage() {
                 />
               )}
               <PartsAccordion
-                key={problemState.problem.uuid}
+                key={`accordion-${problemState.problem.uuid}`}
                 parts={problemState.problem.problemParts}
               />
             </Stack>
