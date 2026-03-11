@@ -1,3 +1,4 @@
+import { Text } from "@mantine/core";
 import { diffWords } from "diff";
 
 export function PreviousAttempt({
@@ -12,7 +13,7 @@ export function PreviousAttempt({
   });
 
   return (
-    <p>
+    <Text>
       {diff
         .filter((item) => !item.added)
         .map((item, index) => (
@@ -20,6 +21,6 @@ export function PreviousAttempt({
             {item.value}
           </span>
         ))}
-    </p>
+    </Text>
   );
 }
