@@ -22,7 +22,7 @@ export function EnglishFormattedPronoun({
   return (
     <span>
       {contextualWord}
-      {disambiguators.length > 0 && `(${disambiguators.join(", ")})`}
+      {disambiguators.length > 0 && ` (${disambiguators.join(", ")})`}
     </span>
   );
 }
