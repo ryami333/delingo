@@ -9,8 +9,8 @@
     "node": "^24.13.0"
   },
   "devDependencies": {
-    "@storybook/addon-links": "^10.2.11",
-    "@storybook/react-vite": "^10.2.11",
+    "@storybook/addon-links": "^10.3.3",
+    "@storybook/react-vite": "^10.3.3",
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "@types/lodash": "^4",
     "@types/node": "24.10.13",
@@ -20,7 +20,7 @@
     "autoprefixer": "^10.4.24",
     "classnames": "^2.5.1",
     "eslint": "9.39.3",
-    "eslint-plugin-storybook": "10.2.11",
+    "eslint-plugin-storybook": "10.3.3",
     "mongodb": "^7.1.0",
     "postcss": "^8.5.8",
     "postcss-preset-env": "^11.2.0",
@@ -28,7 +28,7 @@
     "prettier-plugin-css-order": "^2.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "storybook": "^10.2.11",
+    "storybook": "^10.3.3",
     "temporal-polyfill": "^0.3.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1",
