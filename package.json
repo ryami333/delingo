@@ -20,7 +20,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "autoprefixer": "^10.4.27",
     "classnames": "^2.5.1",
-    "eslint": "9.39.4",
+    "eslint": "10.1.0",
     "eslint-plugin-storybook": "10.3.3",
     "mongodb": "^7.1.1",
     "postcss": "^8.5.8",

@@ -6,6 +6,7 @@ import typescriptEslint from "typescript-eslint";
 const eslintConfig = [
   globalIgnores([
     "node_modules/**",
+    "db/**",
     ".next/**",
     ".output/**",
     "out/**",
