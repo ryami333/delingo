@@ -55,7 +55,7 @@
   },
   "type": "module",
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --run",
     "lint": "yarn lint:typecheck && yarn lint:eslint && yarn lint:formatting",
     "lint:typecheck": "tsc",
     "lint:eslint": "eslint .",
