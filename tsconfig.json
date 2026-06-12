@@ -18,7 +18,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "allowImportingTsExtensions": true,
-    "types": ["vite/client"]
+    "types": ["vite/client", "node"]
   },
   "exclude": ["**/node_modules", "**/.*/", "dist", ".output"],
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.mjs"]
