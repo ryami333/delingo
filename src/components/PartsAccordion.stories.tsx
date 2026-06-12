@@ -6,7 +6,7 @@ import {
   findWechselPreposition,
 } from "../helpers/testHelpers";
 import { PartsAccordion } from "./PartsAccordion";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
 
 const meta = {
   title: "Components/PartsAccordion",

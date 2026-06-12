@@ -1,5 +1,5 @@
 import { PreviousAttempt } from "./PreviousAttempt";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryObj } from "@storybook/tanstack-react";
 
 const meta = {
   title: "Components/PreviousAttempt",
