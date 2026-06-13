@@ -49,7 +49,7 @@ export function PreviousAttempt({
           const wrongDeclension = paradigms.some(
             (forms) => forms.has(received) && forms.has(expected),
           );
-          if (wrongDeclension) return "yellow";
+          if (wrongDeclension) return "orange";
 
           return "red";
         })();
