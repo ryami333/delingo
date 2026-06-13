@@ -1,8 +1,8 @@
+import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
 import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
 import { PartsAccordion } from "./PartsAccordion";
 import { PreviousAttempt } from "./PreviousAttempt";
-import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import {
   AppShell,
   Button,
@@ -141,6 +141,7 @@ export function HomePage() {
                 <PreviousAttempt
                   received={problemState.previousGuess}
                   expected={problemState.problem.solution}
+                  parts={problemState.problem.problemParts}
                 />
               )}
               <PartsAccordion
