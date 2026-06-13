@@ -8,10 +8,12 @@ import {
   Button,
   Center,
   Group,
+  Modal,
   Stack,
   TextInput,
   Title,
 } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
@@ -33,6 +35,9 @@ function HomePage() {
     console.log(problemState.problem.problemParts);
     console.log(problemState.problem.solution);
   }, [problemState.problem]);
+
+  const [solutionOpened, { open: openSolution, close: closeSolution }] =
+    useDisclosure(false);
 
   const onSubmit: React.SubmitEventHandler = (e) => {
     e.preventDefault();
@@ -118,9 +123,25 @@ function HomePage() {
                     <Button type="submit" size="md">
                       Submit
                     </Button>
+                    <Button
+                      type="button"
+                      variant="default"
+                      size="md"
+                      onClick={openSolution}
+                    >
+                      Show Solution
+                    </Button>
                   </Group>
                 </Center>
               </form>
+              <Modal
+                opened={solutionOpened}
+                onClose={closeSolution}
+                withCloseButton={false}
+                centered
+              >
+                {problemState.problem.solution}
+              </Modal>
               {problemState.previousGuess !== null && (
                 <PreviousAttempt
                   received={problemState.previousGuess}
