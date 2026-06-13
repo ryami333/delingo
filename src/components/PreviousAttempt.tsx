@@ -19,8 +19,9 @@ export function PreviousAttempt({
         // typed, so we never render them on their own.
         if (item.added) return null;
 
-        let color = "green";
-        if (item.removed) {
+        const color = (() => {
+          if (!item.removed) return "green";
+
           // A removed segment is immediately followed by its added
           // counterpart when the word was changed. If they match
           // case-insensitively, the only mistake was capitalization.
@@ -28,8 +29,8 @@ export function PreviousAttempt({
           const capitalizationOnly =
             next?.added &&
             next.value.toLowerCase() === item.value.toLowerCase();
-          color = capitalizationOnly ? "yellow" : "red";
-        }
+          return capitalizationOnly ? "yellow" : "red";
+        })();
 
         return (
           <span key={index} style={{ color }}>
