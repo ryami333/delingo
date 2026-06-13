@@ -13,3 +13,10 @@ const meta = {
 export default meta;
 
 export const Default = {} satisfies StoryObj<typeof meta>;
+
+export const CapitalizationOnly = {
+  args: {
+    received: "mein mann",
+    expected: "mein Mann",
+  },
+} satisfies StoryObj<typeof meta>;

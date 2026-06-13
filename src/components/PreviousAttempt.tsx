@@ -14,13 +14,29 @@ export function PreviousAttempt({
 
   return (
     <Text>
-      {diff
-        .filter((item) => !item.added)
-        .map((item, index) => (
-          <span key={index} style={{ color: item.removed ? "red" : "green" }}>
+      {diff.map((item, index) => {
+        // Added segments belong to the expected answer, not what the user
+        // typed, so we never render them on their own.
+        if (item.added) return null;
+
+        let color = "green";
+        if (item.removed) {
+          // A removed segment is immediately followed by its added
+          // counterpart when the word was changed. If they match
+          // case-insensitively, the only mistake was capitalization.
+          const next = diff[index + 1];
+          const capitalizationOnly =
+            next?.added &&
+            next.value.toLowerCase() === item.value.toLowerCase();
+          color = capitalizationOnly ? "yellow" : "red";
+        }
+
+        return (
+          <span key={index} style={{ color }}>
             {item.value}
           </span>
-        ))}
+        );
+      })}
     </Text>
   );
 }
