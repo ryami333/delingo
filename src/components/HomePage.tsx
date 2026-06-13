@@ -140,8 +140,7 @@ export function HomePage() {
               {problemState.previousGuess !== null && (
                 <PreviousAttempt
                   received={problemState.previousGuess}
-                  expected={problemState.problem.solution}
-                  parts={problemState.problem.problemParts}
+                  problem={problemState.problem}
                 />
               )}
               <PartsAccordion

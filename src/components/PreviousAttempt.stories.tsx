@@ -13,7 +13,7 @@ const meta = {
   component: PreviousAttempt,
   args: {
     received: "mein Man",
-    expected: "mein Mann",
+    problem: { solution: "mein Mann", problemParts: [] },
   },
 } satisfies Meta<typeof PreviousAttempt>;
 
@@ -24,7 +24,7 @@ export const Default = {} satisfies StoryObj<typeof meta>;
 export const CapitalizationOnly = {
   args: {
     received: "mein mann",
-    expected: "mein Mann",
+    problem: { solution: "mein Mann", problemParts: [] },
   },
 } satisfies StoryObj<typeof meta>;
 
@@ -32,10 +32,12 @@ export const CapitalizationOnly = {
 export const WrongDeclension = {
   args: {
     received: "den Mensch",
-    expected: "der Mensch",
-    parts: [
-      ["the", theArtikel],
-      ["person", person],
-    ],
+    problem: {
+      solution: "der Mensch",
+      problemParts: [
+        ["the", theArtikel],
+        ["person", person],
+      ],
+    },
   },
 } satisfies StoryObj<typeof meta>;

@@ -1,24 +1,24 @@
 import { getInflections } from "../helpers/getInflections";
-import { ProblemPart } from "../helpers/problems/AbstractProblem";
+import { AbstractProblem } from "../helpers/problems/AbstractProblem";
 import { Text } from "@mantine/core";
 import { diffWords } from "diff";
 
 export function PreviousAttempt({
-  expected,
+  problem,
   received,
-  parts = [],
 }: {
-  expected: string;
+  problem: Pick<AbstractProblem, "solution" | "problemParts">;
   received: string;
-  parts?: ProblemPart[];
 }) {
+  const { solution: expected, problemParts } = problem;
+
   const diff = diffWords(received, expected, {
     intlSegmenter: new Intl.Segmenter("de-DE", { granularity: "word" }),
   });
 
   // Each entity's full set of inflected forms, lowercased. Two words in the
   // same set are different declensions of the same word.
-  const paradigms = parts.map(
+  const paradigms = problemParts.map(
     ([, entity]) =>
       new Set(getInflections(entity).map((form) => form.toLowerCase())),
   );
