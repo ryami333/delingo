@@ -69,6 +69,7 @@ export function HomePage() {
               <PartsPopovers
                 key={`parts-${problemState.problem.uuid}`}
                 parts={problemState.problem.problemParts}
+                showHints={true}
               />
               <form
                 onSubmit={onSubmit}

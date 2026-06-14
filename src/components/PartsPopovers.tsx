@@ -3,32 +3,48 @@ import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
 import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
 import { Button, Group, Popover } from "@mantine/core";
 
-function entityLabel(entity: Entity): string {
+function getEntitySpoiler(entity: Entity): string {
   const { __type } = entity;
   switch (__type) {
     case "pronoun": {
-      return `${entity.pronoun}`;
+      return entity.pronoun;
     }
-    case "wechselpreposition": {
-      return `${entity.preposition}`;
-    }
+    case "wechselpreposition":
     case "preposition": {
-      return `${entity.preposition} • ${entity.form}`;
+      return entity.preposition;
     }
     case "artikel": {
-      return `${entity.word}`;
+      return entity.word;
     }
-    case "intransitiveVerb": {
-      return `${entity.verb} • ${entity.direction}`;
-    }
+    case "intransitiveVerb":
     case "transitiveVerb": {
-      return `${entity.verb} • ${entity.form}`;
+      return entity.verb;
     }
     case "noun": {
-      return `${entity.nominativ.singular} • ${entity.gender}`;
+      return entity.nominativ.singular;
     }
     default: {
       throw new Error(`Unhandled case: ${__type satisfies never}`);
+    }
+  }
+}
+
+function getEntityHints(entity: Entity) {
+  switch (entity.__type) {
+    case "preposition": {
+      return [entity.form];
+    }
+    case "intransitiveVerb": {
+      return [entity.direction];
+    }
+    case "transitiveVerb": {
+      return [entity.form];
+    }
+    case "noun": {
+      return [entity.gender];
+    }
+    default: {
+      return [];
     }
   }
 }
@@ -47,7 +63,13 @@ function PartLabel({ word, entity }: { word: string; entity: Entity }) {
   }
 }
 
-export function PartsPopovers({ parts }: { parts: [string, Entity][] }) {
+export function PartsPopovers({
+  parts,
+  showHints = false,
+}: {
+  parts: [string, Entity][];
+  showHints: boolean;
+}) {
   return (
     <Group justify="center">
       {parts.map(([word, entity], index) => (
@@ -55,9 +77,10 @@ export function PartsPopovers({ parts }: { parts: [string, Entity][] }) {
           <Popover.Target>
             <Button variant="outline">
               <PartLabel word={word} entity={entity} />
+              {showHints && getEntityHints(entity).map((hint) => ` • ${hint}`)}
             </Button>
           </Popover.Target>
-          <Popover.Dropdown>{entityLabel(entity)}</Popover.Dropdown>
+          <Popover.Dropdown>{getEntitySpoiler(entity)}</Popover.Dropdown>
         </Popover>
       ))}
     </Group>
