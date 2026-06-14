@@ -32,9 +32,12 @@ export function getInflections(entity: Entity): string[] {
     case "wechselpreposition":
       return [entity.preposition];
     case "transitiveVerb":
-    case "intransitiveVerb":
-      return Object.values(entity.conjugation).flatMap((person) =>
-        Object.values(person),
-      );
+    case "intransitiveVerb": {
+      return [
+        entity.conjugation.firstPerson,
+        entity.conjugation.secondPerson,
+        entity.conjugation.thirdPerson,
+      ].flatMap((person) => [person.singular, person.plural]);
+    }
   }
 }
