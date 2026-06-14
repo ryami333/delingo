@@ -2,6 +2,12 @@ import { getInflections } from "./getInflections";
 import { AbstractProblem } from "./problems/AbstractProblem";
 import { diffWords } from "diff";
 
+export type FeedbackKind =
+  | "none"
+  | "capitalization"
+  | "declination"
+  | "unknown";
+
 /**
  * A single segment of the user's attempt, paired with the kind of problem (if
  * any) it represents. `text` is the portion of the received answer; `problem`
@@ -9,7 +15,7 @@ import { diffWords } from "diff";
  */
 export type Feedback = {
   text: string;
-  problem: "none" | "capitalization" | "declination" | "unknown";
+  kind: FeedbackKind;
 };
 
 /**
@@ -45,7 +51,7 @@ export function getAttemptFeedback({
     // so we never surface them on their own.
     if (item.added) return;
 
-    const problemKind = ((): Feedback["problem"] => {
+    const problemKind = ((): FeedbackKind => {
       if (!item.removed) return "none";
 
       // A removed segment is immediately followed by its added counterpart
@@ -70,7 +76,7 @@ export function getAttemptFeedback({
       return "unknown";
     })();
 
-    feedback.push({ text: item.value, problem: problemKind });
+    feedback.push({ text: item.value, kind: problemKind });
   });
 
   return feedback;
