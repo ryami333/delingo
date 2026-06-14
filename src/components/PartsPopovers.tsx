@@ -51,7 +51,7 @@ export function PartsPopovers({ parts }: { parts: [string, Entity][] }) {
   return (
     <Group justify="center">
       {parts.map(([word, entity], index) => (
-        <Popover key={index}>
+        <Popover key={index} closeOnEscape={true}>
           <Popover.Target>
             <Button variant="outline">
               <PartLabel word={word} entity={entity} />
