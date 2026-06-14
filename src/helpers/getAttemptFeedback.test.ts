@@ -37,9 +37,9 @@ describe("getAttemptFeedback", () => {
     });
   });
 
-  describe("declension", () => {
+  describe("inflection", () => {
     // "den" is the accusative form of "der" — right article, wrong case.
-    test("a different inflection of the right word is flagged as declension", () => {
+    test("a different inflection of the right word is flagged as inflection", () => {
       const feedback = getAttemptFeedback({
         received: "den Mensch",
         problem: {
@@ -54,7 +54,7 @@ describe("getAttemptFeedback", () => {
       const article = feedback.find(
         (item) => item.text.trim().toLowerCase() === "den",
       );
-      expect(article?.kind).toBe("declension");
+      expect(article?.kind).toBe("inflection");
     });
 
     test("the matched word in the answer carries no problem", () => {

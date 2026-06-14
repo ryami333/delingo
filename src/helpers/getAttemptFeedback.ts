@@ -2,7 +2,7 @@ import { getInflections } from "./getInflections";
 import { AbstractProblem } from "./problems/AbstractProblem";
 import { diffWords } from "diff";
 
-export type FeedbackKind = "none" | "capitalization" | "declension" | "unknown";
+export type FeedbackKind = "none" | "capitalization" | "inflection" | "unknown";
 
 /**
  * A single segment of the user's attempt, paired with the kind of problem (if
@@ -34,7 +34,7 @@ export function getAttemptFeedback({
   });
 
   // Each entity's full set of inflected forms, lowercased. Two words in the
-  // same set are different declensions of the same word.
+  // same set are different inflections of the same word.
   const paradigms = problemParts.map(
     ([, entity]) =>
       new Set(getInflections(entity).map((form) => form.toLowerCase())),
@@ -61,13 +61,14 @@ export function getAttemptFeedback({
       // Right word, wrong case: only the capitalization differs.
       if (receivedForm === expectedForm) return "capitalization";
 
-      // Right word, wrong declension. Identify this slot's paradigm by the
-      // expected (correct) form, then check whether the received form is a
-      // different inflection within it. Pinning to the paradigm that owns the
-      // expected form — rather than any paradigm in the solution — keeps the
-      // feedback positionally meaningful.
+      // Right word, wrong inflected form (a noun/article declension or a verb
+      // conjugation). Identify this slot's paradigm by the expected (correct)
+      // form, then check whether the received form is a different inflection
+      // within it. Pinning to the paradigm that owns the expected form — rather
+      // than any paradigm in the solution — keeps the feedback positionally
+      // meaningful.
       const slotParadigm = paradigms.find((forms) => forms.has(expectedForm));
-      if (slotParadigm?.has(receivedForm)) return "declension";
+      if (slotParadigm?.has(receivedForm)) return "inflection";
 
       return "unknown";
     })();

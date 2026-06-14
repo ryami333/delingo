@@ -4,9 +4,10 @@ import { Entity } from "./problems/AbstractProblem";
 /**
  * Returns every German surface form an entity can take — its full paradigm.
  *
- * This powers "wrong declension" feedback: two words belong to the same
+ * This powers "wrong inflection" feedback: two words belong to the same
  * paradigm when they both appear in this list for the same entity, which means
- * the learner picked the right word but inflected it for the wrong case/number.
+ * the learner picked the right word but inflected it wrongly — a noun/article
+ * declension or a verb conjugation.
  *
  * Only articles and nouns carry a real case table, so they are the only types
  * that yield more than one form. The rest return their lone surface form(s),
