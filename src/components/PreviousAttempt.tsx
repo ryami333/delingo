@@ -7,7 +7,7 @@ function getFeedbackKindColor(kind: FeedbackKind): string {
       return "green";
     case "capitalization":
       return "yellow";
-    case "declination":
+    case "declension":
       return "orange";
     case "unknown":
       return "red";

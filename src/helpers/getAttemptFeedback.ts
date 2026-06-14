@@ -2,11 +2,7 @@ import { getInflections } from "./getInflections";
 import { AbstractProblem } from "./problems/AbstractProblem";
 import { diffWords } from "diff";
 
-export type FeedbackKind =
-  | "none"
-  | "capitalization"
-  | "declination"
-  | "unknown";
+export type FeedbackKind = "none" | "capitalization" | "declension" | "unknown";
 
 /**
  * A single segment of the user's attempt, paired with the kind of problem (if
@@ -71,7 +67,7 @@ export function getAttemptFeedback({
       // expected form — rather than any paradigm in the solution — keeps the
       // feedback positionally meaningful.
       const slotParadigm = paradigms.find((forms) => forms.has(expectedForm));
-      if (slotParadigm?.has(receivedForm)) return "declination";
+      if (slotParadigm?.has(receivedForm)) return "declension";
 
       return "unknown";
     })();
