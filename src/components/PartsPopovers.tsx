@@ -1,4 +1,6 @@
 import { Entity } from "../helpers/problems/AbstractProblem";
+import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
+import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
 import { Button, Group, Popover } from "@mantine/core";
 
 function entityLabel(entity: Entity): string {
@@ -31,13 +33,29 @@ function entityLabel(entity: Entity): string {
   }
 }
 
+function PartLabel({ word, entity }: { word: string; entity: Entity }) {
+  switch (entity.__type) {
+    case "artikel": {
+      return <EnglishFormattedArtikel contextualWord={word} artikel={entity} />;
+    }
+    case "pronoun": {
+      return <EnglishFormattedPronoun contextualWord={word} pronoun={entity} />;
+    }
+    default: {
+      return <span>{word}</span>;
+    }
+  }
+}
+
 export function PartsPopovers({ parts }: { parts: [string, Entity][] }) {
   return (
-    <Group>
+    <Group justify="center">
       {parts.map(([word, entity], index) => (
         <Popover key={index}>
           <Popover.Target>
-            <Button variant="outline">{word}</Button>
+            <Button variant="outline">
+              <PartLabel word={word} entity={entity} />
+            </Button>
           </Popover.Target>
           <Popover.Dropdown>{entityLabel(entity)}</Popover.Dropdown>
         </Popover>
