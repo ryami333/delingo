@@ -27,10 +27,10 @@ export const Capitalization = {
   },
 } satisfies StoryObj<typeof meta>;
 
-export const WrongDeclension = {
+export const WrongInflection = {
   args: {
     feedback: [
-      { text: "den", kind: "declension" },
+      { text: "den", kind: "inflection" },
       { text: " Mensch", kind: "none" },
     ],
   },
