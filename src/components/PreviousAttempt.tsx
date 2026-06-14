@@ -1,43 +1,29 @@
+import { Feedback, FeedbackKind } from "../helpers/getAttemptFeedback";
 import { Text } from "@mantine/core";
-import { diffWords } from "diff";
 
-export function PreviousAttempt({
-  expected,
-  received,
-}: {
-  expected: string;
-  received: string;
-}) {
-  const diff = diffWords(received, expected, {
-    intlSegmenter: new Intl.Segmenter("de-DE", { granularity: "word" }),
-  });
+function getFeedbackKindColor(kind: FeedbackKind): string {
+  switch (kind) {
+    case "none":
+      return "green";
+    case "capitalization":
+      return "yellow";
+    case "declension":
+      return "orange";
+    case "unknown":
+      return "red";
+    default:
+      throw new Error(`Unhandled feedback kind: ${kind satisfies never}`);
+  }
+}
 
+export function PreviousAttempt({ feedback }: { feedback: Feedback[] }) {
   return (
     <Text>
-      {diff.map((item, index) => {
-        // Added segments belong to the expected answer, not what the user
-        // typed, so we never render them on their own.
-        if (item.added) return null;
-
-        const color = (() => {
-          if (!item.removed) return "green";
-
-          // A removed segment is immediately followed by its added
-          // counterpart when the word was changed. If they match
-          // case-insensitively, the only mistake was capitalization.
-          const next = diff[index + 1];
-          const capitalizationOnly =
-            next?.added &&
-            next.value.toLowerCase() === item.value.toLowerCase();
-          return capitalizationOnly ? "yellow" : "red";
-        })();
-
-        return (
-          <span key={index} style={{ color }}>
-            {item.value}
-          </span>
-        );
-      })}
+      {feedback.map((item, index) => (
+        <span key={index} style={{ color: getFeedbackKindColor(item.kind) }}>
+          {item.text}
+        </span>
+      ))}
     </Text>
   );
 }

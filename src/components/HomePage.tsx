@@ -1,8 +1,9 @@
+import { createRandomProblemState } from "../helpers/createRandomProblemState";
+import { getAttemptFeedback } from "../helpers/getAttemptFeedback";
 import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
 import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
 import { PartsAccordion } from "./PartsAccordion";
 import { PreviousAttempt } from "./PreviousAttempt";
-import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import {
   AppShell,
   Button,
@@ -139,8 +140,10 @@ export function HomePage() {
               </Modal>
               {problemState.previousGuess !== null && (
                 <PreviousAttempt
-                  received={problemState.previousGuess}
-                  expected={problemState.problem.solution}
+                  feedback={getAttemptFeedback({
+                    received: problemState.previousGuess,
+                    problem: problemState.problem,
+                  })}
                 />
               )}
               <PartsAccordion

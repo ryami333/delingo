@@ -4,19 +4,34 @@ import type { Meta, StoryObj } from "@storybook/tanstack-react";
 const meta = {
   title: "Components/PreviousAttempt",
   component: PreviousAttempt,
-  args: {
-    received: "mein Man",
-    expected: "mein Mann",
-  },
+  args: {},
 } satisfies Meta<typeof PreviousAttempt>;
 
 export default meta;
 
-export const Default = {} satisfies StoryObj<typeof meta>;
-
-export const CapitalizationOnly = {
+export const Default = {
   args: {
-    received: "mein mann",
-    expected: "mein Mann",
+    feedback: [
+      { text: "mein ", kind: "none" },
+      { text: "Man", kind: "unknown" },
+    ],
+  },
+} satisfies StoryObj<typeof meta>;
+
+export const Capitalization = {
+  args: {
+    feedback: [
+      { text: "mein ", kind: "none" },
+      { text: "mann", kind: "capitalization" },
+    ],
+  },
+} satisfies StoryObj<typeof meta>;
+
+export const WrongDeclension = {
+  args: {
+    feedback: [
+      { text: "den", kind: "declension" },
+      { text: " Mensch", kind: "none" },
+    ],
   },
 } satisfies StoryObj<typeof meta>;
