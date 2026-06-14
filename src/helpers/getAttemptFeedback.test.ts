@@ -19,7 +19,7 @@ describe("getAttemptFeedback", () => {
         problem: { solution: "mein Mann", problemParts: [] },
       });
 
-      expect(feedback).toEqual([{ text: "mein Mann", problem: "none" }]);
+      expect(feedback).toEqual([{ text: "mein Mann", kind: "none" }]);
     });
   });
 
@@ -33,7 +33,7 @@ describe("getAttemptFeedback", () => {
       const mann = feedback.find(
         (item) => item.text.trim().toLowerCase() === "mann",
       );
-      expect(mann?.problem).toBe("capitalization");
+      expect(mann?.kind).toBe("capitalization");
     });
   });
 
@@ -54,7 +54,7 @@ describe("getAttemptFeedback", () => {
       const article = feedback.find(
         (item) => item.text.trim().toLowerCase() === "den",
       );
-      expect(article?.problem).toBe("declination");
+      expect(article?.kind).toBe("declination");
     });
 
     test("the matched word in the answer carries no problem", () => {
@@ -72,7 +72,7 @@ describe("getAttemptFeedback", () => {
       const noun = feedback.find(
         (item) => item.text.trim().toLowerCase() === "mensch",
       );
-      expect(noun?.problem).toBe("none");
+      expect(noun?.kind).toBe("none");
     });
 
     test("an inflection not belonging to the expected slot's paradigm is unknown", () => {
@@ -93,7 +93,7 @@ describe("getAttemptFeedback", () => {
       const wrong = feedback.find(
         (item) => item.text.trim().toLowerCase() === "den",
       );
-      expect(wrong?.problem).toBe("unknown");
+      expect(wrong?.kind).toBe("unknown");
     });
   });
 
@@ -113,7 +113,7 @@ describe("getAttemptFeedback", () => {
       const wrong = feedback.find(
         (item) => item.text.trim().toLowerCase() === "xyz",
       );
-      expect(wrong?.problem).toBe("unknown");
+      expect(wrong?.kind).toBe("unknown");
     });
 
     test("an extra word with no expected counterpart is unknown", () => {
@@ -131,7 +131,7 @@ describe("getAttemptFeedback", () => {
       const extra = feedback.find(
         (item) => item.text.trim().toLowerCase() === "extra",
       );
-      expect(extra?.problem).toBe("unknown");
+      expect(extra?.kind).toBe("unknown");
     });
 
     test("a misspelling cannot be classified without a paradigm, so it is unknown", () => {
@@ -143,7 +143,7 @@ describe("getAttemptFeedback", () => {
       const misspelled = feedback.find(
         (item) => item.text.trim().toLowerCase() === "man",
       );
-      expect(misspelled?.problem).toBe("unknown");
+      expect(misspelled?.kind).toBe("unknown");
     });
   });
 

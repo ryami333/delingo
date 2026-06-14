@@ -1,18 +1,26 @@
 import { Feedback, FeedbackKind } from "../helpers/getAttemptFeedback";
 import { Text } from "@mantine/core";
 
-const colorByProblem: Record<FeedbackKind, string> = {
-  none: "green",
-  capitalization: "yellow",
-  declination: "orange",
-  unknown: "red",
-};
+function getFeedbackKindColor(kind: FeedbackKind): string {
+  switch (kind) {
+    case "none":
+      return "green";
+    case "capitalization":
+      return "yellow";
+    case "declination":
+      return "orange";
+    case "unknown":
+      return "red";
+    default:
+      throw new Error(`Unhandled feedback kind: ${kind satisfies never}`);
+  }
+}
 
 export function PreviousAttempt({ feedback }: { feedback: Feedback[] }) {
   return (
     <Text>
       {feedback.map((item, index) => (
-        <span key={index} style={{ color: colorByProblem[item.kind] }}>
+        <span key={index} style={{ color: getFeedbackKindColor(item.kind) }}>
           {item.text}
         </span>
       ))}
