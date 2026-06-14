@@ -4060,6 +4060,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"delingo@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "delingo@workspace:."
+  dependencies:
+    "@mantine/core": "npm:^9.3.1"
+    "@mantine/hooks": "npm:^9.3.1"
+    "@mantine/notifications": "npm:^9.3.1"
+    "@rolldown/plugin-babel": "npm:^0.2.3"
+    "@storybook/addon-links": "npm:^10.4.4"
+    "@storybook/tanstack-react": "npm:10.4.4"
+    "@t3-oss/env-core": "npm:^0.13.11"
+    "@tabler/icons-react": "npm:^3.44.0"
+    "@tanstack/react-router": "npm:^1.170.15"
+    "@tanstack/react-start": "npm:^1.168.25"
+    "@tanstack/router-plugin": "npm:^1.168.18"
+    "@total-typescript/ts-reset": "npm:^0.6.1"
+    "@trivago/prettier-plugin-sort-imports": "npm:^6.0.2"
+    "@types/lodash": "npm:^4.17.24"
+    "@types/node": "npm:24.13.2"
+    "@types/react": "npm:^19.2.17"
+    "@types/react-dom": "npm:^19.2.3"
+    "@vitejs/plugin-react": "npm:^6.0.2"
+    autoprefixer: "npm:^10.5.0"
+    babel-plugin-react-compiler: "npm:^1.0.0"
+    classnames: "npm:^2.5.1"
+    diff: "npm:^8.0.4"
+    eslint: "npm:10.5.0"
+    eslint-plugin-storybook: "npm:10.4.4"
+    lodash: "npm:^4.18.1"
+    mongodb: "npm:^7.3.0"
+    nitro: "npm:^3.0.260610-beta"
+    postcss: "npm:^8.5.15"
+    postcss-preset-env: "npm:^11.3.0"
+    prettier: "npm:^3.8.4"
+    prettier-plugin-css-order: "npm:^2.2.0"
+    react: "npm:^19.2.7"
+    react-dom: "npm:^19.2.7"
+    sharp: "npm:^0.34.5"
+    storybook: "npm:^10.4.4"
+    temporal-polyfill: "npm:^0.3.2"
+    typescript: "npm:^6.0.3"
+    typescript-eslint: "npm:^8.61.0"
+    vite: "npm:^8.0.16"
+    vitest: "npm:^4.1.8"
+    zod: "npm:^4.4.3"
+  languageName: unknown
+  linkType: soft
+
 "detect-libc@npm:^2.0.3, detect-libc@npm:^2.1.2":
   version: 2.1.2
   resolution: "detect-libc@npm:2.1.2"
@@ -5309,54 +5357,6 @@ __metadata:
   checksum: 10c0/5aad75ab0090b8266069c9aabe582c021ae53eb33c6c691054a13a45db3b4f91a7fb1bd79151e6b4e9e9a86727b522527c0a06ec7d45206b745d54cd3097bcec
   languageName: node
   linkType: hard
-
-"mitchs-record-club@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "mitchs-record-club@workspace:."
-  dependencies:
-    "@mantine/core": "npm:^9.3.1"
-    "@mantine/hooks": "npm:^9.3.1"
-    "@mantine/notifications": "npm:^9.3.1"
-    "@rolldown/plugin-babel": "npm:^0.2.3"
-    "@storybook/addon-links": "npm:^10.4.4"
-    "@storybook/tanstack-react": "npm:10.4.4"
-    "@t3-oss/env-core": "npm:^0.13.11"
-    "@tabler/icons-react": "npm:^3.44.0"
-    "@tanstack/react-router": "npm:^1.170.15"
-    "@tanstack/react-start": "npm:^1.168.25"
-    "@tanstack/router-plugin": "npm:^1.168.18"
-    "@total-typescript/ts-reset": "npm:^0.6.1"
-    "@trivago/prettier-plugin-sort-imports": "npm:^6.0.2"
-    "@types/lodash": "npm:^4.17.24"
-    "@types/node": "npm:24.13.2"
-    "@types/react": "npm:^19.2.17"
-    "@types/react-dom": "npm:^19.2.3"
-    "@vitejs/plugin-react": "npm:^6.0.2"
-    autoprefixer: "npm:^10.5.0"
-    babel-plugin-react-compiler: "npm:^1.0.0"
-    classnames: "npm:^2.5.1"
-    diff: "npm:^8.0.4"
-    eslint: "npm:10.5.0"
-    eslint-plugin-storybook: "npm:10.4.4"
-    lodash: "npm:^4.18.1"
-    mongodb: "npm:^7.3.0"
-    nitro: "npm:^3.0.260610-beta"
-    postcss: "npm:^8.5.15"
-    postcss-preset-env: "npm:^11.3.0"
-    prettier: "npm:^3.8.4"
-    prettier-plugin-css-order: "npm:^2.2.0"
-    react: "npm:^19.2.7"
-    react-dom: "npm:^19.2.7"
-    sharp: "npm:^0.34.5"
-    storybook: "npm:^10.4.4"
-    temporal-polyfill: "npm:^0.3.2"
-    typescript: "npm:^6.0.3"
-    typescript-eslint: "npm:^8.61.0"
-    vite: "npm:^8.0.16"
-    vitest: "npm:^4.1.8"
-    zod: "npm:^4.4.3"
-  languageName: unknown
-  linkType: soft
 
 "mongodb-connection-string-url@npm:^7.0.0":
   version: 7.0.1
