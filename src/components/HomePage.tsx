@@ -2,7 +2,7 @@ import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import { getAttemptFeedback } from "../helpers/getAttemptFeedback";
 import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
 import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
-import { PartsAccordion } from "./PartsAccordion";
+import { PartsPopovers } from "./PartsPopovers";
 import { PreviousAttempt } from "./PreviousAttempt";
 import {
   AppShell,
@@ -146,8 +146,8 @@ export function HomePage() {
                   })}
                 />
               )}
-              <PartsAccordion
-                key={`accordion-${problemState.problem.uuid}`}
+              <PartsPopovers
+                key={`parts-${problemState.problem.uuid}`}
                 parts={problemState.problem.problemParts}
               />
             </Stack>

@@ -5,12 +5,12 @@ import {
   findPronoun,
   findWechselPreposition,
 } from "../helpers/testHelpers";
-import { PartsAccordion } from "./PartsAccordion";
+import { PartsPopovers } from "./PartsPopovers";
 import type { Meta, StoryObj } from "@storybook/tanstack-react";
 
 const meta = {
-  title: "Components/PartsAccordion",
-  component: PartsAccordion,
+  title: "Components/PartsPopovers",
+  component: PartsPopovers,
   args: {
     parts: [
       ["she", findPronoun("she")],
@@ -20,7 +20,7 @@ const meta = {
       ["day", findNoun("day")],
     ],
   },
-} satisfies Meta<typeof PartsAccordion>;
+} satisfies Meta<typeof PartsPopovers>;
 
 export default meta;
 
