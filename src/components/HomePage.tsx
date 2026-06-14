@@ -1,4 +1,5 @@
 import { createRandomProblemState } from "../helpers/createRandomProblemState";
+import { getAttemptFeedback } from "../helpers/getAttemptFeedback";
 import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
 import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
 import { PartsAccordion } from "./PartsAccordion";
@@ -139,8 +140,10 @@ export function HomePage() {
               </Modal>
               {problemState.previousGuess !== null && (
                 <PreviousAttempt
-                  received={problemState.previousGuess}
-                  problem={problemState.problem}
+                  feedback={getAttemptFeedback({
+                    received: problemState.previousGuess,
+                    problem: problemState.problem,
+                  })}
                 />
               )}
               <PartsAccordion
