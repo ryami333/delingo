@@ -4,10 +4,10 @@ import {
 } from "../helpers/lexicon/pronounSchema";
 
 const disambiguatorLabels: Record<PronounDisambiguator, string> = {
-  plural: "👥",
-  singular: "👤",
-  formal: "f.",
-  informal: "inf.",
+  plural: "plural",
+  singular: "singular",
+  formal: "formal",
+  informal: "informal",
 };
 
 export function EnglishFormattedPronoun({
