@@ -1,4 +1,7 @@
-import { Pronoun, PronounDisambiguator } from "../helpers/pronounSchema";
+import {
+  Pronoun,
+  PronounDisambiguator,
+} from "../helpers/lexicon/pronounSchema";
 
 const disambiguatorLabels: Record<PronounDisambiguator, string> = {
   plural: "👥",

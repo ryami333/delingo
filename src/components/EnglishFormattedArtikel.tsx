@@ -1,4 +1,7 @@
-import { Artikel, ArtikelDisambiguator } from "../helpers/artikelSchema";
+import {
+  Artikel,
+  ArtikelDisambiguator,
+} from "../helpers/lexicon/artikelSchema";
 
 const disambiguatorLabels: Record<ArtikelDisambiguator, string> = {
   plural: "👥",

@@ -1,8 +1,8 @@
-import { Artikel } from "../artikelSchema";
-import { IntransitiveVerb } from "../intransitiveVerbSchema";
-import { Noun } from "../nounSchema";
-import { Preposition } from "../prepositionSchema";
-import { Pronoun } from "../pronounSchema";
+import { Artikel } from "../lexicon/artikelSchema";
+import { IntransitiveVerb } from "../lexicon/intransitiveVerbSchema";
+import { Noun } from "../lexicon/nounSchema";
+import { Preposition } from "../lexicon/prepositionSchema";
+import { Pronoun } from "../lexicon/pronounSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 

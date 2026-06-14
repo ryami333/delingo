@@ -1,5 +1,5 @@
-import { Artikel } from "../artikelSchema";
-import { Noun } from "../nounSchema";
+import { Artikel } from "../lexicon/artikelSchema";
+import { Noun } from "../lexicon/nounSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 

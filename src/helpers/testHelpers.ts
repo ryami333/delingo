@@ -1,16 +1,19 @@
-import { artikelSchema, artikels } from "./artikelSchema";
+import { artikelSchema, artikels } from "./lexicon/artikelSchema";
 import {
   intransitiveVerbSchema,
   intransitiveVerbs,
-} from "./intransitiveVerbSchema";
-import { nounSchema, nouns } from "./nounSchema";
-import { prepositionSchema, prepositions } from "./prepositionSchema";
-import { pronounSchema, pronouns } from "./pronounSchema";
-import { transitiveVerbSchema, transitiveVerbs } from "./transitiveVerbSchema";
+} from "./lexicon/intransitiveVerbSchema";
+import { nounSchema, nouns } from "./lexicon/nounSchema";
+import { prepositionSchema, prepositions } from "./lexicon/prepositionSchema";
+import { pronounSchema, pronouns } from "./lexicon/pronounSchema";
+import {
+  transitiveVerbSchema,
+  transitiveVerbs,
+} from "./lexicon/transitiveVerbSchema";
 import {
   wechselPrepositions,
   wechselprepositionSchema,
-} from "./wechselprepositionSchema";
+} from "./lexicon/wechselprepositionSchema";
 
 export function findArtikel(english: string) {
   return artikelSchema.parse(artikels.find((item) => item.english === english));

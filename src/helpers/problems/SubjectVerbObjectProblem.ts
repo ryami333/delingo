@@ -1,7 +1,7 @@
-import { Artikel } from "../artikelSchema";
-import { Noun } from "../nounSchema";
-import { Pronoun } from "../pronounSchema";
-import { TransitiveVerb } from "../transitiveVerbSchema";
+import { Artikel } from "../lexicon/artikelSchema";
+import { Noun } from "../lexicon/nounSchema";
+import { Pronoun } from "../lexicon/pronounSchema";
+import { TransitiveVerb } from "../lexicon/transitiveVerbSchema";
 import { AbstractProblem, ProblemPart } from "./AbstractProblem";
 import capitalize from "lodash/capitalize";
 

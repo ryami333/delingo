@@ -1,10 +1,10 @@
-import { Artikel } from "../artikelSchema";
-import { IntransitiveVerb } from "../intransitiveVerbSchema";
-import { Noun } from "../nounSchema";
-import { Preposition } from "../prepositionSchema";
-import { Pronoun } from "../pronounSchema";
-import { TransitiveVerb } from "../transitiveVerbSchema";
-import { Wechselpreposition } from "../wechselprepositionSchema";
+import { Artikel } from "../lexicon/artikelSchema";
+import { IntransitiveVerb } from "../lexicon/intransitiveVerbSchema";
+import { Noun } from "../lexicon/nounSchema";
+import { Preposition } from "../lexicon/prepositionSchema";
+import { Pronoun } from "../lexicon/pronounSchema";
+import { TransitiveVerb } from "../lexicon/transitiveVerbSchema";
+import { Wechselpreposition } from "../lexicon/wechselprepositionSchema";
 
 export type Entity =
   | Noun
