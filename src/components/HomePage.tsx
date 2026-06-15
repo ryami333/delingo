@@ -1,8 +1,6 @@
 import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import { getAttemptFeedback } from "../helpers/getAttemptFeedback";
-import { EnglishFormattedArtikel } from "./EnglishFormattedArtikel";
-import { EnglishFormattedPronoun } from "./EnglishFormattedPronoun";
-import { PartsAccordion } from "./PartsAccordion";
+import { PartsPopovers } from "./PartsPopovers";
 import { PreviousAttempt } from "./PreviousAttempt";
 import {
   AppShell,
@@ -68,42 +66,11 @@ export function HomePage() {
         <Center>
           <div style={{ width: "min(100%, 600px)" }}>
             <Stack align="stretch" gap="xl">
-              <Title>
-                <Center>
-                  <span style={{ whiteSpace: "pre" }}>
-                    {problemState.problem.problemParts.map(
-                      (problemPart, index) => (
-                        <>
-                          {index !== 0 && " "}
-                          {(() => {
-                            const [word, entity] = problemPart;
-                            switch (entity.__type) {
-                              case "artikel": {
-                                return (
-                                  <EnglishFormattedArtikel
-                                    contextualWord={word}
-                                    artikel={entity}
-                                  />
-                                );
-                              }
-                              case "pronoun": {
-                                return (
-                                  <EnglishFormattedPronoun
-                                    contextualWord={word}
-                                    pronoun={entity}
-                                  />
-                                );
-                              }
-                              default:
-                                return <span>{word}</span>;
-                            }
-                          })()}
-                        </>
-                      ),
-                    )}
-                  </span>
-                </Center>
-              </Title>
+              <PartsPopovers
+                key={`parts-${problemState.problem.uuid}`}
+                parts={problemState.problem.problemParts}
+                showHints={true}
+              />
               <form
                 onSubmit={onSubmit}
                 key={`form-${problemState.problem.uuid}`}
@@ -146,10 +113,6 @@ export function HomePage() {
                   })}
                 />
               )}
-              <PartsAccordion
-                key={`accordion-${problemState.problem.uuid}`}
-                parts={problemState.problem.problemParts}
-              />
             </Stack>
           </div>
         </Center>
