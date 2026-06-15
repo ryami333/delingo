@@ -75,7 +75,7 @@ export function PartsPopovers({
       {parts.map(([word, entity], index) => (
         <Popover key={index} closeOnEscape={true}>
           <Popover.Target>
-            <Button variant="outline">
+            <Button variant="outline" size="md">
               <PartLabel word={word} entity={entity} />
               {showHints && getEntityHints(entity).map((hint) => ` • ${hint}`)}
             </Button>
