@@ -118,7 +118,11 @@ export function HomePage() {
                   })}
                 />
               )}
-              {settings.showCheatSheet && <CheatSheet />}
+              {settings.showCheatSheet && (
+                <Center>
+                  <CheatSheet />
+                </Center>
+              )}
             </Stack>
           </div>
         </Center>
