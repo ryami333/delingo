@@ -1,6 +1,7 @@
 import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import { getAttemptFeedback } from "../helpers/getAttemptFeedback";
 import { useSettings } from "../helpers/useSettings";
+import { CheatSheet } from "./CheatSheet";
 import { PartsPopovers } from "./PartsPopovers";
 import { PreviousAttempt } from "./PreviousAttempt";
 import { SettingsMenu } from "./SettingsMenu";
@@ -117,6 +118,7 @@ export function HomePage() {
                   })}
                 />
               )}
+              <CheatSheet />
             </Stack>
           </div>
         </Center>
