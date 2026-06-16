@@ -35,7 +35,6 @@ src/
   components/           # React components
   helpers/
     problems/           # Problem generation (AbstractProblem, NominalProblem, SubjectVerbObjectProblem)
-    env.mjs             # Type-safe env vars (t3-oss/env-core)
     *.json              # Data files (nouns, artikels, pronouns, verbs)
     *Schema.ts          # Zod schemas for data files
 vite.config.ts          # Vite + Nitro + TanStack Start + React plugins
@@ -43,7 +42,6 @@ vite.config.ts          # Vite + Nitro + TanStack Start + React plugins
 
 ## Code Conventions
 
-- **Environment variables**: Always use `src/helpers/env.mjs` — never access `process.env` directly (enforced by ESLint rule).
 - **Routing**: File-based routing via TanStack Router. Route groups use parentheses: `(frontend)`. SSR is disabled (`ssr: false` on the root route).
 - **Imports**: Prettier auto-sorts imports — non-CSS imports first, then CSS imports.
 - **CSS**: CSS Modules for component styles (`.module.css`). PostCSS with CSS nesting enabled. Prettier sorts CSS declarations.

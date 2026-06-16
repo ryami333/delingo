@@ -1,0 +1,73 @@
+# Builds the app as a static SPA and deploys it to GitHub Pages.
+#
+# ▶️ Triggers
+#   • Every push to `main` (auto-deploy)
+#   • Manually via the "Run workflow" button (workflow_dispatch)
+#
+# 🛠️ One-time setup (in the repo on GitHub):
+#   Settings → Pages → "Build and deployment" → Source: "GitHub Actions"
+#
+# The site is served from https://ryami333.github.io/delingo/ — the `/delingo/`
+# base path is configured in vite.config.ts. If you switch to a custom domain
+# (served from the root), change that `base` back to "/".
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Permissions required by the GitHub Pages deployment action.
+permissions:
+  contents: read # checkout
+  pages: write # deploy to Pages
+  id-token: write # OIDC token for deploy-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: "package.json"
+          cache: "yarn"
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Add SPA deep-link fallback
+        # The build emits the SPA shell as index.html. GitHub Pages has no server
+        # to rewrite unknown routes, so serve the same shell as 404.html — it
+        # boots the client-side router, which then resolves the requested path.
+        run: cp .output/public/index.html .output/public/404.html
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
