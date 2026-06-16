@@ -68,5 +68,15 @@
     "preposition": "außer",
     "english": "except",
     "form": "dativ"
+  },
+  {
+    "preposition": "bis",
+    "english": "until",
+    "form": "akkusativ"
+  },
+  {
+    "preposition": "ab",
+    "english": "as of",
+    "form": "dativ"
   }
 ]

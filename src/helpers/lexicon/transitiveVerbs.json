@@ -220,6 +220,61 @@
     }
   },
   {
+    "verb": "fragen",
+    "english": "ask",
+    "englishThirdSingular": "asks",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "frage", "plural": "fragen" },
+      "secondPerson": { "singular": "fragst", "plural": "fragt" },
+      "thirdPerson": { "singular": "fragt", "plural": "fragen" }
+    }
+  },
+  {
+    "verb": "bringen",
+    "english": "bring",
+    "englishThirdSingular": "brings",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "bringe", "plural": "bringen" },
+      "secondPerson": { "singular": "bringst", "plural": "bringt" },
+      "thirdPerson": { "singular": "bringt", "plural": "bringen" }
+    }
+  },
+  {
+    "verb": "tragen",
+    "english": "carry",
+    "englishThirdSingular": "carries",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "trage", "plural": "tragen" },
+      "secondPerson": { "singular": "trägst", "plural": "tragt" },
+      "thirdPerson": { "singular": "trägt", "plural": "tragen" }
+    }
+  },
+  {
+    "verb": "lesen",
+    "english": "read",
+    "englishThirdSingular": "reads",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "lese", "plural": "lesen" },
+      "secondPerson": { "singular": "liest", "plural": "lest" },
+      "thirdPerson": { "singular": "liest", "plural": "lesen" }
+    }
+  },
+  {
+    "verb": "schreiben",
+    "english": "write",
+    "englishThirdSingular": "writes",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "schreibe", "plural": "schreiben" },
+      "secondPerson": { "singular": "schreibst", "plural": "schreibt" },
+      "thirdPerson": { "singular": "schreibt", "plural": "schreiben" }
+    }
+  },
+  {
     "verb": "sein",
     "english": "am / are / is",
     "englishThirdSingular": "is",

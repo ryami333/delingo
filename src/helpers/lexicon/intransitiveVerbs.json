@@ -141,5 +141,60 @@
       "secondPerson": { "singular": "arbeitest", "plural": "arbeitet" },
       "thirdPerson": { "singular": "arbeitet", "plural": "arbeiten" }
     }
+  },
+  {
+    "verb": "fallen",
+    "direction": "directional",
+    "english": "fall",
+    "englishThirdSingular": "falls",
+    "conjugation": {
+      "firstPerson": { "singular": "falle", "plural": "fallen" },
+      "secondPerson": { "singular": "fällst", "plural": "fallt" },
+      "thirdPerson": { "singular": "fällt", "plural": "fallen" }
+    }
+  },
+  {
+    "verb": "springen",
+    "direction": "directional",
+    "english": "jump",
+    "englishThirdSingular": "jumps",
+    "conjugation": {
+      "firstPerson": { "singular": "springe", "plural": "springen" },
+      "secondPerson": { "singular": "springst", "plural": "springt" },
+      "thirdPerson": { "singular": "springt", "plural": "springen" }
+    }
+  },
+  {
+    "verb": "steigen",
+    "direction": "directional",
+    "english": "climb",
+    "englishThirdSingular": "climbs",
+    "conjugation": {
+      "firstPerson": { "singular": "steige", "plural": "steigen" },
+      "secondPerson": { "singular": "steigst", "plural": "steigt" },
+      "thirdPerson": { "singular": "steigt", "plural": "steigen" }
+    }
+  },
+  {
+    "verb": "warten",
+    "direction": "locative",
+    "english": "wait",
+    "englishThirdSingular": "waits",
+    "conjugation": {
+      "firstPerson": { "singular": "warte", "plural": "warten" },
+      "secondPerson": { "singular": "wartest", "plural": "wartet" },
+      "thirdPerson": { "singular": "wartet", "plural": "warten" }
+    }
+  },
+  {
+    "verb": "hängen",
+    "direction": "locative",
+    "english": "hang",
+    "englishThirdSingular": "hangs",
+    "conjugation": {
+      "firstPerson": { "singular": "hänge", "plural": "hängen" },
+      "secondPerson": { "singular": "hängst", "plural": "hängt" },
+      "thirdPerson": { "singular": "hängt", "plural": "hängen" }
+    }
   }
 ]

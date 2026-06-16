@@ -118,5 +118,45 @@
     "nominativ": { "singular": "Auge", "plural": "Augen" },
     "akkusativ": { "singular": "Auge", "plural": "Augen" },
     "dativ": { "singular": "Auge", "plural": "Augen" }
+  },
+  {
+    "gender": "m",
+    "english": "way",
+    "pluralEnglish": "ways",
+    "nominativ": { "singular": "Weg", "plural": "Wege" },
+    "akkusativ": { "singular": "Weg", "plural": "Wege" },
+    "dativ": { "singular": "Weg", "plural": "Wegen" }
+  },
+  {
+    "gender": "n",
+    "english": "book",
+    "pluralEnglish": "books",
+    "nominativ": { "singular": "Buch", "plural": "Bücher" },
+    "akkusativ": { "singular": "Buch", "plural": "Bücher" },
+    "dativ": { "singular": "Buch", "plural": "Büchern" }
+  },
+  {
+    "gender": "f",
+    "english": "week",
+    "pluralEnglish": "weeks",
+    "nominativ": { "singular": "Woche", "plural": "Wochen" },
+    "akkusativ": { "singular": "Woche", "plural": "Wochen" },
+    "dativ": { "singular": "Woche", "plural": "Wochen" }
+  },
+  {
+    "gender": "n",
+    "english": "car",
+    "pluralEnglish": "cars",
+    "nominativ": { "singular": "Auto", "plural": "Autos" },
+    "akkusativ": { "singular": "Auto", "plural": "Autos" },
+    "dativ": { "singular": "Auto", "plural": "Autos" }
+  },
+  {
+    "gender": "f",
+    "english": "hour",
+    "pluralEnglish": "hours",
+    "nominativ": { "singular": "Stunde", "plural": "Stunden" },
+    "akkusativ": { "singular": "Stunde", "plural": "Stunden" },
+    "dativ": { "singular": "Stunde", "plural": "Stunden" }
   }
 ]
