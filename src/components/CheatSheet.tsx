@@ -17,120 +17,120 @@ export function CheatSheet() {
   return (
     <Table striped highlightOnHover withTableBorder withColumnBorders>
       <Table.Tbody>
-        <Table.Tr>
+        <Table.Tr className={cx("m")}>
           <Table.Td rowSpan={4}>Nominativ</Table.Td>
           <Table.Td>m</Table.Td>
           <Table.Td>
             <Word stem="kein" /> <Word stem="neu" ending="er" />{" "}
-            <Word stem="Film" />
+            <Word stem="Brief" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("n")}>
           <Table.Td>n</Table.Td>
           <Table.Td>
             <Word stem="kein" /> <Word stem="neu" ending="es" />{" "}
-            <Word stem="Buch" />
+            <Word stem="Bild" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("f")}>
           <Table.Td>f</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="e" /> <Word stem="neu" ending="e" />{" "}
-            <Word stem="Serie" />
+            <Word stem="Karte" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("pl")}>
           <Table.Td>pl</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="e" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Filme" />
+            <Word stem="Briefe" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("m")}>
           <Table.Td rowSpan={4}>Akkusativ</Table.Td>
           <Table.Td>m</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="en" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Film" />
+            <Word stem="Brief" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("n")}>
           <Table.Td>n</Table.Td>
           <Table.Td>
             <Word stem="kein" /> <Word stem="neu" ending="es" />{" "}
-            <Word stem="Buch" />
+            <Word stem="Bild" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("f")}>
           <Table.Td>f</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="e" /> <Word stem="neu" ending="e" />{" "}
-            <Word stem="Serie" />
+            <Word stem="Karte" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("pl")}>
           <Table.Td>pl</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="e" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Filme" />
+            <Word stem="Briefe" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("m")}>
           <Table.Td rowSpan={4}>Dativ</Table.Td>
           <Table.Td>m</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="em" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Film" />
+            <Word stem="Brief" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("n")}>
           <Table.Td>n</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="em" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Buch" />
+            <Word stem="Bild" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("f")}>
           <Table.Td>f</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Serie" />
+            <Word stem="Karte" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("pl")}>
           <Table.Td>pl</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="en" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Filme" ending="n" />
+            <Word stem="Briefe" ending="n" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("m")}>
           <Table.Td rowSpan={4}>Genitiv</Table.Td>
           <Table.Td>m</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="es" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Film" ending="s" />
+            <Word stem="Brief" ending="s" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("n")}>
           <Table.Td>n</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="es" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Buch" ending="es" />
+            <Word stem="Bild" ending="es" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("f")}>
           <Table.Td>f</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Serie" />
+            <Word stem="Karte" />
           </Table.Td>
         </Table.Tr>
-        <Table.Tr>
+        <Table.Tr className={cx("pl")}>
           <Table.Td>pl</Table.Td>
           <Table.Td>
             <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
-            <Word stem="Filme" />
+            <Word stem="Briefe" />
           </Table.Td>
         </Table.Tr>
       </Table.Tbody>

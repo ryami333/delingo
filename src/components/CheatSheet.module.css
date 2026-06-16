@@ -1,4 +1,22 @@
 .word-ending {
+  color: var(--ending-color);
   font-weight: bold;
   text-decoration: underline;
+}
+
+/* Ending colors keyed to gender/number, per the article legend. */
+.m {
+  --ending-color: var(--mantine-color-cyan-6);
+}
+
+.n {
+  --ending-color: var(--mantine-color-grape-6);
+}
+
+.f {
+  --ending-color: var(--mantine-color-orange-6);
+}
+
+.pl {
+  --ending-color: var(--mantine-color-pink-6);
 }
