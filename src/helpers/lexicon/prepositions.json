@@ -43,5 +43,30 @@
     "preposition": "zu",
     "english": "to",
     "form": "dativ"
+  },
+  {
+    "preposition": "bei",
+    "english": "at",
+    "form": "dativ"
+  },
+  {
+    "preposition": "nach",
+    "english": "after",
+    "form": "dativ"
+  },
+  {
+    "preposition": "seit",
+    "english": "since",
+    "form": "dativ"
+  },
+  {
+    "preposition": "gegenüber",
+    "english": "opposite",
+    "form": "dativ"
+  },
+  {
+    "preposition": "außer",
+    "english": "except",
+    "form": "dativ"
   }
 ]

@@ -78,5 +78,45 @@
     "nominativ": { "singular": "Haus", "plural": "Häuser" },
     "akkusativ": { "singular": "Haus", "plural": "Häuser" },
     "dativ": { "singular": "Haus", "plural": "Häusern" }
+  },
+  {
+    "gender": "n",
+    "english": "life",
+    "pluralEnglish": "lives",
+    "nominativ": { "singular": "Leben", "plural": "Leben" },
+    "akkusativ": { "singular": "Leben", "plural": "Leben" },
+    "dativ": { "singular": "Leben", "plural": "Leben" }
+  },
+  {
+    "gender": "f",
+    "english": "question",
+    "pluralEnglish": "questions",
+    "nominativ": { "singular": "Frage", "plural": "Fragen" },
+    "akkusativ": { "singular": "Frage", "plural": "Fragen" },
+    "dativ": { "singular": "Frage", "plural": "Fragen" }
+  },
+  {
+    "gender": "m",
+    "english": "friend",
+    "pluralEnglish": "friends",
+    "nominativ": { "singular": "Freund", "plural": "Freunde" },
+    "akkusativ": { "singular": "Freund", "plural": "Freunde" },
+    "dativ": { "singular": "Freund", "plural": "Freunden" }
+  },
+  {
+    "gender": "f",
+    "english": "city",
+    "pluralEnglish": "cities",
+    "nominativ": { "singular": "Stadt", "plural": "Städte" },
+    "akkusativ": { "singular": "Stadt", "plural": "Städte" },
+    "dativ": { "singular": "Stadt", "plural": "Städten" }
+  },
+  {
+    "gender": "n",
+    "english": "eye",
+    "pluralEnglish": "eyes",
+    "nominativ": { "singular": "Auge", "plural": "Augen" },
+    "akkusativ": { "singular": "Auge", "plural": "Augen" },
+    "dativ": { "singular": "Auge", "plural": "Augen" }
   }
 ]

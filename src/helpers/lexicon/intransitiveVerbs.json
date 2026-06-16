@@ -86,5 +86,60 @@
       "secondPerson": { "singular": "liegst", "plural": "liegt" },
       "thirdPerson": { "singular": "liegt", "plural": "liegen" }
     }
+  },
+  {
+    "verb": "fliegen",
+    "direction": "directional",
+    "english": "fly",
+    "englishThirdSingular": "flies",
+    "conjugation": {
+      "firstPerson": { "singular": "fliege", "plural": "fliegen" },
+      "secondPerson": { "singular": "fliegst", "plural": "fliegt" },
+      "thirdPerson": { "singular": "fliegt", "plural": "fliegen" }
+    }
+  },
+  {
+    "verb": "schwimmen",
+    "direction": "directional",
+    "english": "swim",
+    "englishThirdSingular": "swims",
+    "conjugation": {
+      "firstPerson": { "singular": "schwimme", "plural": "schwimmen" },
+      "secondPerson": { "singular": "schwimmst", "plural": "schwimmt" },
+      "thirdPerson": { "singular": "schwimmt", "plural": "schwimmen" }
+    }
+  },
+  {
+    "verb": "wohnen",
+    "direction": "locative",
+    "english": "live",
+    "englishThirdSingular": "lives",
+    "conjugation": {
+      "firstPerson": { "singular": "wohne", "plural": "wohnen" },
+      "secondPerson": { "singular": "wohnst", "plural": "wohnt" },
+      "thirdPerson": { "singular": "wohnt", "plural": "wohnen" }
+    }
+  },
+  {
+    "verb": "schlafen",
+    "direction": "locative",
+    "english": "sleep",
+    "englishThirdSingular": "sleeps",
+    "conjugation": {
+      "firstPerson": { "singular": "schlafe", "plural": "schlafen" },
+      "secondPerson": { "singular": "schläfst", "plural": "schlaft" },
+      "thirdPerson": { "singular": "schläft", "plural": "schlafen" }
+    }
+  },
+  {
+    "verb": "arbeiten",
+    "direction": "locative",
+    "english": "work",
+    "englishThirdSingular": "works",
+    "conjugation": {
+      "firstPerson": { "singular": "arbeite", "plural": "arbeiten" },
+      "secondPerson": { "singular": "arbeitest", "plural": "arbeitet" },
+      "thirdPerson": { "singular": "arbeitet", "plural": "arbeiten" }
+    }
   }
 ]

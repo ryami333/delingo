@@ -165,6 +165,61 @@
     }
   },
   {
+    "verb": "machen",
+    "english": "make",
+    "englishThirdSingular": "makes",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "mache", "plural": "machen" },
+      "secondPerson": { "singular": "machst", "plural": "macht" },
+      "thirdPerson": { "singular": "macht", "plural": "machen" }
+    }
+  },
+  {
+    "verb": "sagen",
+    "english": "say",
+    "englishThirdSingular": "says",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "sage", "plural": "sagen" },
+      "secondPerson": { "singular": "sagst", "plural": "sagt" },
+      "thirdPerson": { "singular": "sagt", "plural": "sagen" }
+    }
+  },
+  {
+    "verb": "geben",
+    "english": "give",
+    "englishThirdSingular": "gives",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "gebe", "plural": "geben" },
+      "secondPerson": { "singular": "gibst", "plural": "gebt" },
+      "thirdPerson": { "singular": "gibt", "plural": "geben" }
+    }
+  },
+  {
+    "verb": "essen",
+    "english": "eat",
+    "englishThirdSingular": "eats",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "esse", "plural": "essen" },
+      "secondPerson": { "singular": "isst", "plural": "esst" },
+      "thirdPerson": { "singular": "isst", "plural": "essen" }
+    }
+  },
+  {
+    "verb": "trinken",
+    "english": "drink",
+    "englishThirdSingular": "drinks",
+    "form": "akkusativ",
+    "conjugation": {
+      "firstPerson": { "singular": "trinke", "plural": "trinken" },
+      "secondPerson": { "singular": "trinkst", "plural": "trinkt" },
+      "thirdPerson": { "singular": "trinkt", "plural": "trinken" }
+    }
+  },
+  {
     "verb": "sein",
     "english": "am / are / is",
     "englishThirdSingular": "is",
