@@ -77,7 +77,7 @@ export function PartsPopovers({
           <Popover.Target>
             <Button variant="outline" size="md">
               <PartLabel word={word} entity={entity} />
-              {showHints && getEntityHints(entity).map((hint) => ` • ${hint}`)}
+              {showHints && getEntityHints(entity).map((hint) => ` • ${hint}`)}
             </Button>
           </Popover.Target>
           <Popover.Dropdown>{getEntitySpoiler(entity)}</Popover.Dropdown>
