@@ -1,3 +1,4 @@
+import { Table } from "@mantine/core";
 import styles from "./CheatSheet.module.css";
 
 const cx = (className: string) => styles[className];
@@ -14,123 +15,125 @@ function Word({ stem, ending }: { stem: string; ending?: string }) {
 
 export function CheatSheet() {
   return (
-    <table>
-      <tr>
-        <td rowSpan={4}>Nominativ</td>
-        <td>m</td>
-        <td>
-          <Word stem="kein" /> <Word stem="neu" ending="er" />{" "}
-          <Word stem="Film" />
-        </td>
-      </tr>
-      <tr>
-        <td>n</td>
-        <td>
-          <Word stem="kein" /> <Word stem="neu" ending="es" />{" "}
-          <Word stem="Buch" />
-        </td>
-      </tr>
-      <tr>
-        <td>f</td>
-        <td>
-          <Word stem="kein" ending="e" /> <Word stem="neu" ending="e" />{" "}
-          <Word stem="Serie" />
-        </td>
-      </tr>
-      <tr>
-        <td>pl</td>
-        <td>
-          <Word stem="kein" ending="e" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Filme" />
-        </td>
-      </tr>
-      <tr>
-        <td rowSpan={4}>Akkusativ</td>
-        <td>m</td>
-        <td>
-          <Word stem="kein" ending="en" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Film" />
-        </td>
-      </tr>
-      <tr>
-        <td>n</td>
-        <td>
-          <Word stem="kein" /> <Word stem="neu" ending="es" />{" "}
-          <Word stem="Buch" />
-        </td>
-      </tr>
-      <tr>
-        <td>f</td>
-        <td>
-          <Word stem="kein" ending="e" /> <Word stem="neu" ending="e" />{" "}
-          <Word stem="Serie" />
-        </td>
-      </tr>
-      <tr>
-        <td>pl</td>
-        <td>
-          <Word stem="kein" ending="e" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Filme" />
-        </td>
-      </tr>
-      <tr>
-        <td rowSpan={4}>Dativ</td>
-        <td>m</td>
-        <td>
-          <Word stem="kein" ending="em" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Film" />
-        </td>
-      </tr>
-      <tr>
-        <td>n</td>
-        <td>
-          <Word stem="kein" ending="em" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Buch" />
-        </td>
-      </tr>
-      <tr>
-        <td>f</td>
-        <td>
-          <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Serie" />
-        </td>
-      </tr>
-      <tr>
-        <td>pl</td>
-        <td>
-          <Word stem="kein" ending="en" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Filme" ending="n" />
-        </td>
-      </tr>
-      <tr>
-        <td rowSpan={4}>Genitiv</td>
-        <td>m</td>
-        <td>
-          <Word stem="kein" ending="es" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Film" ending="s" />
-        </td>
-      </tr>
-      <tr>
-        <td>n</td>
-        <td>
-          <Word stem="kein" ending="es" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Buch" ending="es" />
-        </td>
-      </tr>
-      <tr>
-        <td>f</td>
-        <td>
-          <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Serie" />
-        </td>
-      </tr>
-      <tr>
-        <td>pl</td>
-        <td>
-          <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
-          <Word stem="Filme" />
-        </td>
-      </tr>
-    </table>
+    <Table striped highlightOnHover withTableBorder withColumnBorders>
+      <Table.Tbody>
+        <Table.Tr>
+          <Table.Td rowSpan={4}>Nominativ</Table.Td>
+          <Table.Td>m</Table.Td>
+          <Table.Td>
+            <Word stem="kein" /> <Word stem="neu" ending="er" />{" "}
+            <Word stem="Film" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>n</Table.Td>
+          <Table.Td>
+            <Word stem="kein" /> <Word stem="neu" ending="es" />{" "}
+            <Word stem="Buch" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>f</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="e" /> <Word stem="neu" ending="e" />{" "}
+            <Word stem="Serie" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>pl</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="e" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Filme" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td rowSpan={4}>Akkusativ</Table.Td>
+          <Table.Td>m</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="en" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Film" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>n</Table.Td>
+          <Table.Td>
+            <Word stem="kein" /> <Word stem="neu" ending="es" />{" "}
+            <Word stem="Buch" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>f</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="e" /> <Word stem="neu" ending="e" />{" "}
+            <Word stem="Serie" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>pl</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="e" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Filme" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td rowSpan={4}>Dativ</Table.Td>
+          <Table.Td>m</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="em" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Film" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>n</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="em" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Buch" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>f</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Serie" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>pl</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="en" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Filme" ending="n" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td rowSpan={4}>Genitiv</Table.Td>
+          <Table.Td>m</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="es" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Film" ending="s" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>n</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="es" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Buch" ending="es" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>f</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Serie" />
+          </Table.Td>
+        </Table.Tr>
+        <Table.Tr>
+          <Table.Td>pl</Table.Td>
+          <Table.Td>
+            <Word stem="kein" ending="er" /> <Word stem="neu" ending="en" />{" "}
+            <Word stem="Filme" />
+          </Table.Td>
+        </Table.Tr>
+      </Table.Tbody>
+    </Table>
   );
 }
