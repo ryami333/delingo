@@ -2,6 +2,8 @@
 
 A German language learning app — gamified drills for mastering articles (der/die/das) and grammatical cases.
 
+![Delingo screenshot](src/assets/images/screenshot.png)
+
 ## Getting Started
 
 ### Requirements
