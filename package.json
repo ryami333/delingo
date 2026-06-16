@@ -62,7 +62,6 @@
     "lint:formatting": "prettier . --check",
     "storybook": "storybook dev -p 6006",
     "dev": "vite dev --port 3000",
-    "dev:backend": "docker compose up --remove-orphans --build",
     "build": "vite build",
     "start": "node --env-file-if-exists=.env .output/server/index.mjs"
   },
