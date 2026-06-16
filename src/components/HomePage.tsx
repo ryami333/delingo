@@ -1,7 +1,9 @@
 import { createRandomProblemState } from "../helpers/createRandomProblemState";
 import { getAttemptFeedback } from "../helpers/getAttemptFeedback";
+import { useSettings } from "../helpers/useSettings";
 import { PartsPopovers } from "./PartsPopovers";
 import { PreviousAttempt } from "./PreviousAttempt";
+import { SettingsMenu } from "./SettingsMenu";
 import {
   AppShell,
   Button,
@@ -32,6 +34,8 @@ export function HomePage() {
 
   const [solutionOpened, { open: openSolution, close: closeSolution }] =
     useDisclosure(false);
+
+  const { settings, toggleSetting } = useSettings();
 
   const onSubmit: React.SubmitEventHandler = (e) => {
     e.preventDefault();
@@ -69,7 +73,7 @@ export function HomePage() {
               <PartsPopovers
                 key={`parts-${problemState.problem.uuid}`}
                 parts={problemState.problem.problemParts}
-                showHints={true}
+                showHints={settings.showHints}
               />
               <form
                 onSubmit={onSubmit}
@@ -117,6 +121,11 @@ export function HomePage() {
           </div>
         </Center>
       </AppShell.Main>
+
+      <SettingsMenu
+        showHints={settings.showHints}
+        onToggleShowHints={() => toggleSetting("showHints")}
+      />
     </AppShell>
   );
 }
