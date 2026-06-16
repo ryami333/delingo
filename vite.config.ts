@@ -17,9 +17,13 @@ export default defineConfig(({ command }) => ({
     },
   },
   plugins: [
-    // SPA mode prerenders a static index.html shell (no SSR server needed),
-    // which is what GitHub Pages serves.
-    tanstackStart({ srcDirectory: "src", spa: { enabled: true } }),
+    // SPA mode prerenders a static HTML shell (no SSR server needed). Emit it
+    // as index.html so it's the directory index that static hosts (GitHub
+    // Pages, `vite preview`) serve by default.
+    tanstackStart({
+      srcDirectory: "src",
+      spa: { enabled: true, prerender: { outputPath: "index.html" } },
+    }),
     viteReact(),
     babel({
       presets: [reactCompilerPreset()],
