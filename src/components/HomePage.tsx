@@ -118,7 +118,7 @@ export function HomePage() {
                   })}
                 />
               )}
-              <CheatSheet />
+              {settings.showCheatSheet && <CheatSheet />}
             </Stack>
           </div>
         </Center>
@@ -127,6 +127,8 @@ export function HomePage() {
       <SettingsMenu
         showHints={settings.showHints}
         onToggleShowHints={() => toggleSetting("showHints")}
+        showCheatSheet={settings.showCheatSheet}
+        onToggleShowCheatSheet={() => toggleSetting("showCheatSheet")}
       />
     </AppShell>
   );

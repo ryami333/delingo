@@ -4,9 +4,13 @@ import { IconCheck, IconSettings } from "@tabler/icons-react";
 export function SettingsMenu({
   showHints,
   onToggleShowHints,
+  showCheatSheet,
+  onToggleShowCheatSheet,
 }: {
   showHints: boolean;
   onToggleShowHints: () => void;
+  showCheatSheet: boolean;
+  onToggleShowCheatSheet: () => void;
 }) {
   return (
     <Menu
@@ -45,6 +49,17 @@ export function SettingsMenu({
           onClick={onToggleShowHints}
         >
           Show Hints
+        </Menu.Item>
+        <Menu.Item
+          leftSection={
+            <IconCheck
+              size={16}
+              style={{ visibility: showCheatSheet ? "visible" : "hidden" }}
+            />
+          }
+          onClick={onToggleShowCheatSheet}
+        >
+          Show Cheat Sheet
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

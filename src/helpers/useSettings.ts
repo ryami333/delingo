@@ -3,6 +3,7 @@ import z from "zod";
 
 export const settingsSchema = z.object({
   showHints: z.boolean().default(false),
+  showCheatSheet: z.boolean().default(false),
 });
 
 export type Settings = z.output<typeof settingsSchema>;
