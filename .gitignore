@@ -139,3 +139,6 @@ media/
 
 # Vite build dir:
 .output
+
+# `yarn start` static-preview wrapper (serves .output/public under /delingo/)
+.serve
