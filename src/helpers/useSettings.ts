@@ -1,32 +1,40 @@
 import { useLocalStorage } from "@mantine/hooks";
+import z from "zod";
 
-export type Settings = {
-  showHints: boolean;
-};
+export const settingsSchema = z.object({
+  showHints: z.boolean().default(false),
+});
 
-export const defaultSettings: Settings = {
-  showHints: false,
-};
+export type Settings = z.output<typeof settingsSchema>;
+
+// Parsing an empty object lets each field's `.default()` populate it.
+export const defaultSettings: Settings = settingsSchema.parse({});
 
 const STORAGE_KEY = "delingo:settings";
 
 /**
+ * Parse a persisted settings string. Because every field has a `.default()`,
+ * missing fields fall back to their default rather than coming back
+ * `undefined` for users with older persisted values. Malformed or invalid
+ * stored data falls back to the full defaults.
+ */
+function deserializeSettings(str: string | undefined) {
+  if (str === undefined) return defaultSettings;
+  return settingsSchema.catch(defaultSettings).parse(JSON.parse(str));
+}
+
+/**
  * Central store for user-facing app settings, persisted to localStorage.
  *
- * Backed by Mantine's `useLocalStorage`, which handles serialization, reads the
- * initial value from storage, and syncs across tabs via the `storage` event.
- * The `deserialize` merge means new fields added to `Settings` fall back to
- * their default rather than coming back `undefined` for users with older
- * persisted values.
+ * Backed by Mantine's `useLocalStorage`, which handles reading the initial
+ * value from storage and syncing across tabs via the `storage` event. The
+ * stored value is validated/coerced through `settingsSchema` on read.
  */
 export function useSettings() {
   const [settings, setSettings] = useLocalStorage<Settings>({
     key: STORAGE_KEY,
     defaultValue: defaultSettings,
-    deserialize: (str) =>
-      str === undefined
-        ? defaultSettings
-        : { ...defaultSettings, ...(JSON.parse(str) as Partial<Settings>) },
+    deserialize: deserializeSettings,
   });
 
   function setSetting<K extends keyof Settings>(key: K, value: Settings[K]) {
