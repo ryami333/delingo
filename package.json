@@ -61,7 +61,7 @@
     "storybook": "storybook dev -p 6006",
     "dev": "vite dev --port 3000",
     "build": "vite build",
-    "start": "node --env-file-if-exists=.env .output/server/index.mjs"
+    "start": "npx vite preview --outDir .output/public --base /delingo/ --port 3000"
   },
   "packageManager": "yarn@4.12.0"
 }
