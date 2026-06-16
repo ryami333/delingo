@@ -19,9 +19,10 @@ const meta = {
       ["her", findArtikel("her")],
       ["day", findNoun("day")],
     ],
+    showHints: true,
   },
 } satisfies Meta<typeof PartsPopovers>;
 
 export default meta;
 
-export const Default = {} satisfies StoryObj<typeof meta>;
+export const Default = { args: {} } satisfies StoryObj<typeof meta>;
