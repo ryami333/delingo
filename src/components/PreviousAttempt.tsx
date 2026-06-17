@@ -4,13 +4,13 @@ import { Text } from "@mantine/core";
 function getFeedbackKindColor(kind: FeedbackKind): string {
   switch (kind) {
     case "none":
-      return "green";
+      return "var(--mantine-color-green-6)";
     case "capitalization":
-      return "yellow";
+      return "var(--mantine-color-yellow-6)";
     case "inflection":
-      return "orange";
+      return "var(--mantine-color-orange-6)";
     case "unknown":
-      return "red";
+      return "var(--mantine-color-red-6)";
     default:
       throw new Error(`Unhandled feedback kind: ${kind satisfies never}`);
   }
