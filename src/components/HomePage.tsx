@@ -68,7 +68,7 @@ export function HomePage() {
       </AppShell.Header>
 
       <AppShell.Main>
-        <Center>
+        <Center pt="xl">
           <div style={{ width: "min(100%, 600px)" }}>
             <Stack align="stretch" gap="xl">
               <PartsPopovers
