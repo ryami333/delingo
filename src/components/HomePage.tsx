@@ -69,7 +69,7 @@ export function HomePage() {
 
       <AppShell.Main>
         <Center pt="xl">
-          <div style={{ width: "min(100%, 600px)" }}>
+          <div style={{ width: "min(100%, 800px)" }}>
             <Stack align="stretch" gap="xl">
               <PartsPopovers
                 key={`parts-${problemState.problem.uuid}`}
@@ -80,27 +80,26 @@ export function HomePage() {
                 onSubmit={onSubmit}
                 key={`form-${problemState.problem.uuid}`}
               >
-                <Center>
-                  <Group>
-                    <TextInput
-                      name="foo"
-                      autoFocus
-                      placeholder="Type the German…"
-                      size="md"
-                    />
-                    <Button type="submit" size="md">
-                      Submit
-                    </Button>
-                    <Button
-                      type="button"
-                      variant="default"
-                      size="md"
-                      onClick={openSolution}
-                    >
-                      Show Solution
-                    </Button>
-                  </Group>
-                </Center>
+                <Group wrap="nowrap">
+                  <TextInput
+                    name="foo"
+                    autoFocus
+                    placeholder="Type the German…"
+                    size="md"
+                    style={{ flex: 1 }}
+                  />
+                  <Button type="submit" size="md">
+                    Submit
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="default"
+                    size="md"
+                    onClick={openSolution}
+                  >
+                    Show Solution
+                  </Button>
+                </Group>
               </form>
               <Modal
                 opened={solutionOpened}
