@@ -4102,7 +4102,7 @@ __metadata:
     eslint-plugin-storybook: "npm:10.6.5"
     lodash: "npm:^4.18.1"
     nitro: "npm:^3.0.260610-beta"
-    postcss: "npm:^8.5.15"
+    postcss: "npm:^8.5.23"
     postcss-preset-env: "npm:^11.3.0"
     prettier: "npm:^3.8.4"
     prettier-plugin-css-order: "npm:^2.2.0"
@@ -6389,7 +6389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.5.30":
+"postcss@npm:^8.5.23, postcss@npm:^8.5.30":
   version: 8.5.32
   resolution: "postcss@npm:8.5.32"
   dependencies:
